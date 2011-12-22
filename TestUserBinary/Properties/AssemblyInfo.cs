@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TestUserBinary")]
 [assembly: AssemblyDescription("Example user binary")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Tim Eck")]
+[assembly: AssemblyCompany("Tim Eck II")]
 [assembly: AssemblyProduct("TestUserBinary")]
-[assembly: AssemblyCopyright("Copyright © Tim Eck 2011")]
+[assembly: AssemblyCopyright("Copyright © 2011 Tim Eck II")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

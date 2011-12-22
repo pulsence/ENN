@@ -17,3 +17,5 @@ C:\Development Projects\ENN\ENN\bin\Debug\Scripts\help.script
 C:\Development Projects\ENN\ENN\bin\Debug\Scripts\load.script
 C:\Development Projects\ENN\ENN\bin\Debug\Scripts\combo.script
 C:\Development Projects\ENN\ENN\bin\Debug\Help\Application.txt
+C:\Development Projects\ENN\ENN\bin\Debug\COPYING.txt
+C:\Development Projects\ENN\ENN\bin\Debug\COPYING.LESSER.txt

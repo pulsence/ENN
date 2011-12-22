@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tim Eck II")]
 [assembly: AssemblyProduct("ENN")]
-[assembly: AssemblyCopyright("Copyright © Tim Eck II 2011")]
+[assembly: AssemblyCopyright("Copyright © 2011 Tim Eck II")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

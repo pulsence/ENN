@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SettingsBuilder")]
 [assembly: AssemblyDescription("Tool to create settings for the ENN runtime")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Tim Eck")]
-[assembly: AssemblyProduct("Enn SettingsBuilder")]
-[assembly: AssemblyCopyright("Copyright © Tim Eck 2011")]
+[assembly: AssemblyCompany("Tim Eck II")]
+[assembly: AssemblyProduct("ENN SettingsBuilder")]
+[assembly: AssemblyCopyright("Copyright © 2011 Tim Eck II")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -32,6 +32,7 @@ namespace ENN.Runtime
                     Console.WriteLine(
                         "The network is not ready to run because the" +
                         "topology is not completely loaded");
+                    return;
                 }
 
                 bool error = false;
@@ -53,11 +54,10 @@ namespace ENN.Runtime
                 {
                     Console.WriteLine("The network is not ready to run");
                     Console.WriteLine("In layer number {0}, node {1} is null", --i, --j);
+                    return;
                 }
-                else
-                {
-                    Console.WriteLine("The network is ready to run");
-                }
+                
+                Console.WriteLine("The network is ready to run");
             }
             else
             {

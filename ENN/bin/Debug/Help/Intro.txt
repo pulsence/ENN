@@ -1,0 +1,13 @@
+﻿Enter one of the following commands with parameters. If you want to learn
+more about a commands type -h <command>
+
+<command>	Command Name	Description
+---------------------------------------------------------------------------
+   -r		Run		Runs the loaded network
+   -l		Load tool	Launches the load tool
+   -u		Update tool	Launches the update tool
+   -s		Save tool	Launches the save tool
+   -i		Info & Status	Show information and status
+   -c		Command Script	Executes a file containing commands
+   -a		App Launcher	Launcher Apps packaged with ENN
+   -e		Exit		Exits the program

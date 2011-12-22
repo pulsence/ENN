@@ -1,0 +1,8 @@
+﻿Save Tool
+This tool allows you to save settings and topology to file
+The command takes another command, -s or -t to determine what is being
+saved.
+-s refers to settings and -t refers to topology
+The command also takes another command -f which specifies the file location
+Note: if -f is not specified a stock name is used and the file is saved in
+either the Settings or Topologies folder.

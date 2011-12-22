@@ -1,0 +1,12 @@
+networkmode:training
+userbinarylocation:UserBin\TestUserBinary.dll
+userbinaryclassname:TestUserBinary.TestBinary
+userbinaryname:TestBinary
+useuserbinary:False
+inputlayer:BasicInputLayer
+node:BasicNode
+nodelayer:BasicNodeLayer
+outputlayer:BasicOutputLayer
+trainingtype:traditional
+trainingmeasurement:iterations
+trainingpoint:10000

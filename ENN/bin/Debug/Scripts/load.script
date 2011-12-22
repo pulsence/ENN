@@ -1,0 +1,4 @@
+﻿-l -s -f Settings/testSettings.nns
+-l -b
+-l -t -f Topologies/testTopology.nnt
+-i -s -t

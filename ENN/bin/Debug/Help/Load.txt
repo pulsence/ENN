@@ -1,0 +1,13 @@
+﻿Load Tool
+This tool loads user defined binaries, settings files and topology files
+The type of file that is being loaded is defined by a command
+<command>	Command Name	Description
+---------------------------------------------------------------------------
+   -s		Settings	Loads a settings file
+   -t		Topology	Loads a topology file
+   -b		Binary		Loads a user defined binary file
+Each command except -b takes a -f command which specifies the file
+directory path
+Example: -l -s -f C:\\ENN\\Settings\\mysettings.xml
+
+-b loades the binary file that is specified in the settings

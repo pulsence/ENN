@@ -1,0 +1,25 @@
+﻿#this is a comment
+#you create a record by combining a key and value
+#example:  networkmode:Training
+
+#network execution mode
+networkmode:computational
+
+#user defined file information
+userbinarylocation:UserBin\TestUserBinary.dll
+userbinaryclassname:TestUserBinary.TestBinary
+userbinaryname:TestBinary
+useuserbinary:true
+
+#default topology types
+inputlayer:BasicInputLayer
+node:BasicNode
+nodelayer:BasicNodeLayer
+outputlayer:BasicOutputLayer
+
+enabletiming:true
+
+#training information
+trainingtype:traditional
+trainingmeasurement:interations
+trainingpoint:10000

@@ -1,0 +1,2 @@
+﻿-c -f Scripts/help.script
+-c -f Scripts/load.script

@@ -1,0 +1,5 @@
+C:\Development Projects\ENN\ENN.Framework\obj\Debug\ResolveAssemblyReference.cache
+C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll
+C:\Development Projects\ENN\ENN.Framework\obj\Debug\ENN.Framework.dll
+C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.pdb
+C:\Development Projects\ENN\ENN.Framework\obj\Debug\ENN.Framework.pdb

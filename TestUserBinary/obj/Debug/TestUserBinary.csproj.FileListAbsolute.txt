@@ -1,0 +1,9 @@
+C:\Development Projects\ENN\TestUserBinary\bin\Debug\TestUserBinary.dll
+C:\Development Projects\ENN\TestUserBinary\bin\Debug\TestUserBinary.pdb
+C:\Development Projects\ENN\TestUserBinary\bin\Debug\ENN.Framework.dll
+C:\Development Projects\ENN\TestUserBinary\bin\Debug\ENN.Framework.pdb
+C:\Development Projects\ENN\TestUserBinary\obj\Debug\ResolveAssemblyReference.cache
+C:\Development Projects\ENN\TestUserBinary\obj\Debug\TestUserBinary.dll
+C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll
+C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.pdb
+C:\Development Projects\ENN\TestUserBinary\obj\Debug\TestUserBinary.pdb

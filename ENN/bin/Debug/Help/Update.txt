@@ -1,0 +1,44 @@
+﻿Update Tool
+This tool updates the currently loaded settings or topology
+It takes two commands -s for settings and -t for topology.
+Each command takes different parameters which are explained below.
+
+-s command
+The -s commnad updates settings values
+<parameter>	Parameter Name	Description
+---------------------------------------------------------------------------
+   -k		Key		The name of the key to change
+   -v		Value		The new value to set to key to
+
+Note that every key expects different values so please look up proper value
+before using this tool.
+
+Keys and Values
+Key Name		Value Expected
+---------------------------------------------------------------------------
+networkmode		training or computational
+userbinarylocation	Path to the directory
+userbinaryclassname	Full name of class, namespace.class
+userbinaryname		Name of something
+useuserbinary		true or false
+inputlayer		Name of the class to use
+node			Name of the class to use
+nodelayer		Name of the class to use
+outputlayer		Name of the class to use
+enabletiming		true or false
+trainingtype		traditional or evolving
+trainingmeasurent	interations or accuracy
+trainingpoint		Integer value
+
+Example: -u -s -k networkmode -v training
+
+-t command
+The -t command updates a node or layer in loaded topology
+<parameter>	Parameter Name	Description
+---------------------------------------------------------------------------
+   -l		Layer		The layer's index. This is a positive int
+				value
+   -n		Node		The node's index. This is a positive int
+				value
+Note that the input layer is layer 0 and the first node is 1
+Example: -u -t -l 1 -n 3

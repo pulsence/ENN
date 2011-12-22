@@ -1,0 +1,9 @@
+C:\Development Projects\ENN\ENN\bin\Debug\SettingsBuilder.exe
+C:\Development Projects\ENN\ENN\bin\Debug\SettingsBuilder.pdb
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\Enn.SettingsBuilder.MainForm.resources
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\Enn.SettingsBuilder.Properties.Resources.resources
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\SettingsBuilder.exe
+C:\Development Projects\ENN\Enn.SettingsBuilder\obj\x86\Debug\SettingsBuilder.pdb

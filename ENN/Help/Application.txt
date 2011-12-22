@@ -1,0 +1,3 @@
+﻿-a command allows you to launch separate tools that come with ENN.
+-s launches the settings builder
+-t launches the topology builder

@@ -1,0 +1,11 @@
+networkmode:Computational
+userbinarylocation:UserBin\
+userbinaryname:N\A
+useuserbinary:False
+inputlayer:BasicInputLayer
+node:BasicNode
+nodelayer:BasicNodeLayer
+outputlayer:BasicOutputLayer
+trainingtype:Evolving
+trainingmeasurement:Accuracy
+trainingpoint:90

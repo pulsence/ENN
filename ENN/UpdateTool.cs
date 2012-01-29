@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using ENN.Framework;
 
 /*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -24,12 +22,13 @@ namespace ENN.Runtime
     class UpdateTool
     {
         NetworkSettings settings;
-        NetworkTopology topology;
+        Dictionary<string, NetworkTopology> topologies;
 
-        public UpdateTool(ref NetworkSettings settings, ref NetworkTopology topology)
+        public UpdateTool(ref NetworkSettings settings,
+            ref Dictionary<string, NetworkTopology> topologies)
         {
             this.settings = settings;
-            this.topology = topology;
+            this.topologies = topologies;
         }
 
         public void RunCommand(List<RawCommand> commands)
@@ -56,6 +55,7 @@ namespace ENN.Runtime
 
         void SettingsHandler(List<RawCommand> commands)
         {
+            Dictionary<string, string> other = settings.Other;
             string key = "";
             string value = "";
 
@@ -77,14 +77,24 @@ namespace ENN.Runtime
                         settings.Mode = NetworkMode.Computational;
                     }
                     break;
-                case "trainingstyle":
+                case "networkstyle":
                     if (value == "traditional")
                     {
-                        settings.TrainingStyle = TrainingType.Traditional;
+                        settings.NetworkType = NetworkType.Traditional;
                     }
                     else
                     {
-                        settings.TrainingStyle = TrainingType.Evolving;
+                        settings.NetworkType = NetworkType.Evolving;
+                    }
+                    break;
+                case "trainingstyle":
+                    if (value == "traditional")
+                    {
+                        settings.NetworkType = NetworkType.Traditional;
+                    }
+                    else
+                    {
+                        settings.NetworkType = NetworkType.Evolving;
                     }
                     break;
                 case "userbinarylocation":
@@ -106,7 +116,7 @@ namespace ENN.Runtime
                     settings.DefaultNode = value;
                     break;
                 case "nodelayer":
-                    settings.DefaultNodeLayer = value;
+                    settings.DefaultHiddenLayer = value;
                     break;
                 case "outputlayer":
                     settings.DefaultOutputLayer = value;
@@ -114,20 +124,30 @@ namespace ENN.Runtime
                 case "enabletiming":
                     settings.EnableTiming = (value.ToLower() == "true");
                     break;
-                case "trainingmeasurement":
-                    if (value == "interations")
+                case "trainingiterations":
+                    int trainIter = 0;
+                    int.TryParse(value, out trainIter);
+                    settings.TrainingIterations = trainIter;
+                    break;
+                case "trainingaccuracy":
+                    float trainAccuracy = 0;
+                    float.TryParse(value, out trainAccuracy);
+                    settings.TrainingAccuracy = trainAccuracy;
+                    break;
+                case "trainingpool":
+                    int trainPool = 0;
+                    int.TryParse(value, out trainPool);
+                    settings.TraininPool = trainPool;
+                    break;
+                default:
+                    if(other.ContainsKey(key))
                     {
-                        settings.TrainingMeasure = TrainingMeasurement.Iterations;
+                        other[key] = value;
                     }
                     else
                     {
-                        settings.TrainingMeasure = TrainingMeasurement.Accuracy;
+                        other.Add(key, value);
                     }
-                    break;
-                case "trainingpoint":
-                    int trainPoint = 0;
-                    int.TryParse(value, out trainPoint);
-                    settings.TrainingPoint = trainPoint;
                     break;
             }
 

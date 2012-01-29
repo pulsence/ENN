@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -10,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tim Eck II")]
 [assembly: AssemblyProduct("ENN SettingsBuilder")]
-[assembly: AssemblyCopyright("Copyright © 2011 Tim Eck II")]
+[assembly: AssemblyCopyright("Copyright © 2012 Tim Eck II")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

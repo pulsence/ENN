@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 /*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as

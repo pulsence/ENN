@@ -1,0 +1,26 @@
+networkmode:Computational
+networktype:Evolving
+
+#User Defined Binary settings
+userbinarylocation:UserBin\TestUserBinary.dll
+userbinaryclassname:TestUserBinary.TestBinary
+userbinaryname:TestBinary
+useuserbinary:True
+
+#Default data types
+inputlayer:BasicInputLayer
+node:BasicNode
+nodelayer:BasicNodeLayer
+outputlayer:BasicOutputLayer
+factory:standard
+
+#Debugging
+enabletiming:True
+
+Training Settings
+trainingiterations:10000
+trainingaccuracy:0.9
+trainingpool:25
+
+#User Defined Settings
+version:1.0

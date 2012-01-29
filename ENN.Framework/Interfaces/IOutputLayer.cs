@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -20,8 +15,16 @@ using System.Text;
 
 namespace ENN.Framework
 {
-    public interface IOutputLayer
+    /// <summary>
+    /// Specifies the output layer
+    /// </summary>
+    public interface IOutputLayer : IMetaData
     {
+        /// <summary>
+        /// Returns a single value generated from the final hidden layer's value.
+        /// </summary>
+        /// <param name="nodeValues">Values from the last hidden layer</param>
+        /// <returns>Returns a single value.</returns>
         float GetValue(float[] nodeValues);
     }
 }

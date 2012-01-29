@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31157AC9-D8D5-4859-8C10-902CA4A08734}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ENN.TopologyBuilder</RootNamespace>
+    <AssemblyName>TopologyBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\ENN\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\ENN\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Information Controls\BaseInformationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Information Controls\BaseInformationControl.Designer.cs">
+      <DependentUpon>BaseInformationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information Controls\HiddenLayerInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Information Controls\HiddenLayerInformation.Designer.cs">
+      <DependentUpon>HiddenLayerInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information Controls\InputLayerInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Information Controls\InputLayerInformation.Designer.cs">
+      <DependentUpon>InputLayerInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostProcessor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostProcessor.Designer.cs">
+      <DependentUpon>PostProcessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Controls\PreProcessor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Controls\PreProcessor.Designer.cs">
+      <DependentUpon>PreProcessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Controls\Node.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Controls\Node.Designer.cs">
+      <DependentUpon>Node.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Controls\OutputLayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Controls\OutputLayer.Designer.cs">
+      <DependentUpon>OutputLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Controls\HiddenLayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Controls\HiddenLayer.Designer.cs">
+      <DependentUpon>HiddenLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Controls\InputLayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Controls\InputLayer.Designer.cs">
+      <DependentUpon>InputLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Controls\Layer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Controls\Layer.Designer.cs">
+      <DependentUpon>Layer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Information Controls\BaseInformationControl.resx">
+      <DependentUpon>BaseInformationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information Controls\HiddenLayerInformation.resx">
+      <DependentUpon>HiddenLayerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information Controls\InputLayerInformation.resx">
+      <DependentUpon>InputLayerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostProcessor.resx">
+      <DependentUpon>PostProcessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table Controls\HiddenLayer.resx">
+      <DependentUpon>HiddenLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table Controls\OutputLayer.resx">
+      <DependentUpon>OutputLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table Controls\InputLayer.resx">
+      <DependentUpon>InputLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table Controls\Layer.resx">
+      <DependentUpon>Layer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Table Controls\PreProcessor.resx">
+      <DependentUpon>PreProcessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

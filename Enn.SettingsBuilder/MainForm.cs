@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Reflection;
-using System.IO;
-using ENN.Framework;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -23,12 +11,22 @@ using ENN.Framework;
 * GNU Lesser General Public License for more details.
 * 
 * You should have received a copy of the GNU Lesser General Public License
-* along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
+* along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/using System;
+
+using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using ENN.Framework;
+using ENN.Framework.Tools;
+
 
 namespace ENN.SettingsBuilder
 {
     public partial class MainForm : Form
     {
+        NetworkSettings settings;
+
         public MainForm()
         {
             InitializeComponent();
@@ -42,123 +40,151 @@ namespace ENN.SettingsBuilder
             Type[] types = assembly.GetTypes();
             foreach (Type type in types)
             {
-                if(type.GetMethod("CreateUserObject") != null)
+                if (type.GetInterface("IUserObjectFactory") != null)
                 {
                     className.Text = type.FullName;
                     binaryName.Text = type.Name;
-                    useBinaryCheckBox.Checked = true;
+                    useBinary.Checked = true;
+                    break;
                 }
             }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            networkDropDown.SelectedIndex = 0;
-            trainingType.SelectedIndex = 0;
-            trainingMeasure.SelectedIndex = 0;
+            settings = new NetworkSettings();
+            networkMode.SelectedIndex = 0;
+            networkType.SelectedIndex = 0;
         }
 
         private void loadMenuItem_Click(object sender, EventArgs e)
         {
             openSettings.ShowDialog();
-            StreamReader fs = new StreamReader(openSettings.OpenFile());
-            string line;
-            string[] terms;
-            while (!fs.EndOfStream)
+            try
             {
-                line = fs.ReadLine();
-                line = line.Trim();
-                if (!line.StartsWith("#") || !line.StartsWith(""))
+                settings = Settings.Load(openSettings.FileName);
+                if (settings.Mode == NetworkMode.Computational)
                 {
-                    terms = line.Split(':');
-
-                    switch (terms[0])
-                    {
-                        case "networkmode":
-                            if (terms[1] == "training")
-                            {
-                                networkDropDown.SelectedIndex = 1;
-                            }
-                            else
-                            {
-                                networkDropDown.SelectedIndex = 0;
-                            }
-                            break;
-                        case "trainingstyle":
-                            if (terms[1] == "traditional")
-                            {
-                                trainingType.SelectedIndex = 0;
-                            }
-                            else
-                            {
-                                trainingType.SelectedIndex = 1;
-                            }
-                            break;
-                        case "userbinarylocation":
-                            binaryLocation.Text = terms[1];
-                            break;
-                        case "userbinaryclassname":
-                            className.Text = terms[1];
-                            break;
-                        case "userbinaryname":
-                            binaryName.Text = terms[1];
-                            break;
-                        case "useusesbinary":
-                            useBinaryCheckBox.Checked = 
-                                (terms[1] == "True" || terms[1] == "true");
-                            break;
-                        case "inputlayer":
-                            defaultInput.Text = terms[1];
-                            break;
-                        case "node":
-                            defaultNode.Text = terms[1];
-                            break;
-                        case "nodelayer":
-                            defaultHidden.Text = terms[1];
-                            break;
-                        case "outputlayer":
-                            defaultOutput.Text = terms[1];
-                            break;
-                        case "enabletiming":
-                            enableTiming.Checked = (terms[1].ToLower() == "true");
-                            break;
-                        case "trainingmeasurement":
-                            if (terms[1] == "interations")
-                            {
-                                trainingMeasure.SelectedIndex = 0;
-                            }
-                            else
-                            {
-                                trainingMeasure.SelectedIndex = 1;
-                            }
-                            break;
-                        case "trainingpoint":
-                            trainingPoint.Text = terms[1];
-                            break;
-                    }
+                    networkMode.SelectedIndex = 1;
                 }
+                else
+                {
+                    networkMode.SelectedIndex = 0;
+                }
+
+                if (settings.NetworkType == NetworkType.Traditional)
+                {
+                    networkType.SelectedIndex = 0;
+                }
+                else
+                {
+                    networkType.SelectedIndex = 1;
+                }
+
+                binaryLocation.Text = settings.UserBinaryLocation;
+                className.Text = settings.UserBinaryClassName;
+                binaryName.Text = settings.UserBinaryName;
+                useBinary.Checked = settings.UseUserBinaries;
+
+                defaultInput.Text = settings.DefaultInputLayer;
+                defaultNode.Text = settings.DefaultNode;
+                defaultHidden.Text = settings.DefaultHiddenLayer;
+                defaultOutput.Text = settings.DefaultOutputLayer;
+
+                enableTiming.Checked = settings.EnableTiming;
+
+                trainingAccuracy.Text = settings.TrainingAccuracy.ToString();
+                trainingIterations.Text = settings.TrainingIterations.ToString();
+                trainingPool.Text = settings.TraininPool.ToString();
+
+                customParameters.Text = "";
+                int i = 0;
+                string[] lines = new string[settings.Other.Count];
+                foreach (KeyValuePair<string, string> key in settings.Other)
+                {
+                    lines[i] = key.Key + ":" + key.Value;
+                    i++;
+                }
+                customParameters.Lines = lines;
             }
-            fs.Close();
+            catch (IOException ex)
+            {
+                MessageBox.Show("The file could not be loaded.");
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show("The settings file was not properly formated.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was some unknown error that occured while loading the file.");
+            }
         }
 
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
+            if (networkMode.SelectedIndex == 0)
+                settings.Mode = NetworkMode.Computational;
+            else
+                settings.Mode = NetworkMode.Training;
+
+            if (networkType.SelectedIndex == 0)
+                settings.NetworkType = NetworkType.Traditional;
+            else
+                settings.NetworkType = NetworkType.Evolving;
+
+            settings.UserBinaryName = binaryName.Text;
+            settings.UserBinaryLocation = binaryLocation.Text;
+            settings.UserBinaryClassName = className.Text;
+            settings.UseUserBinaries = useBinary.Checked;
+
+            settings.DefaultInputLayer = defaultInput.Text;
+            settings.DefaultHiddenLayer = defaultHidden.Text;
+            settings.DefaultOutputLayer = defaultOutput.Text;
+            settings.DefaultNode = defaultNode.Text;
+            settings.DefaultFactory = defaultFactory.Text;
+
+            settings.EnableTiming = enableTiming.Checked;
+
+            float tempF = 0;
+            float.TryParse(trainingAccuracy.Text, out tempF);
+            settings.TrainingAccuracy = tempF;
+
+            int tempI = 0;
+            int.TryParse(trainingIterations.Text, out tempI);
+            settings.TrainingIterations = tempI;
+
+            int.TryParse(trainingPool.Text, out tempI);
+            settings.TraininPool = tempI;
+
+            string[] line;
+            foreach (string s in customParameters.Lines)
+            {
+                line = s.Split(':');
+                if (line.Length != 2) continue;
+
+                line[0] = line[0].Trim();
+                line[1] = line[1].Trim();
+
+                if (settings.Other.ContainsKey(line[0]))
+                    settings.Other[line[0]] = line[1];
+                else
+                    settings.Other.Add(line[0], line[1]);
+            }
+
             saveSettings.ShowDialog();
-            StreamWriter writer = new StreamWriter(saveSettings.OpenFile());
-            writer.WriteLine("networkmode:{0}", networkDropDown.SelectedItem);
-            writer.WriteLine("userbinarylocation:{0}", binaryLocation.Text);
-            writer.WriteLine("userbinaryclassname:{0}", className.Text);
-            writer.WriteLine("userbinaryname:{0}", binaryName.Text);
-            writer.WriteLine("useuserbinary:{0}", useBinaryCheckBox.Checked);
-            writer.WriteLine("inputlayer:{0}", defaultInput.Text);
-            writer.WriteLine("node:{0}", defaultNode.Text);
-            writer.WriteLine("nodelayer:{0}", defaultHidden.Text);
-            writer.WriteLine("outputlayer:{0}", defaultOutput.Text);
-            writer.WriteLine("enabletiming:{0}", enableTiming.Checked);
-            writer.WriteLine("trainingtype:{0}", trainingType.SelectedItem);
-            writer.WriteLine("trainingmeasurement:{0}", trainingMeasure.SelectedItem);
-            writer.WriteLine("trainingpoint:{0}", trainingPoint.Text);
-            writer.Close();
+            try
+            {
+                Settings.Save(settings, saveSettings.FileName);
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("The file could not be saved.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was some unknown error that occured while saving the file.");
+            }
         }
     }
 }

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="7a5c3842-37a7-40bf-ae44-19df28e1e564" name="skynryd9@LIL-MONEY-PIT 2012-01-27 00:18:03" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-01-27 00_18_03">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-01-27T00:18:03.2061438-05:00" queuing="2012-01-27T00:18:03.9621870-05:00" start="2012-01-27T00:18:04.1171959-05:00" finish="2012-01-27T00:19:08.9429037-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LoadBinary" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="40106dd3-beba-9df5-cc22-1a96a2f12a80">
+      <Execution id="549c56d6-d1e2-4fd2-8c6c-296fb1a36081" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadBinary" />
+    </UnitTest>
+    <UnitTest name="LoadText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="251000d6-201c-3225-045e-6c6286bebe71">
+      <Execution id="fa09c9b1-4003-42ee-b6e1-69a51a71622d" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadText" />
+    </UnitTest>
+    <UnitTest name="SaveText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="d1ed5f65-7462-12a5-4bb7-93f22baf2269">
+      <Execution id="77611318-b1f9-4416-875c-e6cd50d31a5d" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveText" />
+    </UnitTest>
+    <UnitTest name="SaveBinary" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="2b646a67-1fef-7913-755f-b25bbfd6c4ea">
+      <Execution id="7c7a5c6f-07a8-4da0-bd1a-8c6166db23c0" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveBinary" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="251000d6-201c-3225-045e-6c6286bebe71" executionId="fa09c9b1-4003-42ee-b6e1-69a51a71622d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b646a67-1fef-7913-755f-b25bbfd6c4ea" executionId="7c7a5c6f-07a8-4da0-bd1a-8c6166db23c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40106dd3-beba-9df5-cc22-1a96a2f12a80" executionId="549c56d6-d1e2-4fd2-8c6c-296fb1a36081" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1ed5f65-7462-12a5-4bb7-93f22baf2269" executionId="77611318-b1f9-4416-875c-e6cd50d31a5d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="fa09c9b1-4003-42ee-b6e1-69a51a71622d" testId="251000d6-201c-3225-045e-6c6286bebe71" testName="LoadText" computerName="LIL-MONEY-PIT" duration="00:01:03.7879951" startTime="2012-01-27T00:18:04.2572039-05:00" endTime="2012-01-27T00:19:08.8538986-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa09c9b1-4003-42ee-b6e1-69a51a71622d">
+    </UnitTestResult>
+    <UnitTestResult executionId="7c7a5c6f-07a8-4da0-bd1a-8c6166db23c0" testId="2b646a67-1fef-7913-755f-b25bbfd6c4ea" testName="SaveBinary" computerName="LIL-MONEY-PIT" duration="00:00:00.0001940" startTime="2012-01-27T00:19:08.8628991-05:00" endTime="2012-01-27T00:19:08.8688995-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c7a5c6f-07a8-4da0-bd1a-8c6166db23c0">
+    </UnitTestResult>
+    <UnitTestResult executionId="549c56d6-d1e2-4fd2-8c6c-296fb1a36081" testId="40106dd3-beba-9df5-cc22-1a96a2f12a80" testName="LoadBinary" computerName="LIL-MONEY-PIT" duration="00:00:00.0002217" startTime="2012-01-27T00:19:08.8768999-05:00" endTime="2012-01-27T00:19:08.8829003-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="549c56d6-d1e2-4fd2-8c6c-296fb1a36081">
+    </UnitTestResult>
+    <UnitTestResult executionId="77611318-b1f9-4416-875c-e6cd50d31a5d" testId="d1ed5f65-7462-12a5-4bb7-93f22baf2269" testName="SaveText" computerName="LIL-MONEY-PIT" duration="00:00:00.0001782" startTime="2012-01-27T00:19:08.8899007-05:00" endTime="2012-01-27T00:19:08.8949009-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="77611318-b1f9-4416-875c-e6cd50d31a5d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="56b369e6-169a-4534-bf60-610981078210" name="skynryd9@LIL-MONEY-PIT 2012-01-26 23:25:08" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-01-26 23_25_08">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-01-26T23:25:08.9585872-05:00" queuing="2012-01-26T23:25:08.9955893-05:00" start="2012-01-26T23:25:09.0075900-05:00" finish="2012-01-26T23:25:09.2846058-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SaveTextTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d">
+      <Execution id="c4ed2367-36e0-4228-a372-469f37bb2850" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveTextTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d" executionId="c4ed2367-36e0-4228-a372-469f37bb2850" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c4ed2367-36e0-4228-a372-469f37bb2850" testId="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d" testName="SaveTextTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0596359" startTime="2012-01-26T23:25:09.0235909-05:00" endTime="2012-01-26T23:25:09.2656047-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4ed2367-36e0-4228-a372-469f37bb2850">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Runtime.Tools.TopologyTest.SaveTextTest threw exception: 
+System.IO.IOException: The process cannot access the file 'C:\Development Projects\ENN\TestSuite\TestFiles\testSaveTopology.nnt' because it is being used by another process.</Message>
+          <StackTrace>    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at System.IO.File.OpenText(String path)
+   at ENN.Framework.Tools.Topology.GetRawTypes(String file) in C:\Development Projects\ENN\ENN.Framework\Tools\Topology.cs:line 126
+   at ENN.Framework.Tools.Topology.LoadText(String file, Dictionary`2&amp; objectFactory, NetworkSettings&amp; settings) in C:\Development Projects\ENN\ENN.Framework\Tools\Topology.cs:line 49
+   at ENN.Framework.Tools.Topology.Load(String file, Dictionary`2&amp; objectFactory, NetworkSettings&amp; settings, Boolean binary) in C:\Development Projects\ENN\ENN.Framework\Tools\Topology.cs:line 40
+   at TestSuite.Runtime.Tools.TopologyTest.SaveTextTest() in C:\Development Projects\ENN\TestSuite\Runtime\Tools\TopologyTest.cs:line 64
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

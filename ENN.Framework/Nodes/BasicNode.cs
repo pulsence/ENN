@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -16,16 +13,53 @@ using System.Collections.Generic;
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
 
+using System;
+using System.Collections.Generic;
+
 namespace ENN.Framework
 {
+    /// <summary>
+    /// Basic implimentation of a node. Note very customizable.
+    /// </summary>
+    [Serializable()]
     public class BasicNode : INode
     {
+
         //fields
         protected float[] constants;
 	    protected ActivationFunction activationFunction;
+        protected Dictionary<string, string> meta;
 	    
         //properties
-        public float[] Constants { set { constants = value; } }
+
+        /// <summary>
+        /// Property for this object's meta data
+        /// </summary>
+        public Dictionary<string, string> MetaData { get { return meta; } set { meta = value; } }
+
+        /// <summary>
+        /// Sets the constants array.
+        /// </summary>
+        public float[] Weights
+        {
+            get { return constants; }
+            set
+            {
+                constants = value;
+                
+                string temp = "";
+                for (int i = 0; i < constants.Length; i++)
+                {
+                    temp += constants[i];
+                    if (i < constants.Length - 1)
+                        temp += ", ";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the activation function to use.
+        /// </summary>
         public ActivationFunction ActivationFunc { set { activationFunction = value; } }
 
 	    public BasicNode() : this(null, null){}
@@ -56,14 +90,30 @@ namespace ENN.Framework
         /// <returns>the value calculated.</returns>
 	    public virtual float GetValue(float[] nodeValues){
 		    float value = 0;
-            float wieght;
+            float weight;
 		    for(int i = 0; i < nodeValues.Length; i++){
-                if (i < constants.Length) wieght = constants[i];
-                else wieght = 1.0f;
-			    value += nodeValues[i]*wieght;
+                if (i < constants.Length) weight = constants[i];
+                else weight = 1.0f;
+			    value += nodeValues[i]*weight;
 		    }
 		
 		    return activationFunction(value);
 	    }
+
+		public override bool Equals(object obj)
+		{
+			BasicNode other = (BasicNode)obj;
+
+			if (other == null) return false;
+			if (activationFunction != other.activationFunction) return false;
+
+			if (Weights.Length != other.Weights.Length) return false;
+			for (int i = 0; i < Weights.Length; i++)
+			{
+				if (Weights[i] != other.Weights[i]) return false;
+			}
+
+			return true;
+		}
     }
 }

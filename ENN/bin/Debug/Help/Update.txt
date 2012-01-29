@@ -17,6 +17,7 @@ Keys and Values
 Key Name		Value Expected
 ---------------------------------------------------------------------------
 networkmode		training or computational
+networktype		traditional or evolving
 userbinarylocation	Path to the directory
 userbinaryclassname	Full name of class, namespace.class
 userbinaryname		Name of something
@@ -26,9 +27,9 @@ node			Name of the class to use
 nodelayer		Name of the class to use
 outputlayer		Name of the class to use
 enabletiming		true or false
-trainingtype		traditional or evolving
-trainingmeasurent	interations or accuracy
-trainingpoint		Integer value
+trainingaccuracy	Decimal value for accuracy ex: 0.9
+trainingiterations	Integer value
+trainingpool		Integer value
 
 Example: -u -s -k networkmode -v training
 
@@ -36,6 +37,7 @@ Example: -u -s -k networkmode -v training
 The -t command updates a node or layer in loaded topology
 <parameter>	Parameter Name	Description
 ---------------------------------------------------------------------------
+   -c		Topology Name	The name of the topology to update
    -l		Layer		The layer's index. This is a positive int
 				value
    -n		Node		The node's index. This is a positive int

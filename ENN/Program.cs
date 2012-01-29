@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using ENN.Framework;
 
 /*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -23,7 +22,7 @@ namespace ENN.Runtime
     partial class Program
     {
         static NetworkSettings settings;
-        static NetworkTopology topology;
+        static Dictionary<string, NetworkTopology> topologies;
 
         static LoadTool loadTool;
         static UpdateTool updateTool;
@@ -34,15 +33,21 @@ namespace ENN.Runtime
         static void Main(string[] args)
         {
             settings = new NetworkSettings();
-            topology = new NetworkTopology();
+            topologies = new Dictionary<string, NetworkTopology>();
 
             objectFactory = new Dictionary<string, IUserObjectFactory>();
             objectFactory.Add("standard", new StandLibFactory());
 
-            loadTool = new LoadTool(ref settings, ref topology, ref objectFactory);
-            updateTool = new UpdateTool(ref settings, ref topology);
-            saveTool = new SaveTool(ref settings, ref topology);
+            loadTool = new LoadTool(ref settings, ref topologies, ref objectFactory);
+            updateTool = new UpdateTool(ref settings, ref topologies);
+            saveTool = new SaveTool(ref settings, ref topologies);
 
+            Console.WriteLine("ENN  Copyright (C) 2012  Tim Eck II");
+            Console.WriteLine("This program comes with ABSOLUTELY NO WARRANTY.");
+            Console.WriteLine("This is free software, and you are welcome to redistribute it");
+            Console.WriteLine(
+                "under certain conditions; which can be found in the COPYING.LESSER.txt file");
+            Console.WriteLine("that was provided with the program.\n");
             Console.WriteLine(
                 "The ENN runtime has been succesfully started. You may now enter commands");
             Console.WriteLine("If you are not sure where to start enter -h.");

@@ -1,0 +1,94 @@
+﻿topology {
+	name:main
+	algorithmFactory:standard
+	trainingAlgorithm:HillClimbAlgo
+}
+
+#hidden layer one
+layer {
+	type:hidden
+	dataType:BasicLayer
+	layerName:LayerOne
+	nodeCount:3
+}
+
+#hidden layer two
+layer {
+	type:hidden
+	dataType:BasicLayer
+	layerName:LayerTwo
+	nodeCount:3
+}
+
+#input layer
+layer {
+	type:input
+	dataType:BasicInputLayer
+	inputIndexes:{0,1,2,3}
+}
+
+#output layer
+layer {
+	type:output
+	dataType:BasicOutputLayer
+}
+
+#preprocessor
+preprocessor {
+	dataType:BasicPreProcessor
+	factory:TestBinary
+}
+
+#postprocessor
+postprocessor {
+	dataType:BasicPostProcessor
+	factory:TestBinary
+}
+
+#node
+node {
+	dataType:BasicNode
+	layer:LayerOne
+	activationFunction:logistic
+	combinationWeights:{0.4, 0.3, .2, .6}
+}
+
+#node
+node {
+	dataType:BasicNode
+	layer:LayerOne
+	activationFunction:logistic
+	combinationWeights:{0.4, 0.3, .2, .6}
+}
+
+#node
+node {
+	dataType:BasicNode
+	layer:LayerOne
+	activationFunction:logistic
+	combinationWeights:{0.4, 0.3, .2, .6}
+}
+
+#node
+node {
+	dataType:BasicNode
+	layer:LayerTwo
+	activationFunction:logistic
+	combinationWeights:{0.4, 0.3, .2}
+}
+
+#node
+node {
+	dataType:BasicNode
+	layer:LayerTwo
+	activationFunction:logistic
+	combinationWeights:{0.4, 0.3, .2}
+}
+
+#node
+node {
+	dataType:BasicNode
+	layer:LayerTwo
+	activationFunction:logistic
+	combinationWeights:{0.4, 0.3, .2}
+}

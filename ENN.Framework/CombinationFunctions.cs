@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -18,10 +15,28 @@ using System.Collections;
 
 namespace ENN.Framework
 {
+    /// <summary>
+    /// Function used to combine node values and weights.
+    /// </summary>
+    /// <param name="nodeValues">Array of node values</param>
+    /// <param name="constants">Array of constants values</param>
+    /// <returns>Returns the combined values.</returns>
     public delegate float CombinationFunction (float[] nodeValues, float[] constants);
 
+    /// <summary>
+    /// Class containing two common combination methods that can be used.
+    /// </summary>
     public class CombinationFunctions
     {
+        /// <summary>
+        /// Standard sumation operation. Corrisponding nodeValues and constants are
+        /// multipled then added. Note that no error checking happens so if the nodeValues
+        /// array is larger than constants then an error will be thrown.
+        /// </summary>
+        /// <param name="nodeValues">Array of values for the node in the hidden layer
+        /// immidiatly below the current layer.</param>
+        /// <param name="constants">Weights that line up with a specific nodeValue.</param>
+        /// <returns>Returns a single float value.</returns>
         public static float sumation(float[] nodeValues, float[] constants) 
         {
             float value = 0;
@@ -32,6 +47,15 @@ namespace ENN.Framework
             return value;
         }
 
+        /// <summary>
+        /// Standard production operation. Corrisponding nodeValues and constants are
+        /// multipled then mulitpled. Note that no error checking happens so if the nodeValues
+        /// array is larger than constants then an error will be thrown.
+        /// </summary>
+        /// <param name="nodeValues">Array of values for the node in the hidden layer
+        /// immidiatly below the current layer.</param>
+        /// <param name="constants">Weights that line up with a specific nodeValue.</param>
+        /// <returns>Returns a single float value.</returns>
         public static float production(float[] nodeValues, float[] constants)
         {
             float value = 0;

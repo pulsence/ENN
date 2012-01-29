@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -20,11 +15,28 @@ using System.Text;
 
 namespace ENN.Framework
 {
-    public interface IHiddenLayer
+    /// <summary>
+    /// Specifies the hidden layer
+    /// </summary>
+    public interface IHiddenLayer : IMetaData
     {
+        /// <summary>
+        /// Generates the values of the nodes in the layer.
+        /// </summary>
+        /// <param name="values">Values from the layer below the current layer.</param>
+        /// <returns>Returns an array of node value from the layer.</returns>
         float[] GetValues(float[] values);
-        void SetNodes(INode[] nodes);
-        INode[] GetNodes();
+
+        /// <summary>
+        /// Property to get or set the nodes in the layer.
+        /// </summary>
+        INode[] Nodes { get; set; }
+
+        /// <summary>
+        /// Sets the node at the specified index.
+        /// </summary>
+        /// <param name="node">Node to be added to the layer.</param>
+        /// <param name="index">Location to add the node.</param>
         void SetNode(INode node, int index);
     }
 }

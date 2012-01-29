@@ -1,0 +1,9 @@
+C:\Development Projects\ENN\TestSuite\bin\Debug\TestSuite.dll
+C:\Development Projects\ENN\TestSuite\bin\Debug\TestSuite.pdb
+C:\Development Projects\ENN\TestSuite\bin\Debug\ENN.Framework.dll
+C:\Development Projects\ENN\TestSuite\bin\Debug\TestUserBinary.dll
+C:\Development Projects\ENN\TestSuite\bin\Debug\ENN.Framework.pdb
+C:\Development Projects\ENN\TestSuite\bin\Debug\TestUserBinary.pdb
+C:\Development Projects\ENN\TestSuite\obj\Debug\ResolveAssemblyReference.cache
+C:\Development Projects\ENN\TestSuite\obj\Debug\TestSuite.dll
+C:\Development Projects\ENN\TestSuite\obj\Debug\TestSuite.pdb

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -20,8 +15,22 @@ using System.Text;
 
 namespace ENN.Framework
 {
-    public interface INode
+    /// <summary>
+    /// Specifies the node which will be used in the hidden layers.
+    /// </summary>
+    public interface INode : IMetaData
     {
+        /// <summary>
+        /// Generates an array of floats from the values of the nodes in the
+        /// layer below the current layer.
+        /// </summary>
+        /// <param name="nodeValues">Values from the layer below the current layer.</param>
+        /// <returns>Returns the value of the node.</returns>
         float GetValue(float[] nodeValues);
+
+        /// <summary>
+        /// Gets and sets the weights for the node
+        /// </summary>
+        float[] Weights { get; set; }
     }
 }

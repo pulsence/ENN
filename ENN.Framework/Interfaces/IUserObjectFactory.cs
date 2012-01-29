@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 /*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -20,8 +17,18 @@ using System.Text;
 
 namespace ENN.Framework
 {
+    /// <summary>
+    /// Interface that defines ObjectFactories
+    /// </summary>
     public interface IUserObjectFactory
     {
+        /// <summary>
+        /// This method is used to create instances of interfaces for the runtime.
+        /// </summary>
+        /// <typeparam name="TObject">Type of interface to create.</typeparam>
+        /// <param name="objectName">The name of the object to create.</param>
+        /// <param name="buildParam">Parameters to create the object with.</param>
+        /// <returns></returns>
         TObject CreateUserObject<TObject>(string objectName, Dictionary<string, string> buildParam);
     }
 }

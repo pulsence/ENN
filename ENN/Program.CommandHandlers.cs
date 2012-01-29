@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using ENN.Framework;
 
 /*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -36,7 +33,21 @@ namespace ENN.Runtime
 
         static void RunHandler(List<RawCommand> commands)
         {
-            if (commands.Count > 1 && commands[1].CommandChar == 't')
+            NetworkTopology topology = new NetworkTopology(); ;
+            if (commands[1].CommandChar == 'n')
+            {
+                topology = topologies[commands[1].Value];
+            }
+            else
+            {
+                foreach (KeyValuePair<string, NetworkTopology> key in topologies)
+                {
+                    topology = key.Value;
+                    break;
+                }
+            }
+
+            if (commands.Count > 2 && commands[2].CommandChar == 't')
             {
                 if (topology.HiddenLayers == null ||
                     topology.InputLayer == null ||
@@ -56,7 +67,7 @@ namespace ENN.Runtime
                 INode[] nodes;
                 while(i < topology.HiddenLayers.Length && error == false)
                 {
-                    nodes = topology.HiddenLayers[i].GetNodes();
+                    nodes = topology.HiddenLayers[i].Nodes;
                     while (j < nodes.Length && error == false)
                     {
                         error = nodes[j] == null;
@@ -98,8 +109,13 @@ namespace ENN.Runtime
                     else if (commands[i].CommandChar == 't')
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Current Topology:");
-                        Console.WriteLine(topology.ToString());
+                        Console.WriteLine("Current Topologies:");
+                        foreach (KeyValuePair<string, NetworkTopology> key in topologies)
+                        {
+                            Console.WriteLine("{0}:", key.Key);
+                            Console.WriteLine(key.Value);
+                            Console.WriteLine();
+                        }
                     }
                 }
             }
@@ -164,6 +180,7 @@ namespace ENN.Runtime
             else if (commands[1].CommandChar == 'r')
             {
                 Console.WriteLine("This commands runs the network that has been loaded");
+                Console.WriteLine("Expects an -n argument which specifies the name to run");
                 Console.WriteLine("There is one command that can be passed, -t. The -t "+
                     "command runs a test to check if the network is loaded correctly");
             }

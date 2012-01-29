@@ -1,0 +1,211 @@
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
+* 
+* ENN is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Lesser General Public License as
+* published by the Free Software Foundation, version 3 of the License.
+* 
+* ENN is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU Lesser General Public License for more details.
+* 
+* You should have received a copy of the GNU Lesser General Public License
+* along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using ENN.Framework;
+
+namespace ENN.Framework.Tools
+{
+    /// <summary>
+    /// Static class that contains method that are helpful in manipulating NetworkSettings.
+    /// </summary>
+    static public class Settings
+    {
+        /// <summary>
+        /// Loads NetworkSettings from a file. Can load either text or binary representations.
+        /// In addition in text mode, older file versions can be used loaded. Note no exceptions
+        /// are caught by this method you will need to do this your self.
+        /// </summary>
+        /// <param name="filePath">The full path to the file.</param>
+        /// <param name="binary">Detirmines if a binary file or text file will be used to create
+        /// the NetworkSettings. True means the file is a binary file.</param>
+        /// <returns>Returns the NetworkSettings found in the file specified. If the object
+        /// could not be successfully loaded a null value is returned.</returns>
+        static public NetworkSettings Load(string filePath, bool binary = false)
+        {
+            if (binary)
+                return LoadBinary(filePath);
+            return LoadText(filePath);
+        }
+
+        static private NetworkSettings LoadText(string filePath)
+        {
+            NetworkSettings settings = new NetworkSettings();
+            Dictionary<string, string> raw = rawText(filePath);
+            if (raw.Count == 0) return null;
+
+            if (!raw.ContainsKey("version")) raw.Add("version", "1.0");
+            if (raw["version"] != "1.0") return null;
+            foreach (KeyValuePair<string, string> key in raw)
+            {
+                switch (key.Key)
+                {
+                    case "networkmode":
+                        if (key.Value == "training")
+                        {
+                            settings.Mode = NetworkMode.Training;
+                        }
+                        else
+                        {
+                            settings.Mode = NetworkMode.Computational;
+                        }
+                        break;
+                    case "networktype":
+                        if (key.Value == "traditional")
+                        {
+                            settings.NetworkType = NetworkType.Traditional;
+                        }
+                        else
+                        {
+                            settings.NetworkType = NetworkType.Evolving;
+                        }
+                        break;
+                    case "userbinarylocation":
+                        settings.UserBinaryLocation = key.Value;
+                        break;
+                    case "userbinaryclassname":
+                        settings.UserBinaryClassName = key.Value;
+                        break;
+                    case "userbinaryname":
+                        settings.UserBinaryName = key.Value;
+                        break;
+                    case "useuserbinary":
+                        settings.UseUserBinaries = (key.Value.ToLower() == "true");
+                        break;
+                    case "inputlayer":
+                        settings.DefaultInputLayer = key.Value;
+                        break;
+                    case "node":
+                        settings.DefaultNode = key.Value;
+                        break;
+                    case "nodelayer":
+                        settings.DefaultHiddenLayer = key.Value;
+                        break;
+                    case "outputlayer":
+                        settings.DefaultOutputLayer = key.Value;
+                        break;
+                    case "factory":
+                        settings.DefaultFactory = key.Value;
+                        break;
+                    case "enabletiming":
+                        settings.EnableTiming = (key.Value.ToLower() == "true");
+                        break;
+                    case "trainingaccuracy":
+                        float trainAccuracy = 0;
+                        float.TryParse(key.Value, out trainAccuracy);
+                        settings.TrainingAccuracy = trainAccuracy;
+                        break;
+                    case "trainingiterations":
+                        int iterations = 0;
+                        int.TryParse(key.Value, out iterations);
+                        settings.TrainingIterations = iterations;
+                        break;
+                    case "trainingpool":
+                        int pool = 0;
+                        int.TryParse(key.Value, out pool);
+                        settings.TraininPool = pool;
+                        break;
+                    default:
+                        settings.Other.Add(key.Key, key.Value);
+                        break;
+                }
+            }
+            return settings;
+        }
+
+        static private NetworkSettings LoadBinary(string filePath)
+        {
+            Stream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            BinaryFormatter binary = new BinaryFormatter();
+            Object temp = binary.Deserialize(fs);
+            fs.Close();
+            return (NetworkSettings)temp;
+        }
+
+        static public void Save(NetworkSettings settings, string filePath, bool binary = false)
+        {
+            if (binary)
+                SaveBinary(ref settings, filePath);
+            else
+                SaveText(ref settings, filePath);
+        }
+
+        static private void SaveText(ref NetworkSettings settings, string filePath)
+        {
+            StreamWriter writer = new StreamWriter(filePath);
+            writer.WriteLine("networkmode:" + settings.Mode);
+            writer.WriteLine("networktype:" + settings.NetworkType);
+            writer.WriteLine("\n#User Defined Binary settings");
+            writer.WriteLine("userbinarylocation:" + settings.UserBinaryLocation);
+            writer.WriteLine("userbinaryclassname:" + settings.UserBinaryClassName);
+            writer.WriteLine("userbinaryname:" + settings.UserBinaryName);
+            writer.WriteLine("useuserbinary:" + settings.UseUserBinaries);
+            writer.WriteLine("\n#Default data types");
+            writer.WriteLine("inputlayer:" + settings.DefaultInputLayer);
+            writer.WriteLine("node:" + settings.DefaultNode);
+            writer.WriteLine("nodelayer:" + settings.DefaultHiddenLayer);
+            writer.WriteLine("outputlayer:" + settings.DefaultOutputLayer);
+            writer.WriteLine("factory:" + settings.DefaultFactory);
+            writer.WriteLine("\n#Debugging");
+            writer.WriteLine("enabletiming:" + settings.EnableTiming);
+            writer.WriteLine("\nTraining Settings");
+            writer.WriteLine("trainingiterations:" + settings.TrainingIterations);
+            writer.WriteLine("trainingaccuracy:" + settings.TrainingAccuracy);
+            writer.WriteLine("trainingpool:" + settings.TraininPool);
+            writer.WriteLine("\n#User Defined Settings");
+            foreach (KeyValuePair<string, string> key in settings.Other)
+            {
+                writer.WriteLine("{0}:{1}", key.Key, key.Value);
+            }
+            writer.Close();
+        }
+
+        static private void SaveBinary(ref NetworkSettings settings, string filePath)
+        {
+            Stream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
+            BinaryFormatter binary = new BinaryFormatter();
+            binary.Serialize(fs, settings);
+            fs.Close();
+        }
+
+        static private Dictionary<string, string> rawText(string filePath)
+        {
+            Dictionary<string, string> raw = new Dictionary<string, string>();
+            StreamReader reader = new StreamReader(filePath);
+            string line;
+            string[] pieces;
+            while (!reader.EndOfStream)
+            {
+                line = reader.ReadLine();
+                if (line == "" || line[0] == '#') continue;
+
+                pieces = line.Split(':');
+                if (pieces.Length != 2) continue;
+
+                pieces[0] = pieces[0].Trim();
+                pieces[1] = pieces[1].Trim();
+
+                if (!raw.ContainsKey(pieces[0]))
+                {
+                    raw.Add(pieces[0], pieces[1]);
+                }
+            }
+            return raw;
+        }
+    }
+}

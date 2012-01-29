@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-/*This file is part of ENN.
-* Copyright (C) 2011  Tim Eck II
+﻿/*This file is part of ENN.
+* Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as
@@ -18,17 +13,34 @@ using System.Text;
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
 
+using System;
+using System.Collections.Generic;
+
 namespace ENN.Framework
 {
+    /// <summary>
+    /// Basic hidden layer. Decent for networks with smaller node and hidden layer counts.
+    /// </summary>
+    [Serializable()]
     public class BasicLayer : IHiddenLayer
     {
         protected INode[] nodes;
+
+        /// <summary>
+        /// Property for this object's meta data
+        /// </summary>
+        public Dictionary<string, string> MetaData { get; set; }
 
         public BasicLayer(INode[] computationalNodes)
         {
             this.nodes = computationalNodes;
         }
 
+        /// <summary>
+        /// Calculates the values of the nodes in the current layer.
+        /// </summary>
+        /// <param name="values">Values from the layer right before the current layer.</param>
+        /// <returns>Returns a float array containing the value produced by the nodes.</returns>
         public virtual float[] GetValues(float[] values)
         {
             float[] cValues = new float[nodes.Length];
@@ -39,22 +51,21 @@ namespace ENN.Framework
             return cValues;
         }
 
-        public void SetNodes(INode[] nodes)
+        /// <summary>
+        /// Gets or Sets the nodes in the layer.
+        /// </summary>
+        public INode[] Nodes
         {
-            this.nodes = nodes;
-        }
-
-        public INode[] GetNodes()
-        {
-            return nodes;
+            get { return nodes; }
+            set { this.nodes = value; }
         }
 
         /// <summary>
         /// Set a specific node as particular node at a specific index. Pass -1 as index to 
         /// set the first empty node as the passed node or the last if none are empty.
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="index"></param>
+        /// <param name="node">Node the set</param>
+        /// <param name="index">Location to place the node</param>
         public void SetNode(INode node, int index = -1)
         {
             if (nodes == null) return;
@@ -75,5 +86,20 @@ namespace ENN.Framework
                 nodes[index] = node;
             }
         }
+
+		public override bool Equals(object obj)
+		{
+			BasicLayer other = (BasicLayer)obj;
+
+			if (other == null) return false;
+
+			if (nodes.Length != other.nodes.Length) return false;
+			for (int i = 0; i < nodes.Length; i++)
+			{
+				if (!nodes[i].Equals(other.nodes[i])) return false;
+			}
+
+			return true;
+		}
     }
 }

@@ -49,6 +49,10 @@
 			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topologyContainer = new System.Windows.Forms.SplitContainer();
 			this.topologyDisplay = new System.Windows.Forms.FlowLayoutPanel();
+			this.topologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.userBinariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.binaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.mainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.topologyContainer)).BeginInit();
 			this.topologyContainer.Panel1.SuspendLayout();
@@ -77,14 +81,17 @@
 			// 
 			// loadFileMenuItem
 			// 
+			this.loadFileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.topologyToolStripMenuItem,
+            this.userBinariesToolStripMenuItem});
 			this.loadFileMenuItem.Name = "loadFileMenuItem";
-			this.loadFileMenuItem.Size = new System.Drawing.Size(100, 22);
+			this.loadFileMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.loadFileMenuItem.Text = "Load";
 			// 
 			// saveFileMenuItem
 			// 
 			this.saveFileMenuItem.Name = "saveFileMenuItem";
-			this.saveFileMenuItem.Size = new System.Drawing.Size(100, 22);
+			this.saveFileMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.saveFileMenuItem.Text = "Save";
 			// 
 			// actionMenu
@@ -105,7 +112,7 @@
             this.nodeToolStripMenuItem,
             this.processorToolStripMenuItem});
 			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-			this.createToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.createToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
 			this.createToolStripMenuItem.Text = "Create";
 			// 
 			// inputLayerToolStripMenuItem
@@ -115,7 +122,7 @@
             this.hiddenToolStripMenuItem,
             this.outputToolStripMenuItem});
 			this.inputLayerToolStripMenuItem.Name = "inputLayerToolStripMenuItem";
-			this.inputLayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.inputLayerToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
 			this.inputLayerToolStripMenuItem.Text = "Layer";
 			// 
 			// inputToolStripMenuItem
@@ -166,21 +173,21 @@
 			// preProcessorToolStripMenuItem
 			// 
 			this.preProcessorToolStripMenuItem.Name = "preProcessorToolStripMenuItem";
-			this.preProcessorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.preProcessorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
 			this.preProcessorToolStripMenuItem.Text = "PreProcessor";
 			this.preProcessorToolStripMenuItem.Click += new System.EventHandler(this.preProcessorToolStripMenuItem_Click);
 			// 
 			// postProcessorToolStripMenuItem
 			// 
 			this.postProcessorToolStripMenuItem.Name = "postProcessorToolStripMenuItem";
-			this.postProcessorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.postProcessorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
 			this.postProcessorToolStripMenuItem.Text = "PostProcessor";
 			this.postProcessorToolStripMenuItem.Click += new System.EventHandler(this.postProcessorToolStripMenuItem_Click);
 			// 
 			// copyToolStripMenuItem
 			// 
 			this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-			this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.copyToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
 			this.copyToolStripMenuItem.Text = "Copy";
 			this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
 			// 
@@ -190,7 +197,7 @@
             this.selectedToolStripMenuItem,
             this.newToolStripMenuItem});
 			this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-			this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.pasteToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
 			this.pasteToolStripMenuItem.Text = "Paste";
 			// 
 			// selectedToolStripMenuItem
@@ -210,7 +217,7 @@
 			// deleteToolStripMenuItem
 			// 
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.deleteToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
 			this.deleteToolStripMenuItem.Text = "Delete";
 			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
 			// 
@@ -241,6 +248,34 @@
 			this.topologyDisplay.Size = new System.Drawing.Size(693, 406);
 			this.topologyDisplay.TabIndex = 0;
 			this.topologyDisplay.Resize += new System.EventHandler(this.topologyDisplay_Resize);
+			// 
+			// topologyToolStripMenuItem
+			// 
+			this.topologyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.textToolStripMenuItem,
+            this.binaryToolStripMenuItem});
+			this.topologyToolStripMenuItem.Name = "topologyToolStripMenuItem";
+			this.topologyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.topologyToolStripMenuItem.Text = "Topology";
+			// 
+			// userBinariesToolStripMenuItem
+			// 
+			this.userBinariesToolStripMenuItem.Name = "userBinariesToolStripMenuItem";
+			this.userBinariesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.userBinariesToolStripMenuItem.Text = "User Binaries";
+			this.userBinariesToolStripMenuItem.Click += new System.EventHandler(this.userBinariesToolStripMenuItem_Click);
+			// 
+			// textToolStripMenuItem
+			// 
+			this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+			this.textToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.textToolStripMenuItem.Text = "Text";
+			// 
+			// binaryToolStripMenuItem
+			// 
+			this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
+			this.binaryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.binaryToolStripMenuItem.Text = "Binary";
 			// 
 			// MainForm
 			// 
@@ -286,6 +321,10 @@
 		private System.Windows.Forms.ToolStripMenuItem selectedToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
 		private System.Windows.Forms.FlowLayoutPanel topologyDisplay;
+		private System.Windows.Forms.ToolStripMenuItem topologyToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem binaryToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem userBinariesToolStripMenuItem;
 	}
 }
 

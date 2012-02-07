@@ -88,17 +88,19 @@ namespace ENN.Framework
         /// <param name="nodeValues">An array of values from the nodes in the layer below
         /// the layer that this node resides in.</param>
         /// <returns>the value calculated.</returns>
-	    public virtual float GetValue(float[] nodeValues){
-		    float value = 0;
-            float weight;
-		    for(int i = 0; i < nodeValues.Length; i++){
-                if (i < constants.Length) weight = constants[i];
-                else weight = 1.0f;
-			    value += nodeValues[i]*weight;
-		    }
-		
-		    return activationFunction(value);
-	    }
+		public virtual float GetValue(float[] nodeValues)
+		{
+			float value = 0;
+			float weight;
+			for (int i = 0; i < nodeValues.Length; i++)
+			{
+				if (i < constants.Length) weight = constants[i];
+				else weight = 1.0f;
+				value += nodeValues[i] * weight;
+			}
+
+			return activationFunction(value);
+		}
 
 		public override bool Equals(object obj)
 		{

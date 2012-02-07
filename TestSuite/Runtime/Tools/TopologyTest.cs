@@ -92,19 +92,19 @@ namespace TestSuite.Runtime.Tools
 			SetUpBaseTopology();
 
 			Topology.Save(
-				basePath + "testBinaryTopologySave.nntb",
+				basePath + "testBinaryTopologySave.nntc",
 				baseTopology,
 				true);
 
 			testTopology = Topology.Load(
-				basePath + "testBinaryTopologySave.nntb",
+				basePath + "testBinaryTopologySave.nntc",
 				ref objectFactory,
 				ref settings,
 				true);
 
 			Assert.IsTrue(baseTopology.Equals(testTopology));
 
-			File.Delete(basePath + "testBinaryTopologySave.nntb");
+			File.Delete(basePath + "testBinaryTopologySave.nntc");
 		}
 
 		private void SetUpBaseTopology()

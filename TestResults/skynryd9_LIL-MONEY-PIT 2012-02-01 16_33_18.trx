@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="45034aa4-c5ba-439d-9d28-e6539f3f9899" name="skynryd9@LIL-MONEY-PIT 2012-02-01 16:33:18" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-01 16_33_18">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-01T16:33:18.4580822-05:00" queuing="2012-02-01T16:33:19.2531277-05:00" start="2012-02-01T16:33:19.3911355-05:00" finish="2012-02-01T16:33:39.9953140-05:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="LIL-MONEY-PIT" outcome="Error" timestamp="2012-02-01T16:33:39.9943140-05:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ModifiedLogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="f590dcde-57c2-4844-9cad-2fe602dec5de">
+      <Execution id="9d9fc823-7982-4ed3-b998-56c8020d7fbc" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ModifiedLogisticTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f590dcde-57c2-4844-9cad-2fe602dec5de" executionId="9d9fc823-7982-4ed3-b998-56c8020d7fbc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9d9fc823-7982-4ed3-b998-56c8020d7fbc" testId="f590dcde-57c2-4844-9cad-2fe602dec5de" testName="ModifiedLogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:20.4731710" startTime="2012-02-01T16:33:19.5221430-05:00" endTime="2012-02-01T16:33:39.9953140-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9d9fc823-7982-4ed3-b998-56c8020d7fbc">
+    </UnitTestResult>
+  </Results>
+</TestRun>

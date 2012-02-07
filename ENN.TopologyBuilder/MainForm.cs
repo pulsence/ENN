@@ -21,6 +21,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ENN.Framework;
+using ENN.TopologyBuilder.Views;
+using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder
 {	
@@ -32,9 +35,12 @@ namespace ENN.TopologyBuilder
 		bool hasPreProcessor;
 		bool hasPostProcessor;
 
-		Layer currentSelectedLayer;
-		Layer copyLayer;
+		LayerView currentSelectedLayer;
+		LayerView copyLayer;
 
+		//Models
+		MetaDataPoolModel metaData;
+		
 		public MainForm()
 		{
 			InitializeComponent();
@@ -44,8 +50,18 @@ namespace ENN.TopologyBuilder
 			hasPostProcessor = false;
 			hasPreProcessor = false;
 
-			currentSelectedLayer = new Layer();
-			copyLayer = new Layer();
+			currentSelectedLayer = new LayerView();
+			copyLayer = new LayerView();
+
+			metaData = new MetaDataPoolModel();
+
+			metaData.SetFactory("standard", new StandLibFactory());
+			metaData.SetInputLayer("BasicInputLayer");
+			metaData.SetHiddenLayer("BasicLayer");
+			metaData.SetHiddenLayer("ThreadedHiddenLayer");
+			metaData.SetOutputLayer("BasicOutputLayer");
+			metaData.SetNode("BasicNode");
+			metaData.SetNode("CustomizableNode");
 		}
 
 		#region Copy/Paste/Delete
@@ -77,9 +93,9 @@ namespace ENN.TopologyBuilder
 		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Type currentType = currentSelectedLayer.GetType();
-			if (currentType == typeof(OutputLayer))
+			if (currentType == typeof(OutputLayerView))
 				hasOutput = false;
-			else if (currentType == typeof(InputLayer))
+			else if (currentType == typeof(InputLayerView))
 				hasInput = false;
 
 			topologyDisplay.Controls.Remove(currentSelectedLayer);
@@ -95,17 +111,17 @@ namespace ENN.TopologyBuilder
 		/// <param name="e"></param>
 		private void hiddenToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			HiddenLayerView layer = new HiddenLayerView();
+			layer.SetMetaDataModel(ref metaData);
+			int location = -1;
 			if (hasOutput || hasPostProcessor)
 			{
-				int location = topologyDisplay.Controls.Count;
+				location = topologyDisplay.Controls.Count;
 
 				if (hasOutput) location--;
 				if (hasPostProcessor) location--;
-
-				AddTableItem(new HiddenLayer(), location);
 			}
-			else
-				AddTableItem(new HiddenLayer());
+			AddTableItem(layer, location);
 		}
 
 		/// <summary>
@@ -117,11 +133,13 @@ namespace ENN.TopologyBuilder
 		{
 			if (!hasOutput)
 			{
+				OutputLayerView layer = new OutputLayerView();
+				layer.SetMetaDataModel(ref metaData);
 				if (hasPostProcessor)
-					AddTableItem(new OutputLayer(),
+					AddTableItem(layer,
 						topologyDisplay.Controls.Count - 1);
 				else
-					AddTableItem(new OutputLayer());
+					AddTableItem(layer);
 				hasOutput = true;
 			}
 			else
@@ -139,10 +157,12 @@ namespace ENN.TopologyBuilder
 			if (!hasInput)
 			{
 				hasInput = true;
+				InputLayerView layer = new InputLayerView();
+				layer.SetMetaDataModel(ref metaData);
 				if(hasPreProcessor)
-					AddTableItem(new InputLayer(), 1);
+					AddTableItem(layer, 1);
 				else
-					AddTableItem(new InputLayer(), 0);
+					AddTableItem(layer, 0);
 			}
 		}
 
@@ -156,7 +176,9 @@ namespace ENN.TopologyBuilder
 			if (!hasPreProcessor)
 			{
 				hasPreProcessor = true;
-				AddTableItem(new PreProcessor(), 0);
+				PreProcessorView layer = new PreProcessorView();
+				layer.SetMetaDataModel(ref metaData);
+				AddTableItem(layer, 0);
 			}
 		}
 
@@ -170,7 +192,9 @@ namespace ENN.TopologyBuilder
 			if (!hasPostProcessor)
 			{
 				hasPostProcessor = true;
-				AddTableItem(new PostProcessor());
+				PostProcessorView layer = new PostProcessorView();
+				layer.SetMetaDataModel(ref metaData);
+				AddTableItem(layer);
 			}
 		}
 
@@ -181,10 +205,11 @@ namespace ENN.TopologyBuilder
 		/// <param name="e"></param>
 		private void nodeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (currentSelectedLayer.GetType() == typeof(HiddenLayer))
+			if (currentSelectedLayer.GetType() == typeof(HiddenLayerView))
 			{
-				HiddenLayer layer = (HiddenLayer)currentSelectedLayer;
-				Node node = new Node();
+				HiddenLayerView layer = (HiddenLayerView)currentSelectedLayer;
+				NodeView node = new NodeView();
+				layer.SetMetaDataModel(ref metaData);
 				node.Click += new EventHandler(ChangeInformation);
 				layer.AddNode(node);
 			}
@@ -199,7 +224,7 @@ namespace ENN.TopologyBuilder
 		private void ChangeInformation(object obj, EventArgs args)
 		{
 			currentSelectedLayer.BorderStyle = BorderStyle.FixedSingle;
-			currentSelectedLayer = (Layer)obj;
+			currentSelectedLayer = (LayerView)obj;
 			currentSelectedLayer.BorderStyle = BorderStyle.Fixed3D;
 			Control info = currentSelectedLayer.GetInformation();
 			info.Size = topologyContainer.Panel2.Size;
@@ -208,7 +233,7 @@ namespace ENN.TopologyBuilder
 			topologyContainer.Panel2.Controls.Add(info);
 		}
 
-		private void AddTableItem(Layer layer, int row = -1)
+		private void AddTableItem(LayerView layer, int row = -1)
 		{
 			layer.Width = topologyDisplay.Width - 25;
 			layer.Click += new EventHandler(ChangeInformation);
@@ -235,6 +260,18 @@ namespace ENN.TopologyBuilder
 			{
 				control.Width = width;
 			}
+		}
+
+		/// <summary>
+		/// Opens a form to load user defined binaries
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void userBinariesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LoadUserBinaries form = new LoadUserBinaries();
+			form.SetMetaDataPool(ref metaData);
+			form.Show();
 		}
 	}
 }

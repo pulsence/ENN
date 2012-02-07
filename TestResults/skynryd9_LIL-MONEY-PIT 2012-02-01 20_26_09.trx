@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3e717f7d-7061-4cae-9353-633927678d01" name="skynryd9@LIL-MONEY-PIT 2012-02-01 20:26:09" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-01 20_26_09">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-01T20:26:09.1881622-05:00" queuing="2012-02-01T20:26:09.2401652-05:00" start="2012-02-01T20:26:09.2531660-05:00" finish="2012-02-01T20:26:09.5121808-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="923feb72-64b3-b25f-cfd9-a157f2316282">
+      <Execution id="4de70316-a23e-4152-bc01-2ec65e148e19" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicOutputLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="GetValueTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="c93155ce-b454-6847-1825-0b7654684196">
+      <Execution id="db973a7e-8fdd-40af-91e1-d6952570291d" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicOutputLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetValueTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="923feb72-64b3-b25f-cfd9-a157f2316282" executionId="4de70316-a23e-4152-bc01-2ec65e148e19" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c93155ce-b454-6847-1825-0b7654684196" executionId="db973a7e-8fdd-40af-91e1-d6952570291d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4de70316-a23e-4152-bc01-2ec65e148e19" testId="923feb72-64b3-b25f-cfd9-a157f2316282" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0150198" startTime="2012-02-01T20:26:09.2721670-05:00" endTime="2012-02-01T20:26:09.4931797-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4de70316-a23e-4152-bc01-2ec65e148e19">
+    </UnitTestResult>
+    <UnitTestResult executionId="db973a7e-8fdd-40af-91e1-d6952570291d" testId="c93155ce-b454-6847-1825-0b7654684196" testName="GetValueTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0004835" startTime="2012-02-01T20:26:09.4951798-05:00" endTime="2012-02-01T20:26:09.4991800-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db973a7e-8fdd-40af-91e1-d6952570291d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

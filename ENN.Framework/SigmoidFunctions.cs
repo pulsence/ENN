@@ -1,6 +1,4 @@
-﻿using System;
-
-/*This file is part of ENN.
+﻿/*This file is part of ENN.
 * Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
@@ -15,6 +13,8 @@
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
 
+using System;
+
 namespace ENN.Framework
 {
     /// <summary>
@@ -28,7 +28,7 @@ namespace ENN.Framework
     /// Helpful class that containts a variety of sigmoid functions that can be used as
     /// activation functions.
     /// </summary>
-    public class SigmoidFunctions
+    public static class SigmoidFunctions
     {
         /// <summary>
         /// Calculates the logistic function of the value. The logistic function is
@@ -49,7 +49,8 @@ namespace ENN.Framework
         /// <returns>Returns the functions output. The values will be in the range (-1,1).</returns>
         public static float ModifiedLogistic(float value)
         {
-            return (float) (2 / (1 + Math.Pow(Math.E, -value * .5)) + 1);
+			double denominator = 1 + Math.Pow(Math.E, (-value * .5));
+            return (float) (2 / denominator) - 1;
         }
 
         ///<summary>
@@ -90,8 +91,8 @@ namespace ENN.Framework
         {
             if (v <= 0) return 0;
             float numerator = lowerAsymptote - upperAsymptote;
-            float denominator = (float) Math.Pow(1 + v *
-                    Math.Pow(Math.E, -growthRate * (value - M)), 1 / v);
+            float denominator = (float) Math.Pow(
+				1 + v * Math.Pow(Math.E, (-growthRate * (value - M))), (1 / v));
             return upperAsymptote + numerator / denominator;
         }
 

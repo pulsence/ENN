@@ -205,6 +205,7 @@ namespace ENN.Framework.Tools
                     raw.Add(pieces[0], pieces[1]);
                 }
             }
+			reader.Close();
             return raw;
         }
     }

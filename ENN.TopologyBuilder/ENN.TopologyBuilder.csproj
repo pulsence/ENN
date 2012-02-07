@@ -46,65 +46,98 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Information Controls\BaseInformationControl.cs">
+    <Compile Include="CustomEvents.cs" />
+    <Compile Include="Meta Data Views\BaseMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Information Controls\BaseInformationControl.Designer.cs">
-      <DependentUpon>BaseInformationControl.cs</DependentUpon>
+    <Compile Include="Meta Data Views\BaseMetaDataView.Designer.cs">
+      <DependentUpon>BaseMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Information Controls\HiddenLayerInformation.cs">
+    <Compile Include="Meta Data Views\HiddenLayerMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Information Controls\HiddenLayerInformation.Designer.cs">
-      <DependentUpon>HiddenLayerInformation.cs</DependentUpon>
+    <Compile Include="Meta Data Views\HiddenLayerMetaDataView.Designer.cs">
+      <DependentUpon>HiddenLayerMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Information Controls\InputLayerInformation.cs">
+    <Compile Include="Meta Data Views\InputLayerMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Information Controls\InputLayerInformation.Designer.cs">
-      <DependentUpon>InputLayerInformation.cs</DependentUpon>
+    <Compile Include="Meta Data Views\InputLayerMetaDataView.Designer.cs">
+      <DependentUpon>InputLayerMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PostProcessor.cs">
+    <Compile Include="Meta Data Views\OutputLayerMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PostProcessor.Designer.cs">
-      <DependentUpon>PostProcessor.cs</DependentUpon>
+    <Compile Include="Meta Data Views\OutputLayerMetaDataView.Designer.cs">
+      <DependentUpon>OutputLayerMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table Controls\PreProcessor.cs">
+    <Compile Include="Meta Data Views\PostProcessorMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Table Controls\PreProcessor.Designer.cs">
-      <DependentUpon>PreProcessor.cs</DependentUpon>
+    <Compile Include="Meta Data Views\PostProcessorMetaDataView.Designer.cs">
+      <DependentUpon>PostProcessorMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table Controls\Node.cs">
+    <Compile Include="Meta Data Views\PreProcessorMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Table Controls\Node.Designer.cs">
-      <DependentUpon>Node.cs</DependentUpon>
+    <Compile Include="Meta Data Views\PreProcessorMetaDataView.Designer.cs">
+      <DependentUpon>PreProcessorMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table Controls\OutputLayer.cs">
+    <Compile Include="LoadUserBinaries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadUserBinaries.Designer.cs">
+      <DependentUpon>LoadUserBinaries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meta Data Views\NodeMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Table Controls\OutputLayer.Designer.cs">
-      <DependentUpon>OutputLayer.cs</DependentUpon>
+    <Compile Include="Meta Data Views\NodeMetaDataView.Designer.cs">
+      <DependentUpon>NodeMetaDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table Controls\HiddenLayer.cs">
+    <Compile Include="Models\MetaDataPoolModel.cs" />
+    <Compile Include="Models\TopologyModel.cs" />
+    <Compile Include="Table Views\PostProcessorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Table Controls\HiddenLayer.Designer.cs">
-      <DependentUpon>HiddenLayer.cs</DependentUpon>
+    <Compile Include="Table Views\PostProcessorView.Designer.cs">
+      <DependentUpon>PostProcessorView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table Controls\InputLayer.cs">
+    <Compile Include="Table Views\PreProcessorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Table Controls\InputLayer.Designer.cs">
-      <DependentUpon>InputLayer.cs</DependentUpon>
+    <Compile Include="Table Views\PreProcessorView.Designer.cs">
+      <DependentUpon>PreProcessorView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table Controls\Layer.cs">
+    <Compile Include="Table Views\NodeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Table Controls\Layer.Designer.cs">
-      <DependentUpon>Layer.cs</DependentUpon>
+    <Compile Include="Table Views\NodeView.Designer.cs">
+      <DependentUpon>NodeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Views\OutputLayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Views\OutputLayerView.Designer.cs">
+      <DependentUpon>OutputLayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Views\HiddenLayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Views\HiddenLayerView.Designer.cs">
+      <DependentUpon>HiddenLayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Views\InputLayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Views\InputLayerView.Designer.cs">
+      <DependentUpon>InputLayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table Views\LayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table Views\LayerView.Designer.cs">
+      <DependentUpon>LayerView.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -114,29 +147,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Information Controls\BaseInformationControl.resx">
-      <DependentUpon>BaseInformationControl.cs</DependentUpon>
+    <EmbeddedResource Include="Meta Data Views\BaseMetaDataView.resx">
+      <DependentUpon>BaseMetaDataView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Information Controls\HiddenLayerInformation.resx">
-      <DependentUpon>HiddenLayerInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Meta Data Views\HiddenLayerMetaDataView.resx">
+      <DependentUpon>HiddenLayerMetaDataView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Information Controls\InputLayerInformation.resx">
-      <DependentUpon>InputLayerInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Meta Data Views\InputLayerMetaDataView.resx">
+      <DependentUpon>InputLayerMetaDataView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PostProcessor.resx">
-      <DependentUpon>PostProcessor.cs</DependentUpon>
+    <EmbeddedResource Include="LoadUserBinaries.resx">
+      <DependentUpon>LoadUserBinaries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Table Controls\HiddenLayer.resx">
-      <DependentUpon>HiddenLayer.cs</DependentUpon>
+    <EmbeddedResource Include="Table Views\PostProcessorView.resx">
+      <DependentUpon>PostProcessorView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Table Controls\OutputLayer.resx">
-      <DependentUpon>OutputLayer.cs</DependentUpon>
+    <EmbeddedResource Include="Table Views\HiddenLayerView.resx">
+      <DependentUpon>HiddenLayerView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Table Controls\InputLayer.resx">
-      <DependentUpon>InputLayer.cs</DependentUpon>
+    <EmbeddedResource Include="Table Views\OutputLayerView.resx">
+      <DependentUpon>OutputLayerView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Table Controls\Layer.resx">
-      <DependentUpon>Layer.cs</DependentUpon>
+    <EmbeddedResource Include="Table Views\InputLayerView.resx">
+      <DependentUpon>InputLayerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table Views\LayerView.resx">
+      <DependentUpon>LayerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -151,8 +187,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Table Controls\PreProcessor.resx">
-      <DependentUpon>PreProcessor.cs</DependentUpon>
+    <EmbeddedResource Include="Table Views\PreProcessorView.resx">
+      <DependentUpon>PreProcessorView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -163,6 +199,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ENN.Framework\ENN.Framework.csproj">
+      <Project>{9F877964-D251-425E-AD80-BC85A1FD930A}</Project>
+      <Name>ENN.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

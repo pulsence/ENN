@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ee8ac8ef-5748-4e1a-bd43-5348d98eff97" name="skynryd9@LIL-MONEY-PIT 2012-02-01 16:42:37" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-01 16_42_37">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-01T16:42:37.7100696-05:00" queuing="2012-02-01T16:42:37.7990747-05:00" start="2012-02-01T16:42:37.8120754-05:00" finish="2012-02-01T16:42:38.2180986-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="16" executed="16" passed="15" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SimpleAlgebraTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="792cef7e-de8b-0ac6-a844-fe24d4cd88a7">
+      <Execution id="96008078-0c25-4767-8ed0-7ac581f6e5c0" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SimpleAlgebraTest" />
+    </UnitTest>
+    <UnitTest name="GeneralizedLogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="0e6d1b38-b06d-0bf7-032c-34acbd831cfe">
+      <Execution id="fbcda3a5-f69c-42dd-8290-a4faa7303eba" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GeneralizedLogisticTest" />
+    </UnitTest>
+    <UnitTest name="LoadText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="251000d6-201c-3225-045e-6c6286bebe71">
+      <Execution id="724cac26-5b5d-46f0-b6e5-704e0f20f336" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadText" />
+    </UnitTest>
+    <UnitTest name="SaveLoadBinaryTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="7809094d-33f4-45e7-b7ae-cef1ad197ec5">
+      <Execution id="c21b4eeb-9496-46d1-a17e-de217a0a7edb" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveLoadBinaryTest" />
+    </UnitTest>
+    <UnitTest name="SaveText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="d1ed5f65-7462-12a5-4bb7-93f22baf2269">
+      <Execution id="98490810-2f59-42db-8e21-00f7b760cda5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveText" />
+    </UnitTest>
+    <UnitTest name="WeightsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="56505b5f-896b-db28-949a-5aa770ed8421">
+      <Execution id="1cb6d1c4-153e-495f-9e2c-bd868ddb25e6" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WeightsTest" />
+    </UnitTest>
+    <UnitTest name="SaveLoadBinary" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="26cf318a-7fd7-86c5-b025-e6f47e9d78ca">
+      <Execution id="b54e5472-2261-4583-b83b-eaa89e591bde" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveLoadBinary" />
+    </UnitTest>
+    <UnitTest name="LoadTextTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="91413c2e-76dd-9dca-f643-52fa9133df7b">
+      <Execution id="fdb1d002-cb1f-481b-b390-1146be179dd5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadTextTest" />
+    </UnitTest>
+    <UnitTest name="LogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="7dd4e77c-7264-6ef4-1008-777f833c6760">
+      <Execution id="d9c57954-daea-453e-b1d0-0fbcd775c52a" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogisticTest" />
+    </UnitTest>
+    <UnitTest name="GetValueTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="2319df9d-0e3d-4e3b-170c-489339715346">
+      <Execution id="d6eb1769-e376-4c67-a408-d52db8a24a45" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetValueTest" />
+    </UnitTest>
+    <UnitTest name="ModifiedLogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="f590dcde-57c2-4844-9cad-2fe602dec5de">
+      <Execution id="013e4e9d-a9db-4dbd-9dce-77521a86cd94" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ModifiedLogisticTest" />
+    </UnitTest>
+    <UnitTest name="GeneralizedLogisticTest1" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="ff4ad6f6-4cbb-7229-fbd4-444874289508">
+      <Execution id="74ac1472-bf15-4263-813e-39f704f1946b" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GeneralizedLogisticTest1" />
+    </UnitTest>
+    <UnitTest name="MetaDataTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="84139ec4-03ef-0b1f-410c-ed34ad1e61a7">
+      <Execution id="ae45c1eb-2c16-4c38-bb15-114b76b6cd36" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MetaDataTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="771f593f-e636-6035-a459-8163b178bcfa">
+      <Execution id="19b7b3b1-702e-4ec6-b701-15a4903fb56e" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="HyperbolicTangentTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="dd120e22-c30c-9c60-6bde-948198bc12d2">
+      <Execution id="c751db7f-5e8a-48da-9f0b-01336520d533" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="HyperbolicTangentTest" />
+    </UnitTest>
+    <UnitTest name="SaveTextTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d">
+      <Execution id="ad50cad0-5af3-4464-b917-02fbb8653a59" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveTextTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0e6d1b38-b06d-0bf7-032c-34acbd831cfe" executionId="fbcda3a5-f69c-42dd-8290-a4faa7303eba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2319df9d-0e3d-4e3b-170c-489339715346" executionId="d6eb1769-e376-4c67-a408-d52db8a24a45" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="251000d6-201c-3225-045e-6c6286bebe71" executionId="724cac26-5b5d-46f0-b6e5-704e0f20f336" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26cf318a-7fd7-86c5-b025-e6f47e9d78ca" executionId="b54e5472-2261-4583-b83b-eaa89e591bde" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="56505b5f-896b-db28-949a-5aa770ed8421" executionId="1cb6d1c4-153e-495f-9e2c-bd868ddb25e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d" executionId="ad50cad0-5af3-4464-b917-02fbb8653a59" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="771f593f-e636-6035-a459-8163b178bcfa" executionId="19b7b3b1-702e-4ec6-b701-15a4903fb56e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7809094d-33f4-45e7-b7ae-cef1ad197ec5" executionId="c21b4eeb-9496-46d1-a17e-de217a0a7edb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="792cef7e-de8b-0ac6-a844-fe24d4cd88a7" executionId="96008078-0c25-4767-8ed0-7ac581f6e5c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7dd4e77c-7264-6ef4-1008-777f833c6760" executionId="d9c57954-daea-453e-b1d0-0fbcd775c52a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84139ec4-03ef-0b1f-410c-ed34ad1e61a7" executionId="ae45c1eb-2c16-4c38-bb15-114b76b6cd36" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91413c2e-76dd-9dca-f643-52fa9133df7b" executionId="fdb1d002-cb1f-481b-b390-1146be179dd5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1ed5f65-7462-12a5-4bb7-93f22baf2269" executionId="98490810-2f59-42db-8e21-00f7b760cda5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dd120e22-c30c-9c60-6bde-948198bc12d2" executionId="c751db7f-5e8a-48da-9f0b-01336520d533" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f590dcde-57c2-4844-9cad-2fe602dec5de" executionId="013e4e9d-a9db-4dbd-9dce-77521a86cd94" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff4ad6f6-4cbb-7229-fbd4-444874289508" executionId="74ac1472-bf15-4263-813e-39f704f1946b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="fbcda3a5-f69c-42dd-8290-a4faa7303eba" testId="0e6d1b38-b06d-0bf7-032c-34acbd831cfe" testName="GeneralizedLogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0144008" startTime="2012-02-01T16:42:37.8180757-05:00" endTime="2012-02-01T16:42:38.0610896-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fbcda3a5-f69c-42dd-8290-a4faa7303eba">
+    </UnitTestResult>
+    <UnitTestResult executionId="d6eb1769-e376-4c67-a408-d52db8a24a45" testId="2319df9d-0e3d-4e3b-170c-489339715346" testName="GetValueTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0013227" startTime="2012-02-01T16:42:38.0640898-05:00" endTime="2012-02-01T16:42:38.0710902-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6eb1769-e376-4c67-a408-d52db8a24a45">
+    </UnitTestResult>
+    <UnitTestResult executionId="724cac26-5b5d-46f0-b6e5-704e0f20f336" testId="251000d6-201c-3225-045e-6c6286bebe71" testName="LoadText" computerName="LIL-MONEY-PIT" duration="00:00:00.0051287" startTime="2012-02-01T16:42:38.0730903-05:00" endTime="2012-02-01T16:42:38.0810908-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="724cac26-5b5d-46f0-b6e5-704e0f20f336">
+    </UnitTestResult>
+    <UnitTestResult executionId="b54e5472-2261-4583-b83b-eaa89e591bde" testId="26cf318a-7fd7-86c5-b025-e6f47e9d78ca" testName="SaveLoadBinary" computerName="LIL-MONEY-PIT" duration="00:00:00.0039696" startTime="2012-02-01T16:42:38.0840910-05:00" endTime="2012-02-01T16:42:38.0900913-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b54e5472-2261-4583-b83b-eaa89e591bde">
+    </UnitTestResult>
+    <UnitTestResult executionId="1cb6d1c4-153e-495f-9e2c-bd868ddb25e6" testId="56505b5f-896b-db28-949a-5aa770ed8421" testName="WeightsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0005743" startTime="2012-02-01T16:42:38.0930915-05:00" endTime="2012-02-01T16:42:38.0960916-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1cb6d1c4-153e-495f-9e2c-bd868ddb25e6">
+    </UnitTestResult>
+    <UnitTestResult executionId="ad50cad0-5af3-4464-b917-02fbb8653a59" testId="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d" testName="SaveTextTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0181780" startTime="2012-02-01T16:42:38.0990918-05:00" endTime="2012-02-01T16:42:38.1200930-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad50cad0-5af3-4464-b917-02fbb8653a59">
+    </UnitTestResult>
+    <UnitTestResult executionId="19b7b3b1-702e-4ec6-b701-15a4903fb56e" testId="771f593f-e636-6035-a459-8163b178bcfa" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0003676" startTime="2012-02-01T16:42:38.1220931-05:00" endTime="2012-02-01T16:42:38.1260934-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="19b7b3b1-702e-4ec6-b701-15a4903fb56e">
+    </UnitTestResult>
+    <UnitTestResult executionId="c21b4eeb-9496-46d1-a17e-de217a0a7edb" testId="7809094d-33f4-45e7-b7ae-cef1ad197ec5" testName="SaveLoadBinaryTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0087924" startTime="2012-02-01T16:42:38.1280935-05:00" endTime="2012-02-01T16:42:38.1390941-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c21b4eeb-9496-46d1-a17e-de217a0a7edb">
+    </UnitTestResult>
+    <UnitTestResult executionId="96008078-0c25-4767-8ed0-7ac581f6e5c0" testId="792cef7e-de8b-0ac6-a844-fe24d4cd88a7" testName="SimpleAlgebraTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0003787" startTime="2012-02-01T16:42:38.1420943-05:00" endTime="2012-02-01T16:42:38.1450944-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96008078-0c25-4767-8ed0-7ac581f6e5c0">
+    </UnitTestResult>
+    <UnitTestResult executionId="d9c57954-daea-453e-b1d0-0fbcd775c52a" testId="7dd4e77c-7264-6ef4-1008-777f833c6760" testName="LogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0002656" startTime="2012-02-01T16:42:38.1470946-05:00" endTime="2012-02-01T16:42:38.1510948-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d9c57954-daea-453e-b1d0-0fbcd775c52a">
+    </UnitTestResult>
+    <UnitTestResult executionId="ae45c1eb-2c16-4c38-bb15-114b76b6cd36" testId="84139ec4-03ef-0b1f-410c-ed34ad1e61a7" testName="MetaDataTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0003121" startTime="2012-02-01T16:42:38.1540950-05:00" endTime="2012-02-01T16:42:38.1560951-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae45c1eb-2c16-4c38-bb15-114b76b6cd36">
+    </UnitTestResult>
+    <UnitTestResult executionId="fdb1d002-cb1f-481b-b390-1146be179dd5" testId="91413c2e-76dd-9dca-f643-52fa9133df7b" testName="LoadTextTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0005585" startTime="2012-02-01T16:42:38.1580952-05:00" endTime="2012-02-01T16:42:38.1610954-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fdb1d002-cb1f-481b-b390-1146be179dd5">
+    </UnitTestResult>
+    <UnitTestResult executionId="98490810-2f59-42db-8e21-00f7b760cda5" testId="d1ed5f65-7462-12a5-4bb7-93f22baf2269" testName="SaveText" computerName="LIL-MONEY-PIT" duration="00:00:00.0199557" startTime="2012-02-01T16:42:38.1630955-05:00" endTime="2012-02-01T16:42:38.1860968-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98490810-2f59-42db-8e21-00f7b760cda5">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Runtime.Tools.SettingsTest.SaveText threw exception: 
+System.IO.IOException: The process cannot access the file 'C:\Development Projects\ENN\TestSuite\TestFiles\testSaveSettings.nns' because it is being used by another process.</Message>
+          <StackTrace>    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.Delete(String path)
+   at TestSuite.Runtime.Tools.SettingsTest.SaveText() in C:\Development Projects\ENN\TestSuite\Runtime\Tools\SettingsTest.cs:line 58
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c751db7f-5e8a-48da-9f0b-01336520d533" testId="dd120e22-c30c-9c60-6bde-948198bc12d2" testName="HyperbolicTangentTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0003360" startTime="2012-02-01T16:42:38.1890970-05:00" endTime="2012-02-01T16:42:38.1920971-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c751db7f-5e8a-48da-9f0b-01336520d533">
+    </UnitTestResult>
+    <UnitTestResult executionId="013e4e9d-a9db-4dbd-9dce-77521a86cd94" testId="f590dcde-57c2-4844-9cad-2fe602dec5de" testName="ModifiedLogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0002706" startTime="2012-02-01T16:42:38.1950973-05:00" endTime="2012-02-01T16:42:38.1970974-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="013e4e9d-a9db-4dbd-9dce-77521a86cd94">
+    </UnitTestResult>
+    <UnitTestResult executionId="74ac1472-bf15-4263-813e-39f704f1946b" testId="ff4ad6f6-4cbb-7229-fbd4-444874289508" testName="GeneralizedLogisticTest1" computerName="LIL-MONEY-PIT" duration="00:00:00.0002544" startTime="2012-02-01T16:42:38.2000976-05:00" endTime="2012-02-01T16:42:38.2020977-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74ac1472-bf15-4263-813e-39f704f1946b">
+    </UnitTestResult>
+  </Results>
+</TestRun>

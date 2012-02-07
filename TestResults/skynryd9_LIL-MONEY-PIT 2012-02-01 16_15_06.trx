@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="e27c0ba9-1fb4-44d3-a2cd-aefe602151c6" name="skynryd9@LIL-MONEY-PIT 2012-02-01 16:15:06" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-01 16_15_06">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-01T16:15:06.2886137-05:00" queuing="2012-02-01T16:15:08.4527374-05:00" start="2012-02-01T16:15:08.5947456-05:00" finish="2012-02-01T16:15:09.6688070-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="17" executed="17" passed="9" error="0" failed="4" timeout="0" aborted="0" inconclusive="4" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SimpleAlgebraTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="792cef7e-de8b-0ac6-a844-fe24d4cd88a7">
+      <Execution id="f71e91b7-b1fa-4113-9d0e-de1fa1aad49d" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SimpleAlgebraTest" />
+    </UnitTest>
+    <UnitTest name="GeneralizedLogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="0e6d1b38-b06d-0bf7-032c-34acbd831cfe">
+      <Execution id="895ad61b-cfb7-41f5-9280-cae8b0b83fe3" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GeneralizedLogisticTest" />
+    </UnitTest>
+    <UnitTest name="HyperbolicTangentTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="dd120e22-c30c-9c60-6bde-948198bc12d2">
+      <Execution id="b7d783f9-6218-49cc-8dc1-13cbcc9771ba" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="HyperbolicTangentTest" />
+    </UnitTest>
+    <UnitTest name="LoadText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="251000d6-201c-3225-045e-6c6286bebe71">
+      <Execution id="f60044a8-7449-4dc6-a56e-2bb3a284e6b3" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadText" />
+    </UnitTest>
+    <UnitTest name="SaveLoadBinaryTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="7809094d-33f4-45e7-b7ae-cef1ad197ec5">
+      <Execution id="43729581-9184-4720-a7bc-0c7b64579727" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveLoadBinaryTest" />
+    </UnitTest>
+    <UnitTest name="SaveText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="d1ed5f65-7462-12a5-4bb7-93f22baf2269">
+      <Execution id="498da1db-72af-4030-a803-3e2efb35aac3" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveText" />
+    </UnitTest>
+    <UnitTest name="WeightsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="56505b5f-896b-db28-949a-5aa770ed8421">
+      <Execution id="44b53b9b-80ad-4ba4-970c-817a2c097a53" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WeightsTest" />
+    </UnitTest>
+    <UnitTest name="SaveLoadBinary" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="26cf318a-7fd7-86c5-b025-e6f47e9d78ca">
+      <Execution id="6f62646c-5acd-44bb-b34d-0b75d64e0565" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveLoadBinary" />
+    </UnitTest>
+    <UnitTest name="LoadTextTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="91413c2e-76dd-9dca-f643-52fa9133df7b">
+      <Execution id="4299d01f-847c-4545-8568-4e329b8f141c" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadTextTest" />
+    </UnitTest>
+    <UnitTest name="LogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="7dd4e77c-7264-6ef4-1008-777f833c6760">
+      <Execution id="1238e527-0646-4a90-a2c2-11b12cc30b33" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogisticTest" />
+    </UnitTest>
+    <UnitTest name="GetValueTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="2319df9d-0e3d-4e3b-170c-489339715346">
+      <Execution id="34094567-9652-4cc0-b2bc-9184dde137f2" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetValueTest" />
+    </UnitTest>
+    <UnitTest name="ModifiedLogisticTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="f590dcde-57c2-4844-9cad-2fe602dec5de">
+      <Execution id="a7fbf487-cbaa-4350-aed5-d4c2563b147b" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ModifiedLogisticTest" />
+    </UnitTest>
+    <UnitTest name="GeneralizedLogisticTest1" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="ff4ad6f6-4cbb-7229-fbd4-444874289508">
+      <Execution id="c8e0da85-2753-4c0b-ab98-9d65710539a5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GeneralizedLogisticTest1" />
+    </UnitTest>
+    <UnitTest name="MetaDataTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="84139ec4-03ef-0b1f-410c-ed34ad1e61a7">
+      <Execution id="1201778a-1bb3-47c4-bf48-f101c3bba4c5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MetaDataTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="771f593f-e636-6035-a459-8163b178bcfa">
+      <Execution id="446e0731-6438-462f-be14-a3900580f27a" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.BasicNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="SigmoidFunctionsConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="5161f85f-1ba8-d6fd-1f08-cafd018833e4">
+      <Execution id="f500ea0c-c2c3-4172-9dc0-cd7686c94ff4" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.SigmoidFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SigmoidFunctionsConstructorTest" />
+    </UnitTest>
+    <UnitTest name="SaveTextTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d">
+      <Execution id="ea1dc371-4d7a-41fe-b839-ab74b9d76a7d" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Runtime.Tools.TopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveTextTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0e6d1b38-b06d-0bf7-032c-34acbd831cfe" executionId="895ad61b-cfb7-41f5-9280-cae8b0b83fe3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2319df9d-0e3d-4e3b-170c-489339715346" executionId="34094567-9652-4cc0-b2bc-9184dde137f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="251000d6-201c-3225-045e-6c6286bebe71" executionId="f60044a8-7449-4dc6-a56e-2bb3a284e6b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26cf318a-7fd7-86c5-b025-e6f47e9d78ca" executionId="6f62646c-5acd-44bb-b34d-0b75d64e0565" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5161f85f-1ba8-d6fd-1f08-cafd018833e4" executionId="f500ea0c-c2c3-4172-9dc0-cd7686c94ff4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="56505b5f-896b-db28-949a-5aa770ed8421" executionId="44b53b9b-80ad-4ba4-970c-817a2c097a53" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d" executionId="ea1dc371-4d7a-41fe-b839-ab74b9d76a7d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="771f593f-e636-6035-a459-8163b178bcfa" executionId="446e0731-6438-462f-be14-a3900580f27a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7809094d-33f4-45e7-b7ae-cef1ad197ec5" executionId="43729581-9184-4720-a7bc-0c7b64579727" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="792cef7e-de8b-0ac6-a844-fe24d4cd88a7" executionId="f71e91b7-b1fa-4113-9d0e-de1fa1aad49d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7dd4e77c-7264-6ef4-1008-777f833c6760" executionId="1238e527-0646-4a90-a2c2-11b12cc30b33" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84139ec4-03ef-0b1f-410c-ed34ad1e61a7" executionId="1201778a-1bb3-47c4-bf48-f101c3bba4c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91413c2e-76dd-9dca-f643-52fa9133df7b" executionId="4299d01f-847c-4545-8568-4e329b8f141c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1ed5f65-7462-12a5-4bb7-93f22baf2269" executionId="498da1db-72af-4030-a803-3e2efb35aac3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dd120e22-c30c-9c60-6bde-948198bc12d2" executionId="b7d783f9-6218-49cc-8dc1-13cbcc9771ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f590dcde-57c2-4844-9cad-2fe602dec5de" executionId="a7fbf487-cbaa-4350-aed5-d4c2563b147b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff4ad6f6-4cbb-7229-fbd4-444874289508" executionId="c8e0da85-2753-4c0b-ab98-9d65710539a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="895ad61b-cfb7-41f5-9280-cae8b0b83fe3" testId="0e6d1b38-b06d-0bf7-032c-34acbd831cfe" testName="GeneralizedLogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0898635" startTime="2012-02-01T16:15:08.7377537-05:00" endTime="2012-02-01T16:15:09.2827849-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="895ad61b-cfb7-41f5-9280-cae8b0b83fe3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.GeneralizedLogisticTest() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 93
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="34094567-9652-4cc0-b2bc-9184dde137f2" testId="2319df9d-0e3d-4e3b-170c-489339715346" testName="GetValueTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0538265" startTime="2012-02-01T16:15:09.2877852-05:00" endTime="2012-02-01T16:15:09.3447885-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34094567-9652-4cc0-b2bc-9184dde137f2">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected a difference no greater than &lt;0.0001&gt; between expected value &lt;0.5744425&gt; and actual value &lt;0.785835&gt;. </Message>
+          <StackTrace>   at TestSuite.Runtime.BasicNodeTest.GetValueTest() in C:\Development Projects\ENN\TestSuite\Runtime\BasicNodeTest.cs:line 49
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f60044a8-7449-4dc6-a56e-2bb3a284e6b3" testId="251000d6-201c-3225-045e-6c6286bebe71" testName="LoadText" computerName="LIL-MONEY-PIT" duration="00:00:00.0068379" startTime="2012-02-01T16:15:09.3527889-05:00" endTime="2012-02-01T16:15:09.3627895-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f60044a8-7449-4dc6-a56e-2bb3a284e6b3">
+    </UnitTestResult>
+    <UnitTestResult executionId="6f62646c-5acd-44bb-b34d-0b75d64e0565" testId="26cf318a-7fd7-86c5-b025-e6f47e9d78ca" testName="SaveLoadBinary" computerName="LIL-MONEY-PIT" duration="00:00:00.0317004" startTime="2012-02-01T16:15:09.3657897-05:00" endTime="2012-02-01T16:15:09.3997916-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f62646c-5acd-44bb-b34d-0b75d64e0565">
+    </UnitTestResult>
+    <UnitTestResult executionId="f500ea0c-c2c3-4172-9dc0-cd7686c94ff4" testId="5161f85f-1ba8-d6fd-1f08-cafd018833e4" testName="SigmoidFunctionsConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0007106" startTime="2012-02-01T16:15:09.4027918-05:00" endTime="2012-02-01T16:15:09.4067920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f500ea0c-c2c3-4172-9dc0-cd7686c94ff4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.SigmoidFunctionsConstructorTest() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 74
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="44b53b9b-80ad-4ba4-970c-817a2c097a53" testId="56505b5f-896b-db28-949a-5aa770ed8421" testName="WeightsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0032806" startTime="2012-02-01T16:15:09.4097922-05:00" endTime="2012-02-01T16:15:09.4197928-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="44b53b9b-80ad-4ba4-970c-817a2c097a53">
+    </UnitTestResult>
+    <UnitTestResult executionId="ea1dc371-4d7a-41fe-b839-ab74b9d76a7d" testId="5fe0a59d-da3d-e0ca-00f1-7f42f1b72b3d" testName="SaveTextTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0644975" startTime="2012-02-01T16:15:09.4227929-05:00" endTime="2012-02-01T16:15:09.4907968-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea1dc371-4d7a-41fe-b839-ab74b9d76a7d">
+    </UnitTestResult>
+    <UnitTestResult executionId="446e0731-6438-462f-be14-a3900580f27a" testId="771f593f-e636-6035-a459-8163b178bcfa" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0009912" startTime="2012-02-01T16:15:09.4927969-05:00" endTime="2012-02-01T16:15:09.4967972-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="446e0731-6438-462f-be14-a3900580f27a">
+    </UnitTestResult>
+    <UnitTestResult executionId="43729581-9184-4720-a7bc-0c7b64579727" testId="7809094d-33f4-45e7-b7ae-cef1ad197ec5" testName="SaveLoadBinaryTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0348424" startTime="2012-02-01T16:15:09.4987973-05:00" endTime="2012-02-01T16:15:09.5367994-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43729581-9184-4720-a7bc-0c7b64579727">
+    </UnitTestResult>
+    <UnitTestResult executionId="f71e91b7-b1fa-4113-9d0e-de1fa1aad49d" testId="792cef7e-de8b-0ac6-a844-fe24d4cd88a7" testName="SimpleAlgebraTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0009223" startTime="2012-02-01T16:15:09.5387996-05:00" endTime="2012-02-01T16:15:09.5417997-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f71e91b7-b1fa-4113-9d0e-de1fa1aad49d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.SimpleAlgebraTest() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 163
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1238e527-0646-4a90-a2c2-11b12cc30b33" testId="7dd4e77c-7264-6ef4-1008-777f833c6760" testName="LogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0014967" startTime="2012-02-01T16:15:09.5447999-05:00" endTime="2012-02-01T16:15:09.5478001-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1238e527-0646-4a90-a2c2-11b12cc30b33">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;0&gt;. Actual:&lt;0.5&gt;. </Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.LogisticTest() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 134
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1201778a-1bb3-47c4-bf48-f101c3bba4c5" testId="84139ec4-03ef-0b1f-410c-ed34ad1e61a7" testName="MetaDataTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0005828" startTime="2012-02-01T16:15:09.5498002-05:00" endTime="2012-02-01T16:15:09.5528004-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1201778a-1bb3-47c4-bf48-f101c3bba4c5">
+    </UnitTestResult>
+    <UnitTestResult executionId="4299d01f-847c-4545-8568-4e329b8f141c" testId="91413c2e-76dd-9dca-f643-52fa9133df7b" testName="LoadTextTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0005862" startTime="2012-02-01T16:15:09.5548005-05:00" endTime="2012-02-01T16:15:09.5578006-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4299d01f-847c-4545-8568-4e329b8f141c">
+    </UnitTestResult>
+    <UnitTestResult executionId="498da1db-72af-4030-a803-3e2efb35aac3" testId="d1ed5f65-7462-12a5-4bb7-93f22baf2269" testName="SaveText" computerName="LIL-MONEY-PIT" duration="00:00:00.0033329" startTime="2012-02-01T16:15:09.5598008-05:00" endTime="2012-02-01T16:15:09.5668012-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="498da1db-72af-4030-a803-3e2efb35aac3">
+    </UnitTestResult>
+    <UnitTestResult executionId="b7d783f9-6218-49cc-8dc1-13cbcc9771ba" testId="dd120e22-c30c-9c60-6bde-948198bc12d2" testName="HyperbolicTangentTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0011929" startTime="2012-02-01T16:15:09.5708014-05:00" endTime="2012-02-01T16:15:09.5768017-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b7d783f9-6218-49cc-8dc1-13cbcc9771ba">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.HyperbolicTangentTest() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 121
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a7fbf487-cbaa-4350-aed5-d4c2563b147b" testId="f590dcde-57c2-4844-9cad-2fe602dec5de" testName="ModifiedLogisticTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0017946" startTime="2012-02-01T16:15:09.5888024-05:00" endTime="2012-02-01T16:15:09.5958028-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7fbf487-cbaa-4350-aed5-d4c2563b147b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;0&gt;. Actual:&lt;2&gt;. </Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.ModifiedLogisticTest() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 148
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c8e0da85-2753-4c0b-ab98-9d65710539a5" testId="ff4ad6f6-4cbb-7229-fbd4-444874289508" testName="GeneralizedLogisticTest1" computerName="LIL-MONEY-PIT" duration="00:00:00.0016607" startTime="2012-02-01T16:15:09.5988030-05:00" endTime="2012-02-01T16:15:09.6028032-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8e0da85-2753-4c0b-ab98-9d65710539a5">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;0&gt;. Actual:&lt;0.3990911&gt;. </Message>
+          <StackTrace>   at TestSuite.Runtime.SigmoidFunctionsTest.GeneralizedLogisticTest1() in C:\Development Projects\ENN\TestSuite\Runtime\SigmoidFunctionsTest.cs:line 106
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

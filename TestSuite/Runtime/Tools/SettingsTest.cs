@@ -55,6 +55,7 @@ namespace TestSuite.Runtime.Tools
 
 			testSetting = Settings.Load(basePath + "testSaveSettings.nns");
 			Assert.IsTrue(baseSetting.Equals(testSetting));
+			File.Delete(basePath + "testSaveSettings.nns");
 		}
 
 		[TestMethod]
@@ -65,6 +66,7 @@ namespace TestSuite.Runtime.Tools
 
 			testSetting = Settings.Load(basePath + "testSaveSettings.nnsc", true);
 			Assert.IsTrue(baseSetting.Equals(testSetting));
+			File.Delete(basePath + "testSaveSettings.nnsc");
 		}
 
 		private void SetBaseSetting()

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-/*This file is part of ENN.
+﻿/*This file is part of ENN.
 * Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
@@ -15,6 +12,9 @@ using System.Diagnostics;
 * 
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
+
+using System;
+using System.Diagnostics;
 
 namespace ENN.Framework
 {
@@ -39,7 +39,7 @@ namespace ENN.Framework
         /// </summary>
         /// <param name="state">Information that can be passed to the network in a threaded
         /// environment.</param>
-        public void StartNetwork(Object state = null)
+        public void StartNetwork(object state = null)
         {
             if (settings.Mode == NetworkMode.Computational)
             {

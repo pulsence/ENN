@@ -27,6 +27,17 @@ namespace ENN.TopologyBuilder.Views
 {
 	public partial class NodeView : LayerView
 	{
+		protected string layerName;
+
+		public string LayerName
+		{
+			set
+			{
+				layerName = value;
+				SetMetaData("layer", layerName);
+			}
+		}
+
 		public NodeView()
 		{
 			InitializeComponent();
@@ -36,6 +47,17 @@ namespace ENN.TopologyBuilder.Views
 		{
 			NodeMetaDataView info = new NodeMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;
+
+			if (metaData.ContainsKey("factory"))
+				info.SetFactory(metaData["factory"]);
+			if (metaData.ContainsKey("dataType"))
+				info.SetDataType(metaData["dataType"]);
+			if (metaData.ContainsKey("layer"))
+				info.SetLayerName(metaData["layer"]);
+			if (metaData.ContainsKey("combinationWeights"))
+				info.SetCombinationWeights(metaData["combinationWeights"]);
+			info.SetExtraFields(metaData);
+
 			return info;
 		}
 	}

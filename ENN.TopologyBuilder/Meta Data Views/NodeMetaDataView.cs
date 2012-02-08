@@ -31,20 +31,41 @@ namespace ENN.TopologyBuilder.Views
 		public NodeMetaDataView(ref MetaDataPoolModel pool)
 			: base(ref pool)
 		{
+			excludedKeys.AddRange(new string[] { "layer", "combinationWeights" });
+
 			InitializeComponent();
 			this.headerLabel.Text = "Node Information";
 			metaDataPool.NodeListChanged += DataTypesChanged;
-			metaDataPool.FactoryListChanged += FactoryChanged;
+
+			DataTypesChanged();
 		}
 
-		public override void FactoryChanged()
+		#region View Fields Setters
+		public void SetLayerName(string name)
 		{
-			base.FactoryChanged();
+			layerName.Text = "Layer Name: " + name;
 		}
 
-		public override void DataTypesChanged()
+		public void SetCombinationWeights(string weights)
 		{
-			base.DataTypesChanged();
+			combinationWeights.Text = weights;
 		}
+		#endregion
+
+		#region Events
+		protected override void DataTypesChanged()
+		{
+			foreach (string type in metaDataPool.GetNodes())
+			{
+				if (!dataType.Items.Contains(type))
+					dataType.Items.Add(type);
+			}
+		}
+
+		private void combinationWeights_TextChanged(object sender, EventArgs e)
+		{
+			InvokeInformationChanged("combinationWeights", combinationWeights.Text);
+		}
+		#endregion
 	}
 }

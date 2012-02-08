@@ -30,13 +30,13 @@
 		{
 			this.SuspendLayout();
 			// 
-			// InputLayerInformation
+			// InputLayerMetaDataView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.Name = "InputLayerInformation";
-			this.Size = new System.Drawing.Size(148, 148);
+			this.Name = "InputLayerMetaDataView";
+			this.Size = new System.Drawing.Size(179, 321);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

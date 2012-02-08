@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using ENN.Framework;
-using ENN.Framework.Tools;
-
-/*This file is part of ENN.
+﻿/*This file is part of ENN.
 * Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
@@ -19,6 +12,13 @@ using ENN.Framework.Tools;
 * 
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using ENN.Framework;
+using ENN.Framework.Tools;
 
 namespace ENN.Runtime
 {

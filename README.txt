@@ -6,7 +6,7 @@ extentions. The runtime is used through the command line and has a variety of to
 settings and topologies. It also runs networks.GUI Apps are applications that assist in the creation of
 settings files and topologies.
 
-Version: preBeta 1.0.0 1.29.2012
+Version: preBeta 1.0.0 2.7.2012
 Newly Added:
 Framework:
 -Hill Climb Algorithm was implimented for training

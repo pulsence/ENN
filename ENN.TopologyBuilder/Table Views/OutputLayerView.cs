@@ -36,6 +36,13 @@ namespace ENN.TopologyBuilder.Views
 		{
 			OutputLayerMetaDataView info = new OutputLayerMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;
+
+			if (metaData.ContainsKey("factory"))
+				info.SetFactory(metaData["factory"]);
+			if (metaData.ContainsKey("dataType"))
+				info.SetDataType(metaData["dataType"]);
+			info.SetExtraFields(metaData);
+
 			return info;
 		}
 	}

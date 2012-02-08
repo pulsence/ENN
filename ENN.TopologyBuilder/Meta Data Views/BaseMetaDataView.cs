@@ -31,18 +31,25 @@ namespace ENN.TopologyBuilder.Views
 	public partial class BaseMetaDataView : UserControl
 	{
 		protected MetaDataPoolModel metaDataPool;
-		
-		public event InformationChangedHandler InformationChanged; 
+		//keys that should not be added to extraFields
+		protected List<string> excludedKeys;
 
-		public BaseMetaDataView(ref MetaDataPoolModel pool)
+		public event InformationChangedHandler InformationChanged;
+
+		public BaseMetaDataView()
 		{
 			InitializeComponent();
-			metaDataPool = pool;
+
+			excludedKeys = new List<string>();
+			excludedKeys.AddRange(new string[] { "dataType", "factory" });
 		}
 
-		public void SetHeader(string header)
+		public BaseMetaDataView(ref MetaDataPoolModel pool)
+			: this()
 		{
-			headerLabel.Text = header;
+			metaDataPool = pool;
+			metaDataPool.FactoryListChanged += FactoryChanged;
+			FactoryChanged();
 		}
 
 		protected void InvokeInformationChanged(string key, string value)
@@ -51,8 +58,78 @@ namespace ENN.TopologyBuilder.Views
 				InformationChanged(key, value);
 		}
 
-		public virtual void FactoryChanged() { }
+		#region View Value Setters
+		public void SetHeader(string header)
+		{
+			headerLabel.Text = header;
+		}
 
-		public virtual void DataTypesChanged() { }
+		public void SetFactory(string factoryName)
+		{
+			foreach (string item in factory.Items)
+			{
+				if (item == factoryName)
+				{
+					factory.SelectedItem = item;
+					break;
+				}
+			}
+		}
+
+		public void SetDataType(string dataTypeName)
+		{
+			foreach (string item in dataType.Items)
+			{
+				if (item == dataTypeName)
+				{
+					dataType.SelectedItem = item;
+					break;
+				}
+			}
+		}
+
+		public void SetExtraFields(Dictionary<string, string> fields)
+		{
+			List<string> lines = new List<string>();
+			foreach (KeyValuePair<string, string> value in fields)
+			{
+				if (!isExcludedKey(value.Key))
+					lines.Add(value.Key + ":" + value.Value);
+			}
+			extraFields.Lines = lines.ToArray();
+		}
+
+		private bool isExcludedKey(string key)
+		{
+			foreach (string badKey in excludedKeys)
+			{
+				if (key == badKey) return true;
+			}
+			return false;
+		}
+		#endregion
+
+		#region Events
+		protected void FactoryChanged()
+		{
+			foreach (KeyValuePair<string, IUserObjectFactory> key in metaDataPool.GetFactories())
+			{
+				if (!factory.Items.Contains(key.Key))
+					factory.Items.Add(key.Key);
+			}
+		}
+
+		protected virtual void DataTypesChanged() { }
+
+		private void factory_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			InvokeInformationChanged("factory", (string)factory.SelectedItem);
+		}
+
+		private void dataType_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			InvokeInformationChanged("dataType", (string)dataType.SelectedItem);
+		}
+		#endregion
 	}
 }

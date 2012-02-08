@@ -33,24 +33,28 @@ namespace ENN.TopologyBuilder.Views
 		{
 			InitializeComponent();
 
+			excludedKeys.AddRange(new string[] { "nodeCount", "layerName" });
+
 			base.headerLabel.Text = "Hidden Layer Information";
 			metaDataPool.HiddenListChanged += DataTypesChanged;
-			metaDataPool.FactoryListChanged += FactoryChanged;
 
-			FactoryChanged();
 			DataTypesChanged();
 		}
 
-		public override void FactoryChanged()
+		#region View value setters
+		public void SetNodeCount(string count)
 		{
-			foreach (KeyValuePair<string, IUserObjectFactory> key in metaDataPool.GetFactories())
-			{
-				if (!factory.Items.Contains(key.Key))
-					factory.Items.Add(key.Key);
-			}
+			nodeCount.Text = "Nodes: " + count;
 		}
 
-		public override void DataTypesChanged()
+		public void SetLayerName(string name)
+		{
+			layerName.Text = name;
+		}
+		#endregion
+
+		#region Events
+		protected override void DataTypesChanged()
 		{
 			foreach (string type in metaDataPool.GetHiddenLayers())
 			{
@@ -58,15 +62,11 @@ namespace ENN.TopologyBuilder.Views
 					dataType.Items.Add(type);
 			}
 		}
-
-		private void factory_SelectedIndexChanged(object sender, EventArgs e)
+		
+		private void layerName_TextChanged(object sender, EventArgs e)
 		{
-			InvokeInformationChanged("factory", factory.SelectedText);
+				InvokeInformationChanged("layerName", layerName.Text);
 		}
-
-		private void dataType_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			InvokeInformationChanged("dataType", dataType.SelectedText);
-		}
+		#endregion
 	}
 }

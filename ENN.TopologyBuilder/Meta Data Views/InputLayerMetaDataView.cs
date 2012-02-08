@@ -34,17 +34,17 @@ namespace ENN.TopologyBuilder.Views
 			InitializeComponent();
 			base.headerLabel.Text = "Input Layer information";
 			metaDataPool.InputListChanged += DataTypesChanged;
-			metaDataPool.FactoryListChanged += FactoryChanged;
+
+			DataTypesChanged();
 		}
 
-		public override void FactoryChanged()
+		protected override void DataTypesChanged()
 		{
-			base.FactoryChanged();
-		}
-
-		public override void DataTypesChanged()
-		{
-			base.DataTypesChanged();
+			foreach (string type in metaDataPool.GetInputLayers())
+			{
+				if (!dataType.Items.Contains(type))
+					dataType.Items.Add(type);
+			}
 		}
 	}
 }

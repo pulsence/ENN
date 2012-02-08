@@ -28,68 +28,69 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.factoryLabel = new System.Windows.Forms.Label();
-			this.factory = new System.Windows.Forms.ComboBox();
-			this.dataTypeLabel = new System.Windows.Forms.Label();
-			this.dataType = new System.Windows.Forms.ComboBox();
+			this.nodeCount = new System.Windows.Forms.Label();
+			this.layerNameLabel = new System.Windows.Forms.Label();
+			this.layerName = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// headerLabel
 			// 
 			this.headerLabel.Location = new System.Drawing.Point(3, 0);
 			// 
-			// factoryLabel
+			// extraFields
 			// 
-			this.factoryLabel.AutoSize = true;
-			this.factoryLabel.Location = new System.Drawing.Point(3, 31);
-			this.factoryLabel.Name = "factoryLabel";
-			this.factoryLabel.Size = new System.Drawing.Size(42, 13);
-			this.factoryLabel.TabIndex = 1;
-			this.factoryLabel.Text = "Factory";
+			this.extraFields.Location = new System.Drawing.Point(6, 190);
 			// 
-			// factory
+			// extraFieldsLabel
 			// 
-			this.factory.FormattingEnabled = true;
-			this.factory.Location = new System.Drawing.Point(6, 47);
-			this.factory.Name = "factory";
-			this.factory.Size = new System.Drawing.Size(121, 21);
-			this.factory.TabIndex = 2;
-			this.factory.SelectedIndexChanged += new System.EventHandler(this.factory_SelectedIndexChanged);
+			this.extraFieldsLabel.Location = new System.Drawing.Point(3, 174);
 			// 
-			// dataTypeLabel
+			// nodeCount
 			// 
-			this.dataTypeLabel.AutoSize = true;
-			this.dataTypeLabel.Location = new System.Drawing.Point(3, 71);
-			this.dataTypeLabel.Name = "dataTypeLabel";
-			this.dataTypeLabel.Size = new System.Drawing.Size(57, 13);
-			this.dataTypeLabel.TabIndex = 3;
-			this.dataTypeLabel.Text = "Data Type";
+			this.nodeCount.AutoSize = true;
+			this.nodeCount.Location = new System.Drawing.Point(3, 150);
+			this.nodeCount.Name = "nodeCount";
+			this.nodeCount.Size = new System.Drawing.Size(50, 13);
+			this.nodeCount.TabIndex = 5;
+			this.nodeCount.Text = "Nodes: 0";
 			// 
-			// dataType
+			// layerNameLabel
 			// 
-			this.dataType.FormattingEnabled = true;
-			this.dataType.Location = new System.Drawing.Point(6, 87);
-			this.dataType.Name = "dataType";
-			this.dataType.Size = new System.Drawing.Size(121, 21);
-			this.dataType.TabIndex = 4;
-			this.dataType.SelectedIndexChanged += new System.EventHandler(this.dataType_SelectedIndexChanged);
+			this.layerNameLabel.AutoSize = true;
+			this.layerNameLabel.Location = new System.Drawing.Point(3, 111);
+			this.layerNameLabel.Name = "layerNameLabel";
+			this.layerNameLabel.Size = new System.Drawing.Size(64, 13);
+			this.layerNameLabel.TabIndex = 6;
+			this.layerNameLabel.Text = "Layer Name";
 			// 
-			// HiddenLayerInformation
+			// layerName
+			// 
+			this.layerName.Location = new System.Drawing.Point(6, 127);
+			this.layerName.Name = "layerName";
+			this.layerName.Size = new System.Drawing.Size(160, 20);
+			this.layerName.TabIndex = 7;
+			this.layerName.TextChanged += new System.EventHandler(this.layerName_TextChanged);
+			// 
+			// HiddenLayerMetaDataView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.Controls.Add(this.dataTypeLabel);
-			this.Controls.Add(this.dataType);
-			this.Controls.Add(this.factoryLabel);
-			this.Controls.Add(this.factory);
-			this.Name = "HiddenLayerInformation";
-			this.Size = new System.Drawing.Size(141, 225);
-			this.Controls.SetChildIndex(this.factory, 0);
-			this.Controls.SetChildIndex(this.headerLabel, 0);
+			this.Controls.Add(this.layerName);
+			this.Controls.Add(this.layerNameLabel);
+			this.Controls.Add(this.nodeCount);
+			this.Name = "HiddenLayerMetaDataView";
+			this.Size = new System.Drawing.Size(189, 406);
 			this.Controls.SetChildIndex(this.factoryLabel, 0);
-			this.Controls.SetChildIndex(this.dataType, 0);
 			this.Controls.SetChildIndex(this.dataTypeLabel, 0);
+			this.Controls.SetChildIndex(this.extraFieldsLabel, 0);
+			this.Controls.SetChildIndex(this.factory, 0);
+			this.Controls.SetChildIndex(this.dataType, 0);
+			this.Controls.SetChildIndex(this.extraFields, 0);
+			this.Controls.SetChildIndex(this.headerLabel, 0);
+			this.Controls.SetChildIndex(this.nodeCount, 0);
+			this.Controls.SetChildIndex(this.layerNameLabel, 0);
+			this.Controls.SetChildIndex(this.layerName, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -97,9 +98,8 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label factoryLabel;
-		private System.Windows.Forms.ComboBox factory;
-		private System.Windows.Forms.Label dataTypeLabel;
-		private System.Windows.Forms.ComboBox dataType;
+		private System.Windows.Forms.Label nodeCount;
+		private System.Windows.Forms.Label layerNameLabel;
+		private System.Windows.Forms.TextBox layerName;
 	}
 }

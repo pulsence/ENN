@@ -209,7 +209,7 @@ namespace ENN.TopologyBuilder
 			{
 				HiddenLayerView layer = (HiddenLayerView)currentSelectedLayer;
 				NodeView node = new NodeView();
-				layer.SetMetaDataModel(ref metaData);
+				node.SetMetaDataModel(ref metaData);
 				node.Click += new EventHandler(ChangeInformation);
 				layer.AddNode(node);
 			}

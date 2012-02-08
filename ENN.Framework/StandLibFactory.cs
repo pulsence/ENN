@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-/*This file is part of ENN.
+﻿/*This file is part of ENN.
 * Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
@@ -14,6 +12,8 @@
 * 
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
+
+using System.Collections.Generic;
 
 namespace ENN.Framework
 {

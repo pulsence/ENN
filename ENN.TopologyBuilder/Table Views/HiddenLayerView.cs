@@ -37,6 +37,18 @@ namespace ENN.TopologyBuilder.Views
 		{
 			HiddenLayerMetaDataView info = new HiddenLayerMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;
+			info.InformationChanged += LayerNameChange;
+
+			if (metaData.ContainsKey("factory"))
+				info.SetFactory(metaData["factory"]);
+			if (metaData.ContainsKey("dataType"))
+				info.SetDataType(metaData["dataType"]);
+			if (metaData.ContainsKey("nodeCount"))
+				info.SetNodeCount(metaData["nodeCount"]);
+			if (metaData.ContainsKey("layerName"))
+				info.SetLayerName(metaData["layerName"]);
+			info.SetExtraFields(metaData);
+
 			return info;
 		}
 
@@ -45,8 +57,22 @@ namespace ENN.TopologyBuilder.Views
 			node.Height = nodeLayout.Height - 6;
 			nodeLayout.Controls.Add(node);
 			AdjustNodes();
+
+			if (metaData.ContainsKey("layerName"))
+				node.LayerName = metaData["layerName"];
+
+			if (metaData.ContainsKey("nodeCount"))
+			{
+				int count = int.Parse(metaData["nodeCount"]) + 1;
+				metaData["nodeCount"] = count.ToString();
+			}
+			else
+			{
+				metaData.Add("nodeCount", "1");
+			}
 		}
 
+		#region Events
 		private void ThrowClick(object sender, EventArgs args)
 		{
 			InvokeOnClick(this, new EventArgs());
@@ -68,5 +94,17 @@ namespace ENN.TopologyBuilder.Views
 		{
 			AdjustNodes();
 		}
+
+		private void LayerNameChange(string key, string value)
+		{
+			if (key != "layerName") return;
+			
+			foreach (Control node in nodeLayout.Controls)
+			{
+				((NodeView)node).LayerName = value;
+			}
+
+		}
+		#endregion
 	}
 }

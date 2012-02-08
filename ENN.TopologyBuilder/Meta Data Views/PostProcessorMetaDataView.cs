@@ -34,17 +34,17 @@ namespace ENN.TopologyBuilder.Views
 			InitializeComponent();
 			this.headerLabel.Text = "Post Processor Information";
 			metaDataPool.PostProcessorListChanged += DataTypesChanged;
-			metaDataPool.FactoryListChanged += FactoryChanged;
-		}
 
-		public override void FactoryChanged()
-		{
-			base.FactoryChanged();
+			DataTypesChanged();
 		}
-
-		public override void DataTypesChanged()
+		
+		protected override void DataTypesChanged()
 		{
-			base.DataTypesChanged();
+			foreach (string type in metaDataPool.GetPostProcessors())
+			{
+				if (!dataType.Items.Contains(type))
+					dataType.Items.Add(type);
+			}
 		}
 	}
 }

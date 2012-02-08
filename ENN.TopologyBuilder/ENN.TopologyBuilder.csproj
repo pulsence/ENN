@@ -159,6 +159,9 @@
     <EmbeddedResource Include="LoadUserBinaries.resx">
       <DependentUpon>LoadUserBinaries.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Meta Data Views\NodeMetaDataView.resx">
+      <DependentUpon>NodeMetaDataView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Table Views\PostProcessorView.resx">
       <DependentUpon>PostProcessorView.cs</DependentUpon>
     </EmbeddedResource>

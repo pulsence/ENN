@@ -31,7 +31,7 @@ namespace ENN.Framework
         /// and returned.</param>
         /// <param name="buildParam">The paramater that will be used to create the object</param>
         /// <returns>Returns a finished object instance</returns>
-        TObject IUserObjectFactory.CreateUserObject<TObject>(
+        public TObject CreateUserObject<TObject>(
             string objectName, Dictionary<string, string> buildParam)
         {
             switch (objectName)

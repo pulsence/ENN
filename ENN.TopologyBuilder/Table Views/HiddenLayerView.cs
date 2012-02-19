@@ -33,7 +33,7 @@ namespace ENN.TopologyBuilder.Views
 			nodeLayout.Click += new EventHandler(ThrowClick);
 		}
 
-		public override UserControl GetInformation()
+		public override BaseMetaDataView GetInformation()
 		{
 			HiddenLayerMetaDataView info = new HiddenLayerMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;
@@ -52,6 +52,10 @@ namespace ENN.TopologyBuilder.Views
 			return info;
 		}
 
+		/// <summary>
+		/// Adds a node to the layer.
+		/// </summary>
+		/// <param name="node">The node to add to the layer.</param>
 		public void AddNode(NodeView node)
 		{
 			node.Height = nodeLayout.Height - 6;
@@ -73,11 +77,18 @@ namespace ENN.TopologyBuilder.Views
 		}
 
 		#region Events
+
+		/// <summary>
+		/// This is used to transfer the click event from the node layout to the layer view.
+		/// </summary>
 		private void ThrowClick(object sender, EventArgs args)
 		{
-			InvokeOnClick(this, new EventArgs());
+			InvokeOnClick(this, args);
 		}
 
+		/// <summary>
+		/// Adjusts the nodes so they all fit on the layer evenly.
+		/// </summary>
 		private void AdjustNodes()
 		{
 			if (nodeLayout.Controls.Count == 0) return;
@@ -90,11 +101,18 @@ namespace ENN.TopologyBuilder.Views
 			}
 		}
 
+		/// <summary>
+		/// Called when ever the nodeLayout object is resized.
+		/// </summary>
 		private void nodeLayout_Resize(object sender, EventArgs e)
 		{
 			AdjustNodes();
 		}
 
+		/// <summary>
+		/// When ever the layers name is changed, all the children nodes have their
+		/// layerNames updated to reflect the change.
+		/// </summary>
 		private void LayerNameChange(string key, string value)
 		{
 			if (key != "layerName") return;

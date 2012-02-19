@@ -44,12 +44,40 @@ namespace ENN.TopologyBuilder.Models
 		List<string> nodes;
 
 		//Events
+		
+		/// <summary>
+		/// Raised when every the list of factories is changed.
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler FactoryListChanged;
+
+		/// <summary>
+		/// Raised when ever the list of input layer data types is changed.
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler InputListChanged;
+
+		/// <summary>
+		/// Raised when ever the list of ouput layer data types is changed. 
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler OutputListChanged;
+
+		/// <summary>
+		/// Raised when ever the list of hidden layer data types is changed.
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler HiddenListChanged;
+
+		/// <summary>
+		/// Raised when ever the list of node data types is changed.
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler NodeListChanged;
+
+		/// <summary>
+		/// Raised when ever the list of preprocessor data types is changed.
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler PreProcessorListChanged;
+
+		/// <summary>
+		/// Raised when ever the list of postprocessor data types is changed.
+		/// </summary>
 		public event MetaDataPoolChangedEventHandler PostProcessorListChanged;
 
 		public MetaDataPoolModel()
@@ -64,6 +92,11 @@ namespace ENN.TopologyBuilder.Models
 			
 		}
 
+		/// <summary>
+		/// Addes an object factory to the list.
+		/// </summary>
+		/// <param name="name">The name that the factory should be added under.</param>
+		/// <param name="factory">The object to store.</param>
 		public void SetFactory(string name, IUserObjectFactory factory)
 		{
 			if (objectFactory.ContainsKey(name))
@@ -87,11 +120,19 @@ namespace ENN.TopologyBuilder.Models
 			return null;
 		}
 
+		/// <summary>
+		/// Returns all of the factories currently loaded.
+		/// </summary>
+		/// <returns>Returns the currently loaded object factories.</returns>
 		public Dictionary<string, IUserObjectFactory> GetFactories()
 		{
 			return objectFactory;
 		}
 
+		/// <summary>
+		/// Adds an input layer data type.
+		/// </summary>
+		/// <param name="name">Input layer data type.</param>
 		public void SetInputLayer(string name)
 		{
 			if (inputLayers.Contains(name)) return;
@@ -101,11 +142,19 @@ namespace ENN.TopologyBuilder.Models
 				InputListChanged();
 		}
 
+		/// <summary>
+		/// Retrieves the list of input layer data types.
+		/// </summary>
+		/// <returns>The list of input layer data types.</returns>
 		public List<string> GetInputLayers()
 		{
 			return inputLayers;
 		}
 
+		/// <summary>
+		/// Adds a hidden layer data type.
+		/// </summary>
+		/// <param name="name">Hidden layer data type.</param>
 		public void SetHiddenLayer(string name)
 		{
 			if (hiddenLayers.Contains(name)) return;
@@ -115,11 +164,19 @@ namespace ENN.TopologyBuilder.Models
 				HiddenListChanged();
 		}
 
+		/// <summary>
+		/// Retrieves the list of hidden layer data types.
+		/// </summary>
+		/// <returns>The list of hidden layer data types.</returns>
 		public List<string> GetHiddenLayers()
 		{
 			return hiddenLayers;
 		}
 
+		/// <summary>
+		/// Adds an output layer data type.
+		/// </summary>
+		/// <param name="name">Output layer data type.</param>
 		public void SetOutputLayer(string name)
 		{
 			if (outputLayers.Contains(name)) return;
@@ -129,11 +186,19 @@ namespace ENN.TopologyBuilder.Models
 				OutputListChanged();
 		}
 
+		/// <summary>
+		/// Retrieves the list of output layer data types.
+		/// </summary>
+		/// <returns>The list of input output data types.</returns>
 		public List<string> GetOutputLayers()
 		{
 			return outputLayers;
 		}
 
+		/// <summary>
+		/// Adds a node data type.
+		/// </summary>
+		/// <param name="name">Node data type.</param>
 		public void SetNode(string name)
 		{
 			if (nodes.Contains(name)) return;
@@ -143,11 +208,19 @@ namespace ENN.TopologyBuilder.Models
 				NodeListChanged();
 		}
 
+		/// <summary>
+		/// Retrieves the list of node data types.
+		/// </summary>
+		/// <returns>The list of node data types.</returns>
 		public List<string> GetNodes()
 		{
 			return nodes;
 		}
 
+		/// <summary>
+		/// Adds a preprocessor data type.
+		/// </summary>
+		/// <param name="name">Preprocessor data type.</param>
 		public void SetPreProcessor(string name)
 		{
 			if (preProcessors.Contains(name)) return;
@@ -157,11 +230,19 @@ namespace ENN.TopologyBuilder.Models
 				PreProcessorListChanged();
 		}
 
+		/// <summary>
+		/// Retrieves the list of preprocessor data types.
+		/// </summary>
+		/// <returns>The list of preprocessor data types.</returns>
 		public List<string> GetPreProcessors()
 		{
 			return preProcessors;
 		}
 
+		/// <summary>
+		/// Adds a postprocessor data type.
+		/// </summary>
+		/// <param name="name">Postprocessor data type.</param>
 		public void SetPostProcessor(string name)
 		{
 			if (postProcessors.Contains(name)) return;
@@ -171,6 +252,10 @@ namespace ENN.TopologyBuilder.Models
 				PostProcessorListChanged();
 		}
 
+		/// <summary>
+		/// Retrieves the list of postprocessor data types.
+		/// </summary>
+		/// <returns>The list of postprocessor data types.</returns>
 		public List<string> GetPostProcessors()
 		{
 			return postProcessors;

@@ -26,6 +26,9 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Based class used to define layer views that can be added to the gui.
+	/// </summary>
 	public partial class LayerView : UserControl
 	{
 		protected MetaDataPoolModel metaDataPool;
@@ -38,16 +41,30 @@ namespace ENN.TopologyBuilder.Views
 			metaData = new Dictionary<string, string>();
 		}
 
+		/// <summary>
+		/// Sets the MetaDataPoolModel that should be used.
+		/// </summary>
+		/// <param name="metaDataModel">Reference to the pool to draw information from.</param>
 		public void SetMetaDataModel(ref MetaDataPoolModel metaDataModel)
 		{
 			metaDataPool = metaDataModel;
 		}
 
-		public virtual UserControl GetInformation()
+		/// <summary>
+		/// Returns a view that is loaded in the left side bar to customize the meta
+		/// data for the current layer.
+		/// </summary>
+		/// <returns>The view to load in the side bar.</returns>
+		public virtual BaseMetaDataView GetInformation()
 		{
 			return new BaseMetaDataView(ref metaDataPool);
 		}
 
+		/// <summary>
+		/// Used to handle information changed events.
+		/// </summary>
+		/// <param name="key">Meta dat key to modify.</param>
+		/// <param name="value">Value for the key.</param>
 		protected void SetMetaData(string key, string value)
 		{
 			if (metaData.ContainsKey(key))

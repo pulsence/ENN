@@ -17,9 +17,18 @@ using System.Collections.Generic;
 
 namespace ENN.Framework.Tools
 {
+	/// <summary>
+	/// Represents a raw type in a topology file.
+	/// </summary>
     class RawType
     {
+		/// <summary>
+		/// The type to create.
+		/// </summary>
         public string Type;
+		/// <summary>
+		/// The fields used to build the type
+		/// </summary>
         public Dictionary<string, string> Fields;
 
         public RawType()

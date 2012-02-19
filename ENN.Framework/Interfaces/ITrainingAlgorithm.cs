@@ -15,11 +15,32 @@
 
 namespace ENN.Framework
 {
+	/// <summary>
+	/// Interface that all training algorithms need to impliment.
+	/// </summary>
     public interface ITrainingAlgorithm
     {
+		/// <summary>
+		/// Sets the current settings for the network that is calling the training
+		/// algorithm.
+		/// </summary>
+		/// <param name="settings">The NetworkSettings object to use.</param>
         void SetSettings(NetworkSettings settings);
 
+		/// <summary>
+		/// Modifies the given network in an attempt to make it more accurate.
+		/// </summary>
+		/// <param name="topology">The topology to train.</param>
+		/// <param name="error">The error of the topology compared to the
+		/// value that was expected. Lower numbers mean a more accurate
+		/// topology.</param>
         void TrainNetwork(ref NetworkTopology topology,
                           float error);
+
+		/// <summary>
+		/// Resets any value that are used to track state so that there is
+		/// no state confusion between training sessions.
+		/// </summary>
+		void Reset();
     }
 }

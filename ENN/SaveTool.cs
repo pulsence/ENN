@@ -21,6 +21,9 @@ using ENN.Framework.Tools;
 
 namespace ENN.Runtime
 {
+	/// <summary>
+	/// Allows for the user to save topologies and settings from the command line.
+	/// </summary>
     class SaveTool
     {
         NetworkSettings settings;
@@ -33,6 +36,11 @@ namespace ENN.Runtime
             this.topologies = topologies;
         }
 
+		/// <summary>
+		/// Handles the commands.
+		/// </summary>
+		/// <param name="commands">The commands and parameters passed with the
+		/// save command</param>
         public void RunCommand(List<RawCommand> commands)
         {
             if (commands.Count < 2)
@@ -55,7 +63,12 @@ namespace ENN.Runtime
             }
         }
 
-        void TopologyHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Saves a topology to disk.
+		/// </summary>
+		/// <param name="commands">Commands used to customize the behavior of the
+		/// command</param>
+        private void TopologyHandler(List<RawCommand> commands)
         {
             Console.WriteLine("Save topology");
 
@@ -91,7 +104,12 @@ namespace ENN.Runtime
 
         }
 
-        void SettingsHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Saves the settings to disk.
+		/// </summary>
+		/// <param name="commands">Commands used to customize the behavior of the
+		/// command</param>
+        private void SettingsHandler(List<RawCommand> commands)
         {
             Console.WriteLine("Saving settings...");
 

@@ -15,9 +15,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using ENN.Framework;
@@ -29,26 +27,56 @@ namespace ENN.Framework.Tools
     /// </summary>
     static public class Topology
     {
+		/// <summary>
+		/// Loads a NetwokTopology from either a text file or binary file.
+		/// </summary>
+		/// <param name="file">The path to the file the contains the
+		/// NetworkTopology</param>
+		/// <param name="objectFactories">The object factories that will be
+		/// used to transform types specified in a text file into objects.
+		/// </param>
+		/// <param name="settings">The currently loaded NetworkSettings.</param>
+		/// <param name="binary">If true a binary file will be loaded, else
+		/// a text file will be loaded. By default this is false.</param>
+		/// <returns></returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static public NetworkTopology Load(
             string file,
-            ref Dictionary<string, IUserObjectFactory> objectFactory,
-            ref NetworkSettings settings,
-            bool binary = false)
+            ref Dictionary<string, IUserObjectFactory> objectFactories,
+            ref NetworkSettings settings, bool binary = false)
         {
             if (binary)
                 return LoadBinary(file);
-            return LoadText(file, ref objectFactory, ref settings);
+            return LoadText(file, ref objectFactories, ref settings);
         }
 
+		/// <summary>
+		/// Creates a NetworkTopology from a text file.
+		/// </summary>
+		/// <param name="file">The location of the file to read from.</param>
+		/// <param name="objectFactories">The object factories that will
+		/// be used to tranform the text types into objects.</param>
+		/// <param name="settings">The currently loaded NetworkSettings.</param>
+		/// <returns>Returns the NetworkTopology located inside of the file.
+		/// If the file can not be parsed null is returned.</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private NetworkTopology LoadText(
             string file,
-            ref Dictionary<string, IUserObjectFactory> objectFactory,
+            ref Dictionary<string, IUserObjectFactory> objectFactories,
             ref NetworkSettings settings)
         {
+			//Check to varify that the file can be loaded.
+			if (GetVersion(file) != "1.0") return null;
+
             NetworkTopology topology = new NetworkTopology();
+			//Retrieves the RawTypes from the file
             List<RawType> rawTypes = GetRawTypes(file);
+
             Dictionary<string, IHiddenLayer> hiddenLayers = new Dictionary<string, IHiddenLayer>();
+			//Factory to create the object with
             string factoryName;
+
+			//Transforms all the rawTypes into objects
             for (int i = 0; i < rawTypes.Count; i++)
             {
                 factoryName = settings.DefaultFactory;
@@ -59,26 +87,26 @@ namespace ENN.Framework.Tools
                     if (rawTypes[i].Fields["type"] == "hidden")
                     {
                         hiddenLayers.Add(rawTypes[i].Fields["layerName"],
-                            objectFactory[factoryName].CreateUserObject<IHiddenLayer>(
+                            objectFactories[factoryName].CreateUserObject<IHiddenLayer>(
                             rawTypes[i].Fields["dataType"],
                             rawTypes[i].Fields));
                     }
                     else if (rawTypes[i].Fields["type"] == "output")
                     {
                         topology.OutputLayer =
-                            objectFactory[factoryName].CreateUserObject<IOutputLayer>(
+                            objectFactories[factoryName].CreateUserObject<IOutputLayer>(
                             rawTypes[i].Fields["dataType"], rawTypes[i].Fields);
                     }
                     else if (rawTypes[i].Fields["type"] == "input")
                     {
                         topology.InputLayer =
-                            objectFactory[factoryName].CreateUserObject<IInputLayer>(
+                            objectFactories[factoryName].CreateUserObject<IInputLayer>(
                             rawTypes[i].Fields["dataType"], rawTypes[i].Fields);
                     }
                 }
                 else if (rawTypes[i].Type == "node")
                 {
-                    INode node = objectFactory[factoryName].CreateUserObject<INode>(
+                    INode node = objectFactories[factoryName].CreateUserObject<INode>(
                         rawTypes[i].Fields["dataType"], rawTypes[i].Fields);
                     if (hiddenLayers.ContainsKey(rawTypes[i].Fields["layer"]))
                     {
@@ -88,28 +116,30 @@ namespace ENN.Framework.Tools
                 else if (rawTypes[i].Type == "preprocessor")
                 {
                     topology.PreProcessor =
-                        objectFactory[factoryName].CreateUserObject<IPreProcessor>(
+                        objectFactories[factoryName].CreateUserObject<IPreProcessor>(
                         rawTypes[i].Fields["dataType"], rawTypes[i].Fields);
 					if(settings.Mode == NetworkMode.Training)
 						topology.TrainingPreProcessor =
-							objectFactory[factoryName].CreateUserObject<ITrainingPreProcessor>(
+							objectFactories[factoryName].CreateUserObject<ITrainingPreProcessor>(
 								rawTypes[i].Fields["dataType"], rawTypes[i].Fields);
                 }
                 else if (rawTypes[i].Type == "postprocessor")
                 {
-                    topology.PostProcessor = objectFactory[factoryName].
+                    topology.PostProcessor = objectFactories[factoryName].
                         CreateUserObject<IPostProcessor>(rawTypes[i].Fields["dataType"], rawTypes[i].Fields);
                 }
 				else if (rawTypes[i].Type == "topology")
 				{
 					topology.MetaData = rawTypes[i].Fields;
-					topology.TrainingAlgorithm = objectFactory[rawTypes[i].Fields["algorithmFactory"]].
+					topology.TrainingAlgorithm = objectFactories[rawTypes[i].Fields["algorithmFactory"]].
 						CreateUserObject<ITrainingAlgorithm>(
 							rawTypes[i].Fields["trainingAlgorithm"],
 							rawTypes[i].Fields);
 				}
             }
 
+			//This tranformation is required because nodes are linked to hidden layers
+			//by names. The name of the layer is the key in the dictionary.
             IHiddenLayer[] layer = new IHiddenLayer[hiddenLayers.Count];
             int j = 0;
             foreach (KeyValuePair<string, IHiddenLayer> temp in hiddenLayers)
@@ -121,49 +151,105 @@ namespace ENN.Framework.Tools
             return topology;
         }
 
+		/// <summary>
+		/// Strips out the raw types from the file and prepares them for being parsed
+		/// into objects.
+		/// </summary>
+		/// <param name="file">Location of the file to open.</param>
+		/// <returns>Returns a list of raw types found in the file.</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private List<RawType> GetRawTypes(string file)
         {
             StreamReader fs = File.OpenText(file);
 
+			//Used when triming the end of a line that starts a type
             string newLine = " \t\n{";
             string line;
             string[] splitLine;
             List<RawType> rawTypes = new List<RawType>();
             RawType rawType = new RawType();
             bool openFound = false;
-            while (!fs.EndOfStream)
-            {
-                line = fs.ReadLine();
-                line = line.Trim();
-                if (!line.StartsWith("#") && line != "")
-                {
-                    if (!openFound)
-                    {
-                        if (line[line.Length - 1] == '{')
-                        {
-                            line = line.Trim(newLine.ToCharArray());
-                            rawType.Type = line;
-                            openFound = true;
-                        }
-                    }
-                    else if (line[0] == '}')
-                    {
-                        openFound = false;
-                        rawTypes.Add(rawType);
-                        rawType = new RawType();
-                    }
-                    else
-                    {
-                        splitLine = line.Split(':');
-                        rawType.Fields.Add(splitLine[0].Trim(), splitLine[1].Trim());
-                    }
-                }
-            }
+			while (!fs.EndOfStream)
+			{
+				line = fs.ReadLine();
+				line = line.Trim();
+
+				//skip commented or empty lines;
+				if (line.StartsWith("#") || line == "") continue;
+
+				//check for the start of a type
+				if (!openFound)
+				{
+					if (line[line.Length - 1] == '{')
+					{
+						line = line.Trim(newLine.ToCharArray());
+						rawType.Type = line;
+						openFound = true;
+					}
+				}
+				else if (line[0] == '}')//check for the closing of a type
+				{
+					openFound = false;
+					rawTypes.Add(rawType);
+					rawType = new RawType();
+				}
+				else if (openFound)//addes the fields if a type has be opened
+				{
+					splitLine = line.Split(':');
+					rawType.Fields.Add(splitLine[0].Trim(), splitLine[1].Trim());
+				}
+				else
+				{
+					splitLine = line.Split(':');
+					splitLine[0] = splitLine[0].Trim();
+					splitLine[1] = splitLine[1].Trim();
+
+					//checks to see if there is an include file command
+					if (splitLine[0] == "include")
+					{
+						rawTypes.AddRange(GetRawTypes(splitLine[1]));
+					}
+				}
+			}
 
             fs.Close();
-            return rawTypes;
+			return rawTypes;
         }
 
+		/// <summary>
+		/// Retrieves the file specification version of the topology file.
+		/// </summary>
+		/// <param name="file">The file containing the topology.</param>
+		/// <returns>Returns the string version number. Example 1.0</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
+		static private string GetVersion(string file)
+		{
+			StreamReader reader = new StreamReader(file);
+			string version = reader.ReadLine();
+			reader.Close();
+
+			string[] line = version.Split(':');
+			line[0] = line[0].Trim();
+			line[1] = line[1].Trim();
+
+			if (line[0] == "version")
+				version = line[1];
+			else //Some default version that will never pass
+				version = "0.0";
+
+			return version;
+		}
+
+		/// <summary>
+		/// Loads a NetworkTopology from a binary file. Note the the version of the
+		/// framework that created the binary must be used to load the file. Only
+		/// text files can be used with different framework versions.
+		/// </summary>
+		/// <param name="file">The location of the file to load the NetworkTopology
+		/// from.</param>
+		/// <returns>Returns the NetworkTopology found in the file. If the was some
+		/// trouble loading the file then null will be returned.</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private NetworkTopology LoadBinary(string file)
         {
             Stream fs = new FileStream(file, FileMode.Open, FileAccess.Read);
@@ -177,7 +263,8 @@ namespace ENN.Framework.Tools
         /// Save a NetworkTopology to file. 
         /// </summary>
         /// <param name="file">Location to save the file.</param>
-        /// <param name="topology">The topology to save to file.</param>
+		/// <param name="topology">The topology to save to file.</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static public void Save(string file, NetworkTopology topology, bool binary = false)
         {
             if(binary)
@@ -186,6 +273,16 @@ namespace ENN.Framework.Tools
                 SaveText(file, ref topology);
         }
 
+		/// <summary>
+		/// Saves a topology to a file in the form of text. Not that the topology must
+		/// have its meta data properly set or you will not be able to load the topology
+		/// from the text file. The only way that you can garuntee that the file will
+		/// save successfully is to have had the topology loaded from a text file at some
+		/// point in time in the past.
+		/// </summary>
+		/// <param name="file">The location of the file</param>
+		/// <param name="topology">The NetworkTopology object to persist</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private void SaveText(string file, ref NetworkTopology topology)
         {
             StreamWriter writer = new StreamWriter(file);
@@ -196,21 +293,22 @@ namespace ENN.Framework.Tools
             //Set up topology
             writer.WriteLine("#Topology");
             writer.WriteLine("topology{");
-            PrintMeta(ref writer, topology.MetaData);
+            WriteMeta(ref writer, topology);
             writer.WriteLine("}");
             writer.WriteLine();
 
             //Add layers
             writer.WriteLine("#Topology Layers");
+
             //Input
             writer.WriteLine("layer{");
-            PrintMeta(ref writer, topology.InputLayer.MetaData);
+            WriteMeta(ref writer, topology.InputLayer);
             writer.WriteLine("}");
             writer.WriteLine();
 
             //Output
             writer.WriteLine("layer{");
-            PrintMeta(ref writer, topology.OutputLayer.MetaData);
+            WriteMeta(ref writer, topology.OutputLayer);
             writer.WriteLine("}");
             writer.WriteLine();
 
@@ -218,22 +316,23 @@ namespace ENN.Framework.Tools
             foreach (IHiddenLayer hidden in topology.HiddenLayers)
             {
 				writer.WriteLine("layer{");
-				PrintMeta(ref writer, hidden.MetaData);
+				WriteMeta(ref writer, hidden);
 				writer.WriteLine("}");
 				writer.WriteLine();
             }
 
             //Add pre/post processors
             writer.WriteLine("#Pre and Post processors");
+
             //Pre
             writer.WriteLine("preprocessor{");
-            PrintMeta(ref writer, topology.PreProcessor.MetaData);
+            WriteMeta(ref writer, topology.PreProcessor);
             writer.WriteLine("}");
             writer.WriteLine();
 
             //Post
             writer.WriteLine("postprocessor{");
-            PrintMeta(ref writer, topology.PostProcessor.MetaData);
+            WriteMeta(ref writer, topology.PostProcessor);
             writer.WriteLine("}");
             writer.WriteLine();
 
@@ -244,7 +343,7 @@ namespace ENN.Framework.Tools
                 foreach (INode node in layer.Nodes)
                 {
                     writer.WriteLine("node{");
-                    PrintMeta(ref writer, node.MetaData);
+                    WriteMeta(ref writer, node);
                     writer.WriteLine("}");
                     writer.WriteLine();
                 }
@@ -252,14 +351,27 @@ namespace ENN.Framework.Tools
 			writer.Close();
         }
 
-        static private void PrintMeta(ref StreamWriter writer, Dictionary<string, string> meta)
+		/// <summary>
+		/// Helper method that writes meta data to disk.
+		/// </summary>
+		/// <param name="writer">Reference to the StreamWriter that is being used
+		/// to write to disk</param>
+		/// <param name="metaData">The object whoes meta data should be writen to disk</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
+        static private void WriteMeta(ref StreamWriter writer, IMetaData metaData)
         {
-            foreach (KeyValuePair<string, string> el in meta)
+            foreach (KeyValuePair<string, string> el in metaData.MetaData)
             {
                 writer.WriteLine("\t{0}:{1}", el.Key, el.Value);
             }
         }
 
+		/// <summary>
+		/// Saves a topology to file in binary format.
+		/// </summary>
+		/// <param name="file">Location to save the topology.</param>
+		/// <param name="topology">The topology object to persist to disk.</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private void SaveBinary(string file, ref NetworkTopology topology)
         {
             Stream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Write);

@@ -32,7 +32,7 @@ namespace ENN.TopologyBuilder.Views
 			InitializeComponent();
 		}
 
-		public override UserControl GetInformation()
+		public override BaseMetaDataView GetInformation()
 		{
 			PostProcessorMetaDataView info = new PostProcessorMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;

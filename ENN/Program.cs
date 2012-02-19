@@ -19,6 +19,9 @@ using ENN.Framework;
 
 namespace ENN.Runtime
 {
+	/// <summary>
+	/// Main entry class for the runtime.
+	/// </summary>
     partial class Program
     {
         static NetworkSettings settings;
@@ -32,6 +35,7 @@ namespace ENN.Runtime
 
         static void Main(string[] args)
         {
+			//variable set up
             settings = new NetworkSettings();
             topologies = new Dictionary<string, NetworkTopology>();
 
@@ -42,6 +46,7 @@ namespace ENN.Runtime
             updateTool = new UpdateTool(ref settings, ref topologies);
             saveTool = new SaveTool(ref settings, ref topologies);
 
+			//start up display information
             Console.WriteLine("ENN  Copyright (C) 2012  Tim Eck II");
             Console.WriteLine("This program comes with ABSOLUTELY NO WARRANTY.");
             Console.WriteLine("This is free software, and you are welcome to redistribute it");
@@ -52,6 +57,7 @@ namespace ENN.Runtime
                 "The ENN runtime has been succesfully started. You may now enter commands");
             Console.WriteLine("If you are not sure where to start enter -h.");
             
+			//command line processing loop
             Command command = RetrieveCommand(Console.ReadLine());
             while (command.BaseType != CommandType.Exit)
             {
@@ -60,11 +66,18 @@ namespace ENN.Runtime
             }
         }
 
-        static Command RetrieveCommand(string raw)
+		/// <summary>
+		/// Creates a Command object from a line of text. This is usualy the next line from
+		/// the command line.
+		/// </summary>
+		/// <param name="raw">The raw unprocessed string that contains the
+		/// command line commands</param>
+		/// <returns></returns>
+        static private Command RetrieveCommand(string raw)
         {
             string[] split = raw.Split(' ');
             List<RawCommand> rawCommands = new List<RawCommand>();
-
+			//Creates a list of raw commands
             for (int i = 0; i < split.Length; i++)
             {
                 if (split[i][0] == '-' && split[i].Length > 1)
@@ -88,6 +101,7 @@ namespace ENN.Runtime
             }
 
             Command command = new Command();
+			//maps the first command to the proper root command
             if (rawCommands.Count == 0)
             {
                 command.BaseType = CommandType.Bad;
@@ -134,7 +148,12 @@ namespace ENN.Runtime
             return command;
         }
 
-        static void ProcessCommand(Command command)
+		/// <summary>
+		/// Process the command by the base command type. Calls the methods
+		/// that are capable to responding to a particular base command.
+		/// </summary>
+		/// <param name="command">The command to process.</param>
+        static private void ProcessCommand(Command command)
         {
             switch (command.BaseType)
             {

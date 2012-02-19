@@ -28,6 +28,9 @@ namespace ENN.TopologyBuilder.Views
 {
 	public delegate void InformationChangedHandler(string key, string value);
 
+	/// <summary>
+	/// Base class used to define meta data views
+	/// </summary>
 	public partial class BaseMetaDataView : UserControl
 	{
 		protected MetaDataPoolModel metaDataPool;
@@ -52,6 +55,11 @@ namespace ENN.TopologyBuilder.Views
 			FactoryChanged();
 		}
 
+		/// <summary>
+		/// Raises the information changed event.
+		/// </summary>
+		/// <param name="key">The meta data key</param>
+		/// <param name="value">The value for the key</param>
 		protected void InvokeInformationChanged(string key, string value)
 		{
 			if (InformationChanged != null)
@@ -59,11 +67,20 @@ namespace ENN.TopologyBuilder.Views
 		}
 
 		#region View Value Setters
+
+		/// <summary>
+		/// Sets the header label.
+		/// </summary>
+		/// <param name="header">Text for the header.</param>
 		public void SetHeader(string header)
 		{
 			headerLabel.Text = header;
 		}
 
+		/// <summary>
+		/// Sets the selected factory.
+		/// </summary>
+		/// <param name="factoryName">The value to set the factory.</param>
 		public void SetFactory(string factoryName)
 		{
 			foreach (string item in factory.Items)
@@ -76,6 +93,9 @@ namespace ENN.TopologyBuilder.Views
 			}
 		}
 
+		/// <summary>
+		/// Sets the selected data type
+		/// </summary>
 		public void SetDataType(string dataTypeName)
 		{
 			foreach (string item in dataType.Items)
@@ -88,6 +108,10 @@ namespace ENN.TopologyBuilder.Views
 			}
 		}
 
+		/// <summary>
+		/// Adds key-value pairs to the extra field text box
+		/// </summary>
+		/// <param name="fields">Key value pairs to add</param>
 		public void SetExtraFields(Dictionary<string, string> fields)
 		{
 			List<string> lines = new List<string>();
@@ -99,6 +123,12 @@ namespace ENN.TopologyBuilder.Views
 			extraFields.Lines = lines.ToArray();
 		}
 
+		/// <summary>
+		/// Detirmines is the key is an exluded key.
+		/// </summary>
+		/// <param name="key">Key to check.</param>
+		/// <returns>Returns true if the key is in the exluded list and
+		/// false if it is not.</returns>
 		private bool isExcludedKey(string key)
 		{
 			foreach (string badKey in excludedKeys)
@@ -110,6 +140,10 @@ namespace ENN.TopologyBuilder.Views
 		#endregion
 
 		#region Events
+
+		/// <summary>
+		/// Updates the factory list when the event is raised.
+		/// </summary>
 		protected void FactoryChanged()
 		{
 			foreach (KeyValuePair<string, IUserObjectFactory> key in metaDataPool.GetFactories())
@@ -119,13 +153,23 @@ namespace ENN.TopologyBuilder.Views
 			}
 		}
 
+		/// <summary>
+		/// Needs to be overriden to update the list of data types based upon the data type
+		/// the view represents.
+		/// </summary>
 		protected virtual void DataTypesChanged() { }
 
+		/// <summary>
+		/// Updates the factory meta data when ever the factory selection changes.
+		/// </summary>
 		private void factory_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			InvokeInformationChanged("factory", (string)factory.SelectedItem);
 		}
 
+		/// <summary>
+		/// Updates the data type meta data when ever the dataType selection is changed.
+		/// </summary>
 		private void dataType_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			InvokeInformationChanged("dataType", (string)dataType.SelectedItem);

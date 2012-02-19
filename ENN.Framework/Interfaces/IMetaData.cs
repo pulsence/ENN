@@ -13,15 +13,19 @@
 * You should have received a copy of the GNU Lesser General Public License
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ENN.Framework
 {
+	/// <summary>
+	/// All data types that are part of a NetworkTopologies that can be writen
+	/// to disk must impliment this interface.
+	/// </summary>
     public interface IMetaData
     {
+		/// <summary>
+		/// Information about the data type.
+		/// </summary>
         Dictionary<string, string> MetaData { get; set; }
     }
 }

@@ -15,6 +15,9 @@
 
 namespace ENN.Runtime
 {
+	/// <summary>
+	/// Base command structure
+	/// </summary>
     class RawCommand
     {
         public char CommandChar { get; set; }

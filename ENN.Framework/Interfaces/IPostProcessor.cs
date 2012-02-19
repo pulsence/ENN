@@ -23,7 +23,8 @@ namespace ENN.Framework
         /// <summary>
         /// Does some action when provided the final value from the network.
         /// </summary>
-        /// <param name="finalValue"></param>
+        /// <param name="finalValue">The final value that was produced by the
+		/// network.</param>
         void FinalAction(float finalValue);
     }
 }

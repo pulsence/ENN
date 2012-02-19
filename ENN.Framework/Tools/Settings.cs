@@ -35,7 +35,8 @@ namespace ENN.Framework.Tools
         /// <param name="binary">Detirmines if a binary file or text file will be used to create
         /// the NetworkSettings. True means the file is a binary file.</param>
         /// <returns>Returns the NetworkSettings found in the file specified. If the object
-        /// could not be successfully loaded a null value is returned.</returns>
+		/// could not be successfully loaded a null value is returned.</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static public NetworkSettings Load(string filePath, bool binary = false)
         {
             if (binary)
@@ -43,14 +44,25 @@ namespace ENN.Framework.Tools
             return LoadText(filePath);
         }
 
+		/// <summary>
+		/// Loads NetworkSettings from a text file. Determines the settings version to load.
+		/// </summary>
+		/// <param name="filePath">The file path to the settings file.</param>
+		/// <returns>Returns the NetworkSettings that were loaded from the file. Returns null
+		/// if the file could no be parsed.</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private NetworkSettings LoadText(string filePath)
         {
             NetworkSettings settings = new NetworkSettings();
+
+			//strips the key-value pairs out of the text file
             Dictionary<string, string> raw = rawText(filePath);
             if (raw.Count == 0) return null;
 
+			//if know version was specified then the latest file version is specified
             if (!raw.ContainsKey("version")) raw.Add("version", "1.0");
             if (raw["version"] != "1.0") return null;
+			//parses the key-value pairs by maping the key to the proper settings field
             foreach (KeyValuePair<string, string> key in raw)
             {
                 switch (key.Key)
@@ -121,6 +133,8 @@ namespace ENN.Framework.Tools
                         settings.TraininPool = pool;
                         break;
                     default:
+						//if no field is found to place the value into then it is
+ 						//added to the catch-all Other field
                         settings.Other.Add(key.Key, key.Value);
                         break;
                 }
@@ -128,6 +142,13 @@ namespace ENN.Framework.Tools
             return settings;
         }
 
+		/// <summary>
+		/// Loads network settings from a binary file.
+		/// </summary>
+		/// <param name="filePath">Location of the file.</param>
+		/// <returns>Returns the NetworkSettings found in the file. If there was an something
+		/// wrong with reading the file null will be returned.</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private NetworkSettings LoadBinary(string filePath)
         {
             Stream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
@@ -137,6 +158,15 @@ namespace ENN.Framework.Tools
             return (NetworkSettings)temp;
         }
 
+		/// <summary>
+		/// Saves a NetworkSettings object to file. The object can be saved to either a binary
+		/// file or text file.
+		/// </summary>
+		/// <param name="settings">The object to save to file.</param>
+		/// <param name="filePath">The location to save the file.</param>
+		/// <param name="binary">If true a binary file will be created. Else a text file will
+		/// be generated. By default this parameter is false.</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static public void Save(NetworkSettings settings, string filePath, bool binary = false)
         {
             if (binary)
@@ -145,29 +175,37 @@ namespace ENN.Framework.Tools
                 SaveText(ref settings, filePath);
         }
 
+		/// <summary>
+		/// Saves the NetworkSettings object to a text file.
+		/// </summary>
+		/// <param name="settings">The NetworkSettings object to save to disk.</param>
+		/// <param name="filePath">The location to save the file to.</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private void SaveText(ref NetworkSettings settings, string filePath)
         {
             StreamWriter writer = new StreamWriter(filePath);
-            writer.WriteLine("networkmode:" + settings.Mode);
-            writer.WriteLine("networktype:" + settings.NetworkType);
+            writer.WriteLine("networkmode:{0}", settings.Mode);
+			writer.WriteLine("networktype:{0}", settings.NetworkType);
             writer.WriteLine("\n#User Defined Binary settings");
-            writer.WriteLine("userbinarylocation:" + settings.UserBinaryLocation);
-            writer.WriteLine("userbinaryclassname:" + settings.UserBinaryClassName);
-            writer.WriteLine("userbinaryname:" + settings.UserBinaryName);
-            writer.WriteLine("useuserbinary:" + settings.UseUserBinaries);
+			writer.WriteLine("userbinarylocation:{0}", settings.UserBinaryLocation);
+			writer.WriteLine("userbinaryclassname:{0}", settings.UserBinaryClassName);
+			writer.WriteLine("userbinaryname:{0}", settings.UserBinaryName);
+			writer.WriteLine("useuserbinary:{0}", settings.UseUserBinaries);
             writer.WriteLine("\n#Default data types");
-            writer.WriteLine("inputlayer:" + settings.DefaultInputLayer);
-            writer.WriteLine("node:" + settings.DefaultNode);
-            writer.WriteLine("nodelayer:" + settings.DefaultHiddenLayer);
-            writer.WriteLine("outputlayer:" + settings.DefaultOutputLayer);
-            writer.WriteLine("factory:" + settings.DefaultFactory);
+			writer.WriteLine("inputlayer:{0}", settings.DefaultInputLayer);
+			writer.WriteLine("node:{0}", settings.DefaultNode);
+			writer.WriteLine("nodelayer:{0}", settings.DefaultHiddenLayer);
+			writer.WriteLine("outputlayer:{0}", settings.DefaultOutputLayer);
+			writer.WriteLine("factory:{0}", settings.DefaultFactory);
             writer.WriteLine("\n#Debugging");
-            writer.WriteLine("enabletiming:" + settings.EnableTiming);
+			writer.WriteLine("enabletiming:{0}", settings.EnableTiming);
             writer.WriteLine("\nTraining Settings");
-            writer.WriteLine("trainingiterations:" + settings.TrainingIterations);
-            writer.WriteLine("trainingaccuracy:" + settings.TrainingAccuracy);
-            writer.WriteLine("trainingpool:" + settings.TraininPool);
+			writer.WriteLine("trainingiterations:{0}", settings.TrainingIterations);
+			writer.WriteLine("trainingaccuracy:{0}", settings.TrainingAccuracy);
+			writer.WriteLine("trainingpool:{0}", settings.TraininPool);
             writer.WriteLine("\n#User Defined Settings");
+			//Writes all the key-value pairs that couldn't be matched to a settings
+			//field to disk.
             foreach (KeyValuePair<string, string> key in settings.Other)
             {
                 writer.WriteLine("{0}:{1}", key.Key, key.Value);
@@ -175,6 +213,13 @@ namespace ENN.Framework.Tools
             writer.Close();
         }
 
+		/// <summary>
+		/// Save the NetworkSettings object to a binary file.
+		/// </summary>
+		/// <param name="settings">The NetworkSettings object that will be saved to
+		/// disk in a binary file.</param>
+		/// <param name="filePath">The location to save the file.</param>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private void SaveBinary(ref NetworkSettings settings, string filePath)
         {
             Stream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -183,6 +228,13 @@ namespace ENN.Framework.Tools
             fs.Close();
         }
 
+		/// <summary>
+		/// Strips the key-value pairs out of the file.
+		/// </summary>
+		/// <param name="filePath">The text file to search</param>
+		/// <returns>Returns a dictionary of key-value pairs found inside of
+		/// the file</returns>
+		/// <exception cref="IOException">System.IO.IOException</exception>
         static private Dictionary<string, string> rawText(string filePath)
         {
             Dictionary<string, string> raw = new Dictionary<string, string>();

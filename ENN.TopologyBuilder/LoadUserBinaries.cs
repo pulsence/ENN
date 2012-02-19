@@ -43,6 +43,9 @@ namespace ENN.TopologyBuilder
 			metaDataPool = pool;
 		}
 
+		/// <summary>
+		/// Locates a file the contains user created library.
+		/// </summary>
 		private void findFile_Click(object sender, EventArgs e)
 		{
 			openBinary.ShowDialog();
@@ -52,8 +55,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Loads the selected file
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void loadFile_Click(object sender, EventArgs e)
 		{
 			try
@@ -110,8 +111,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Clears the form of the loaded values
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void clear_Click(object sender, EventArgs e)
 		{
 			factoryName.Text = "";
@@ -138,8 +137,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds the loaded information into its correct lists
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void addButton_Click(object sender, EventArgs e)
 		{
 			metaDataPool.SetFactory(factoryName.Text, loadedFactory);
@@ -164,20 +161,6 @@ namespace ENN.TopologyBuilder
 
 			MessageBox.Show("Information Added");
 			clear_Click(null, null);
-		}
-
-		/// <summary>
-		/// Copies elements from one list to another if the element is not already in the list.
-		/// </summary>
-		/// <param name="baseList"></param>
-		/// <param name="source"></param>
-		private void AddTolist(ref List<string> baseList, IEnumerable<string> source)
-		{
-			foreach (string toAdd in source)
-			{
-				if (!baseList.Contains(toAdd))
-					baseList.Add(toAdd);
-			}
 		}
 	}
 }

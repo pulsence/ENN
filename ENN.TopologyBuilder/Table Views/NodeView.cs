@@ -29,6 +29,9 @@ namespace ENN.TopologyBuilder.Views
 	{
 		protected string layerName;
 
+		/// <summary>
+		/// Sets the name of the layer that this node belongs to.
+		/// </summary>
 		public string LayerName
 		{
 			set
@@ -43,7 +46,7 @@ namespace ENN.TopologyBuilder.Views
 			InitializeComponent();
 		}
 
-		public override UserControl GetInformation()
+		public override BaseMetaDataView GetInformation()
 		{
 			NodeMetaDataView info = new NodeMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;

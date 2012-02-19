@@ -1,7 +1,4 @@
-﻿using System;
-using ENN.Framework;
-
-/*This file is part of ENN.
+﻿/*This file is part of ENN.
 * Copyright (C) 2012  Tim Eck II
 * 
 * ENN is free software: you can redistribute it and/or modify
@@ -17,15 +14,23 @@ using ENN.Framework;
 * along with ENN.  If not, see <http://www.gnu.org/licenses/>.*/
 
 using System;
+using ENN.Framework;
 using System.Collections.Generic;
 
 namespace TestUserBinary
 {
+	/// <summary>
+	/// Simple example of a postprocessor.
+	/// </summary>
 	[Serializable()]
     class BasicPostProcessor : IPostProcessor
     {
         public Dictionary<string, string> MetaData { get; set; }
 
+		/// <summary>
+		/// Does something when provided with the result from the neural network.
+		/// </summary>
+		/// <param name="finalValue">The final value produced by the neural network.</param>
         public void FinalAction(float finalValue)
         {
             Console.WriteLine("Final value is {0}", finalValue);

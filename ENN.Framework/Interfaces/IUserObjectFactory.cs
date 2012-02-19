@@ -28,7 +28,7 @@ namespace ENN.Framework
         /// <typeparam name="TObject">Type of interface to create.</typeparam>
         /// <param name="objectName">The name of the object to create.</param>
         /// <param name="buildParam">Parameters to create the object with.</param>
-        /// <returns></returns>
+        /// <returns>Returns the data type that was created.</returns>
         TObject CreateUserObject<TObject>(string objectName, Dictionary<string, string> buildParam);
     }
 }

@@ -37,6 +37,11 @@ namespace ENN.Runtime
             this.objectFactory = objectFactory;
         }
 
+		/// <summary>
+		/// Executes some command based upon the parameters passed.
+		/// </summary>
+		/// <param name="commands">Used to determine the sub-commands that
+		/// can be executed.</param>
         public void RunCommand(List<RawCommand> commands)
         {
             if (commands.Count < 2)
@@ -64,6 +69,11 @@ namespace ENN.Runtime
             }
         }
 
+		/// <summary>
+		/// Loads a topology from a file.
+		/// </summary>
+		/// <param name="commands">Commands used to customize the behavior of the
+		/// command</param>
         void TopologyHandler(List<RawCommand> commands)
         {
             Console.WriteLine("Loading topology...");
@@ -98,6 +108,11 @@ namespace ENN.Runtime
             }
         }
 
+		/// <summary>
+		/// Loads settings from a file.
+		/// </summary>
+		/// <param name="commands">Commands used to customize the behavior of the
+		/// command</param>
         void SettingsHandler(List<RawCommand> commands)
         {
             Console.WriteLine("Loading settings...");
@@ -125,6 +140,11 @@ namespace ENN.Runtime
             }
         }
 
+		/// <summary>
+		/// Loads a user binary file from disk.
+		/// </summary>
+		/// <param name="commands">Commands used to customize the behavior of the
+		/// command</param>
         void BinaryHandler(List<RawCommand> commands)
         {
             Console.WriteLine("Loading binary...");

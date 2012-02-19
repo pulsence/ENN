@@ -65,6 +65,10 @@ namespace ENN.TopologyBuilder
 		}
 
 		#region Copy/Paste/Delete
+
+		/// <summary>
+		/// Creates a copy of the currently selected layer.
+		/// </summary>
 		private void copyToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			copyLayer = currentSelectedLayer;
@@ -73,8 +77,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Copies the copied layer to the current layer
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void selectedToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			currentSelectedLayer = copyLayer;
@@ -83,13 +85,14 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Copies the copied layer as a new layer
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void newToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AddTableItem(copyLayer);
 		}
 
+		/// <summary>
+		/// Deletes the currently selected layer,
+		/// </summary>
 		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Type currentType = currentSelectedLayer.GetType();
@@ -97,6 +100,10 @@ namespace ENN.TopologyBuilder
 				hasOutput = false;
 			else if (currentType == typeof(InputLayerView))
 				hasInput = false;
+			else if (currentType == typeof(PreProcessorView))
+				hasPreProcessor = false;
+			else if (currentType == typeof(PostProcessorView))
+				hasPostProcessor = false;
 
 			topologyDisplay.Controls.Remove(currentSelectedLayer);
 			topologyContainer.Panel2.Controls.RemoveAt(0);
@@ -105,10 +112,8 @@ namespace ENN.TopologyBuilder
 
 		#region Add Layers
 		/// <summary>
-		/// Adds Hidden Layer
+		/// Adds a Hidden Layer
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void hiddenToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			HiddenLayerView layer = new HiddenLayerView();
@@ -125,10 +130,8 @@ namespace ENN.TopologyBuilder
 		}
 
 		/// <summary>
-		/// Adds Output Layer
+		/// Adds an Output Layer
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void outputToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (!hasOutput)
@@ -150,8 +153,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds Input Layer
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void inputToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (!hasInput)
@@ -169,8 +170,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a pre processor
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void preProcessorToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (!hasPreProcessor)
@@ -185,8 +184,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a post processor
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void postProcessorToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (!hasPostProcessor)
@@ -201,8 +198,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a node to the current layer
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void nodeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (currentSelectedLayer.GetType() == typeof(HiddenLayerView))
@@ -221,6 +216,10 @@ namespace ENN.TopologyBuilder
 		#endregion
 
 		#region Helpers
+		/// <summary>
+		/// Changes the currently selected object and changes the meta data view
+		/// that is loaded.
+		/// </summary>
 		private void ChangeInformation(object obj, EventArgs args)
 		{
 			currentSelectedLayer.BorderStyle = BorderStyle.FixedSingle;
@@ -233,6 +232,12 @@ namespace ENN.TopologyBuilder
 			topologyContainer.Panel2.Controls.Add(info);
 		}
 
+		/// <summary>
+		/// Adds a new item to the topology display.
+		/// </summary>
+		/// <param name="layer">The layer to add to the display.</param>
+		/// <param name="row">The location in the display to add it. If
+		/// the value is -1 then the layer is added to the end.</param>
 		private void AddTableItem(LayerView layer, int row = -1)
 		{
 			layer.Width = topologyDisplay.Width - 25;
@@ -251,8 +256,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Resizes the elements in the display
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void topologyDisplay_Resize(object sender, EventArgs e)
 		{
 			int width = topologyDisplay.Width - 25;
@@ -265,8 +268,6 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Opens a form to load user defined binaries
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void userBinariesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			LoadUserBinaries form = new LoadUserBinaries();

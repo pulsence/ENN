@@ -1,7 +1,6 @@
 ﻿Update Tool
-This tool updates the currently loaded settings or topology
-It takes two commands -s for settings and -t for topology.
-Each command takes different parameters which are explained below.
+This tool updates the currently loaded settings.
+It takes one commands -s for settings.
 
 -s command
 The -s commnad updates settings values
@@ -32,15 +31,3 @@ trainingiterations	Integer value
 trainingpool		Integer value
 
 Example: -u -s -k networkmode -v training
-
--t command
-The -t command updates a node or layer in loaded topology
-<parameter>	Parameter Name	Description
----------------------------------------------------------------------------
-   -c		Topology Name	The name of the topology to update
-   -l		Layer		The layer's index. This is a positive int
-				value
-   -n		Node		The node's index. This is a positive int
-				value
-Note that the input layer is layer 0 and the first node is 1
-Example: -u -t -l 1 -n 3

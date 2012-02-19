@@ -19,6 +19,9 @@ using ENN.Framework;
 
 namespace ENN.Runtime
 {
+	/// <summary>
+	/// Command line tool used to update the loaded settings.
+	/// </summary>
     class UpdateTool
     {
         NetworkSettings settings;
@@ -31,16 +34,17 @@ namespace ENN.Runtime
             this.topologies = topologies;
         }
 
+		/// <summary>
+		/// Executes some command based upon the parameters passed.
+		/// </summary>
+		/// <param name="commands">Used to determine the sub-commands that
+		/// can be executed.</param>
         public void RunCommand(List<RawCommand> commands)
         {
             if (commands.Count < 2)
             {
                 Console.WriteLine("This tool allows you to update the current settings and topolgy");
                 Console.WriteLine("To learn more about how to use this tool type the command -h -u");
-            }
-            else if (commands[1].CommandChar == 't')
-            {
-                TopologyHandler(commands);
             }
             else if (commands[1].CommandChar == 's')
             {
@@ -53,6 +57,11 @@ namespace ENN.Runtime
             }
         }
 
+		/// <summary>
+		/// Updates the settings that are currently loaded.
+		/// </summary>
+		/// <param name="commands">Commands used to customize the behavior of the
+		/// command</param>
         void SettingsHandler(List<RawCommand> commands)
         {
             Dictionary<string, string> other = settings.Other;
@@ -152,11 +161,6 @@ namespace ENN.Runtime
             }
 
             Console.WriteLine("Settings Updated");
-        }
-
-        void TopologyHandler(List<RawCommand> commands)
-        {
-            Console.WriteLine("Update topology");
         }
     }
 }

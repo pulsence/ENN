@@ -32,7 +32,7 @@ namespace ENN.TopologyBuilder.Views
 			InitializeComponent();
 		}
 
-		public override UserControl GetInformation()
+		public override BaseMetaDataView GetInformation()
 		{
 			OutputLayerMetaDataView info = new OutputLayerMetaDataView(ref metaDataPool);
 			info.InformationChanged += SetMetaData;

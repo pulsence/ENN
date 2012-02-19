@@ -22,23 +22,43 @@ using ENN.Framework;
 
 namespace ENN.Runtime
 {
+	/// <summary>
+	/// Handles responce to specific commands.
+	/// </summary>
     partial class Program
     {
-        static void DefaultHandler()
+		/// <summary>
+		/// The default respond if the base command is not recognized.
+		/// </summary>
+        static private void DefaultHandler()
         {
             Console.WriteLine("You have not placed a valid command. Please try again.");
             Console.WriteLine("If you are not sure what command to use, enter the help " +
                 "command, -h");
         }
 
-        static void RunHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Handles the running and testing of neural networks.
+		/// </summary>
+		/// <param name="commands"></param>
+		static private void RunHandler(List<RawCommand> commands)
         {
-            NetworkTopology topology = new NetworkTopology(); ;
+            NetworkTopology topology = new NetworkTopology();
+			//gets the topology with the name specified.
             if (commands[1].CommandChar == 'n')
             {
-                topology = topologies[commands[1].Value];
+				if (topologies.ContainsKey(commands[1].Value))
+				{
+					topology = topologies[commands[1].Value];
+				}
+				else
+				{
+					Console.WriteLine("{0} is not a valid topology name/n",
+									  commands[1].Value);
+					return;
+				}
             }
-            else
+            else//gets the first topology is no name is specified
             {
                 foreach (KeyValuePair<string, NetworkTopology> key in topologies)
                 {
@@ -49,6 +69,8 @@ namespace ENN.Runtime
 
             if (commands.Count > 2 && commands[2].CommandChar == 't')
             {
+				//tests to see is the specified topology is ready to be used.
+
                 if (topology.HiddenLayers == null ||
                     topology.InputLayer == null ||
                     topology.OutputLayer == null ||
@@ -87,6 +109,7 @@ namespace ENN.Runtime
             }
             else
             {
+				//runs the specified topology
                 Console.WriteLine("The network is starting...");
                 NeuralNetwork network = new NeuralNetwork(topology, settings);
                 ThreadPool.QueueUserWorkItem(network.StartNetwork);
@@ -94,7 +117,12 @@ namespace ENN.Runtime
             }
         }
 
-        static void StatusHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Outputs the current status and information about the system.
+		/// </summary>
+		/// <param name="commands">Details of what type of information
+		/// should be outputed.</param>
+		static private void StatusHandler(List<RawCommand> commands)
         {
             if (commands.Count > 1)
             {
@@ -121,7 +149,12 @@ namespace ENN.Runtime
             }
         }
 
-        static void CommandScriptHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Reads a scripts file and the runs the scripts. Scripts are just
+		/// text file with command line commands on individual lines.
+		/// </summary>
+		/// <param name="commands">Information about the scripts</param>
+		static private void CommandScriptHandler(List<RawCommand> commands)
         {
             if (commands[1].CommandChar == 'f')
             {
@@ -129,9 +162,12 @@ namespace ENN.Runtime
                 {
                     StreamReader fs = File.OpenText(commands[1].Value);
                     Command command;
+					string line;
                     do
                     {
-                        command = RetrieveCommand(fs.ReadLine());
+						line = fs.ReadLine();
+						Console.WriteLine(line);
+                        command = RetrieveCommand(line);
                         ProcessCommand(command);
                     } while (command.BaseType != CommandType.Exit && !fs.EndOfStream);
                     fs.Close();
@@ -151,7 +187,11 @@ namespace ENN.Runtime
             }
         }
 
-        static void AppLauncherHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Launchs packaged gui applications from the command line.
+		/// </summary>
+		/// <param name="commands">The applications to launch.</param>
+		static private void AppLauncherHandler(List<RawCommand> commands)
         {
             try
             {
@@ -171,7 +211,12 @@ namespace ENN.Runtime
             }
         }
 
-        static void HelpHandler(List<RawCommand> commands)
+		/// <summary>
+		/// Displays help on a all the valid commands that can be entered from
+		/// the command line based up the commands passed to the function.
+		/// </summary>
+		/// <param name="commands">Determines what help information is displayed.</param>
+		static private void HelpHandler(List<RawCommand> commands)
         {
             if (commands.Count < 2)
             {
@@ -222,7 +267,11 @@ namespace ENN.Runtime
             }
         }
 
-        static void printToCommand(string[] strings)
+		/// <summary>
+		/// Helper function used to diplays files on screen.
+		/// </summary>
+		/// <param name="strings">Strings to display.</param>
+		static private void printToCommand(string[] strings)
         {
             foreach (string s in strings)
             {

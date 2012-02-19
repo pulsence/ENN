@@ -20,6 +20,11 @@ using System.Threading.Tasks;
 
 namespace ENN.Framework
 {
+	/// <summary>
+	/// Implimentation of an evolving neural network. This network type creates
+	/// topologies by using a genetic algorithm to create topologies the
+	/// better suite a specific problem domain.
+	/// </summary>
 	public class EvolvingNeuralNetwork
 	{
 		NetworkTopology[] topologies;
@@ -32,14 +37,30 @@ namespace ENN.Framework
 			this.settings = settings;
 		}
 
+		/// <summary>
+		/// Starts the network. Note that this network can not run in computational mode.
+		/// In order to use this network its mode needs to be in training.
+		/// </summary>
+		/// <param name="state">State variable used with threading.</param>
 		public void StartNetwork(object state = null)
 		{
 			if (settings.Mode == NetworkMode.Computational) return;
 
+			//the number of generations.
 			int iterations = 0;
+
+			int maxGeneration = 10000;
+			if (settings.Other.ContainsKey("enn_generations"))
+			{
+				int.TryParse(settings.Other["enn_generations"],
+							 out maxGeneration);
+			}
+
 			//stores the accuracy for each topology
 			float[] accuracies = new float[topologies.Length];
 
+			//the numer of indivuduals that should be considered the most
+			//fit and would live on to the next generation.
 			int mostFitCount;
 			if (topologies.Length > 4)
 				mostFitCount = topologies.Length / 4;
@@ -51,11 +72,17 @@ namespace ENN.Framework
 			int p1, p2;
 
 			float mutationRate = 1;
+			if (settings.Other.ContainsKey("enn_mutationrate"))
+			{
+				float.TryParse( settings.Other["enn_mutationrate"],
+								out mutationRate);
+			}
+
 			float mostFitAvr = 0;
 
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
-			while (iterations < 10000)
+			while (iterations < maxGeneration)
 			{
 				Parallel.For(0, topologies.Length, i =>
 				{
@@ -96,9 +123,9 @@ namespace ENN.Framework
 		}
 		
         /// <summary>
-        /// Traines the given network.
+        /// Traines the given network. Same algorithm as in the neural network class.
         /// </summary>
-        float TrainNetwork(ref NetworkTopology topology)
+        private float TrainNetwork(ref NetworkTopology topology)
         {
             topology.TrainingAlgorithm.SetSettings(settings);
             int countSinceTrain = 0;
@@ -132,9 +159,9 @@ namespace ENN.Framework
         }
 
 		/// <summary>
-		/// Calculates a value
+		/// Calculates a value. Same algorithm as in the neural network clas.
 		/// </summary>
-		float ComputeDecision(ref NetworkTopology topology)
+		private float ComputeDecision(ref NetworkTopology topology)
 		{
 			float val;
 			float[] inputPool = topology.PreProcessor.GenerateValues();

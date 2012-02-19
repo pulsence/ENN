@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomEvents.cs" />
     <Compile Include="Meta Data Views\BaseMetaDataView.cs">
       <SubType>UserControl</SubType>
     </Compile>

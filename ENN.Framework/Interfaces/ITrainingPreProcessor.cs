@@ -21,9 +21,11 @@ namespace ENN.Framework
     public interface ITrainingPreProcessor : IPreProcessor
     {
         /// <summary>
-        /// Returns the value that the network should produce.
+        /// Returns the value that the network should produce. This method is called after
+		/// the input values are retrieved.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the value that the neural network should produce
+		/// from the given inputs.</returns>
         float ExpectedResult();
     }
 }

@@ -15,11 +15,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ENN.Framework
 {
+	/// <summary>
+	/// Implimentation of the ITraingingAlgorithm interface. Basic implimentation of
+	/// the hill climbing algorithm.
+	/// </summary>
     [Serializable()]
     public class HillClimbAlgo : ITrainingAlgorithm
     {
@@ -47,8 +49,15 @@ namespace ENN.Framework
             stepValue = baseStepValue;
             priorError = float.MinValue;
             priorWeightValue = -2.0f;
+
+			settings = null;
         }
 
+		/// <summary>
+		/// Sets the base settings values for the training algorithm
+		/// </summary>
+		/// <param name="settings">The network settings of the network that is
+		/// calling the class.</param>
         public void SetSettings(NetworkSettings settings)
         {
             this.settings = settings;
@@ -64,6 +73,12 @@ namespace ENN.Framework
             if (maxFlips == 0) maxFlips = 20;
         }
 
+		/// <summary>
+		/// Trains the network.
+		/// </summary>
+		/// <param name="topology">Reference to the topology object to train.</param>
+		/// <param name="error">The current error in decimal format of the topology.
+		/// Example of expected: 0.6</param>
         public void TrainNetwork(ref NetworkTopology topology, float error)
         {
             if (error > priorError)
@@ -71,7 +86,6 @@ namespace ENN.Framework
                 stepValue *= -0.5f;
                 flips++;
             }
-
             if (flips == maxFlips)
             {
                 nodeIndex++;
@@ -101,6 +115,36 @@ namespace ENN.Framework
             priorError = error;
             topology.HiddenLayers[layerIndex].Nodes[nodeIndex].Weights[weightIndex] += stepValue;
         }
+
+		/// <summary>
+		/// Resets the fields of the object.
+		/// </summary>
+		public void Reset()
+		{
+			layerIndex = 0;
+			nodeIndex = 0;
+			weightIndex = 0;
+			flips = 0;
+			maxFlips = 20;
+
+			baseStepValue = 1;
+			stepValue = baseStepValue;
+			priorError = float.MinValue;
+			priorWeightValue = -2.0f;
+
+			if (settings == null) return;
+			if (settings.Other.ContainsKey("startlayerindex"))
+				int.TryParse(settings.Other["startlayerindex"], out layerIndex);
+			if (settings.Other.ContainsKey("startnodeindex"))
+				int.TryParse(settings.Other["startnodeindex"], out nodeIndex);
+			if (settings.Other.ContainsKey("basestepvalue"))
+				float.TryParse(settings.Other["basestepvalue"], out stepValue);
+			if (stepValue == 0) stepValue = 1;
+			if (settings.Other.ContainsKey("maxflips"))
+				int.TryParse(settings.Other["maxflips"], out maxFlips);
+			if (maxFlips == 0) maxFlips = 20;
+
+		}
 
 		public override bool Equals(object obj)
 		{

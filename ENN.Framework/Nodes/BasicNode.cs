@@ -54,6 +54,7 @@ namespace ENN.Framework
                     if (i < constants.Length - 1)
                         temp += ", ";
                 }
+				meta["combinationWeights"] = temp;
             }
         }
 

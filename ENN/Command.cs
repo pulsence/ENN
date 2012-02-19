@@ -17,11 +17,17 @@ using System.Collections.Generic;
 
 namespace ENN.Runtime
 {
+	/// <summary>
+	/// The different types of commands that can be exicuted.
+	/// </summary>
     enum CommandType
     {
         Exit, Load, Run, Update, Save, Status, Help, Bad, Command, App
     }
 
+	/// <summary>
+	/// Command structure
+	/// </summary>
     class Command
     {
         public CommandType BaseType { get; set; }

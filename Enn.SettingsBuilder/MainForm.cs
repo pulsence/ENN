@@ -32,6 +32,18 @@ namespace ENN.SettingsBuilder
             InitializeComponent();
         }
 
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            settings = new NetworkSettings();
+            networkMode.SelectedIndex = 0;
+            networkType.SelectedIndex = 0;
+        }
+
+		/// <summary>
+		/// Handles the click event for the binaryFileButton. Adds a user binary file
+		/// to the form.
+		/// </summary>
         private void binaryFileButton_Click(object sender, EventArgs e)
         {
             chooseBinary.ShowDialog();
@@ -50,13 +62,9 @@ namespace ENN.SettingsBuilder
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            settings = new NetworkSettings();
-            networkMode.SelectedIndex = 0;
-            networkType.SelectedIndex = 0;
-        }
-
+		/// <summary>
+		/// Loads a settings file and then populates the form fields.
+		/// </summary>
         private void loadMenuItem_Click(object sender, EventArgs e)
         {
             openSettings.ShowDialog();
@@ -121,6 +129,9 @@ namespace ENN.SettingsBuilder
             }
         }
 
+		/// <summary>
+		/// Maps the form fields to the settings object and then saves the object to disk.
+		/// </summary>
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
             if (networkMode.SelectedIndex == 0)

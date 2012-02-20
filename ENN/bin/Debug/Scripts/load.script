@@ -1,4 +1,4 @@
 ﻿-l -s -f Settings/testSettings.nns
--l -b
+-l -b -f UserBin/TestUserBinary.dll -n TestBinary
 -l -t -f Topologies/testTopology.nnt
 -i -s -t

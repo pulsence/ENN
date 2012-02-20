@@ -70,28 +70,70 @@ namespace ENN.Runtime
 		/// command</param>
         private void TopologyHandler(List<RawCommand> commands)
         {
-            Console.WriteLine("Save topology");
+            Console.WriteLine("Saving topology...");
 
-            string filePath =
-                "Topologies\\topologies_" + DateTime.Today.Day + "-" +
-                                        DateTime.Today.Month + "-" +
-                                        DateTime.Today.Year + ".nnt";
+            string filePath = "";
+			string name = "";
+			bool binary = false;
+
             foreach (RawCommand command in commands)
             {
                 if (command.CommandChar == 'f')
                 {
                     filePath = command.Value;
-                    break;
                 }
+				else if (command.CommandChar == 'b')
+				{
+					binary = true;
+				}
+				else if(command.CommandChar == 'n')
+				{
+					name = command.Value;
+				}
             }
+
+			if (name == "")
+			{
+				Console.WriteLine("Could not save topology");
+				Console.WriteLine("No topology was choosen to save");
+				return;
+			}
+
+			if (filePath == "")
+			{
+				filePath =
+				"Topologies\\" + name + "_" + DateTime.Today.Day + "-" +
+											  DateTime.Today.Month + "-" +
+											  DateTime.Today.Year + ".";
+				if (binary)
+				{
+					filePath += "nntc";
+				}
+				else
+				{
+					filePath += "nnt";
+				}
+			}
+
+			if (!binary)
+			{
+				binary = filePath.EndsWith("nntc", true, null);
+			}
 
             try
             {
-                foreach (KeyValuePair<string, NetworkTopology> topology in topologies)
-                {
-                    Topology.Save(filePath, topology.Value);
-                }
-                Console.WriteLine("Saving finished");
+				if (topologies.ContainsKey(name))
+				{
+					Topology.Save(filePath, topologies[name], binary);
+					Console.WriteLine("The topology was saved.");
+				}
+				else
+				{
+					Console.WriteLine("The topology was not saved.");
+					Console.WriteLine(
+						"There was not topology loaded with the name {0}.",
+						name);
+				}
             }
             catch (IOException ex)
             {
@@ -113,29 +155,51 @@ namespace ENN.Runtime
         {
             Console.WriteLine("Saving settings...");
 
-            string filePath =
-                "Settings\\settings_" + DateTime.Today.Day + "-" +
-                                        DateTime.Today.Month + "-" +
-                                        DateTime.Today.Year + ".nns";
-            foreach (RawCommand command in commands)
-            {
-                if (command.CommandChar == 'f')
-                {
-                    filePath = command.Value;
-                    break;
-                }
-            }
+			string filePath = "";
+			bool binary = false;
+
+			foreach (RawCommand command in commands)
+			{
+				if (command.CommandChar == 'f')
+				{
+					filePath = command.Value;
+				}
+				else if (command.CommandChar == 'b')
+				{
+					binary = true;
+				}
+			}
+
+			if (filePath == "")
+			{
+				filePath =
+				"Topologies\\settings_" + DateTime.Today.Day + "-" +
+											  DateTime.Today.Month + "-" +
+											  DateTime.Today.Year + ".";
+				if (binary)
+				{
+					filePath += "nnsc";
+				}
+				else
+				{
+					filePath += "nns";
+				}
+			}
+
+			if (!binary)
+			{
+				binary = filePath.EndsWith("nnsc", true, null);
+			}
 
             try
             {
-
                 Settings.Save(settings, filePath);
-                Console.WriteLine("Saving finished");
+                Console.WriteLine("Settings were saved.");
             }
             catch (IOException ex)
             {
-                Console.WriteLine("Settings could not be saved");
-                Console.WriteLine("There was an error writing to the file");
+                Console.WriteLine("The settings could not be saved.");
+                Console.WriteLine("There was an error writing to the file.");
                 #if(DEBUG)
                 Console.WriteLine("Message: {0}\nSource: {1}", ex.Message, ex.Source);
                 #endif

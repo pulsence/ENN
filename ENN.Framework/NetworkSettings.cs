@@ -46,31 +46,6 @@ namespace ENN.Framework
         /// </summary>
         public NetworkType NetworkType { get; set; }
 
-
-        //Execution information
-        /// <summary>
-        /// Location to the user binaries
-        /// </summary>
-        public string UserBinaryLocation { get; set; }
-
-        /// <summary>
-        /// Full name of the user object factory in the binaries.
-        /// <example>Namespace.ClassName</example>
-        /// <example>TestUserBinary.TestBinary</example>
-        /// </summary>
-        public string UserBinaryClassName { get; set; }
-
-        /// <summary>
-        /// Name that the binary will have in the runetime.
-        /// </summary>
-        public string UserBinaryName { get; set; }
-
-        /// <summary>
-        /// Determines if the binaries should be used or not.
-        /// </summary>
-        public bool UseUserBinaries { get; set; }
-
-        
         /// <summary>
         /// Default data type for the input layer.
         /// </summary>
@@ -129,11 +104,6 @@ namespace ENN.Framework
             Mode = NetworkMode.Computational;
             NetworkType = NetworkType.Evolving;
 
-            UserBinaryLocation = "UserBin\\";
-            UserBinaryClassName = "N\\A";
-            UserBinaryName = "N\\A";
-            UseUserBinaries = false;
-
             DefaultInputLayer = "BasicInputLayer";
             DefaultNode = "BasicNode";
             DefaultHiddenLayer = "BasicNodeLayer";
@@ -153,9 +123,6 @@ namespace ENN.Framework
             StringBuilder outVal =new StringBuilder();
             outVal.AppendLine("Mode: " + Mode);
             outVal.AppendLine("Network Type: " + NetworkType);
-            outVal.AppendLine("User Binary Location: " + UserBinaryLocation);
-            outVal.AppendLine("User Binary Name: " + UserBinaryName);
-            outVal.AppendLine("Use User Binary: " + UseUserBinaries);
             outVal.AppendLine("Default Input Layer: " + DefaultInputLayer);
             outVal.AppendLine("Default Node: " + DefaultNode);
             outVal.AppendLine("Default Node Layer: " + DefaultHiddenLayer);
@@ -178,11 +145,6 @@ namespace ENN.Framework
 
 			if (this.Mode != other.Mode ||
 				this.NetworkType != other.NetworkType) return true;
-
-			if (this.UserBinaryClassName != other.UserBinaryClassName ||
-				this.UserBinaryLocation != other.UserBinaryLocation ||
-				this.UserBinaryName != other.UserBinaryName ||
-				this.UseUserBinaries != other.UseUserBinaries) return false;
 
 			if (this.DefaultFactory != other.DefaultFactory ||
 				this.DefaultHiddenLayer != other.DefaultHiddenLayer ||

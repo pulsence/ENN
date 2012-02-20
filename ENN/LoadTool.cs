@@ -44,7 +44,7 @@ namespace ENN.Runtime
 		/// can be executed.</param>
         public void RunCommand(List<RawCommand> commands)
         {
-            if (commands.Count < 2)
+            if (commands.Count == 1)
             {
                 Console.WriteLine(
                     "This tool allows you to load settings, topolgy, and user binary from a file");
@@ -77,17 +77,68 @@ namespace ENN.Runtime
         void TopologyHandler(List<RawCommand> commands)
         {
             Console.WriteLine("Loading topology...");
+			if (commands[2].CommandChar != 'f')
+			{
+				Console.WriteLine("Topology could not be loaded");
+				Console.WriteLine("No file was specified");
+				return;
+			}
+
             try
             {
-                NetworkTopology topology = Topology.Load(commands[2].Value, ref objectFactory, ref settings);
-                if (topologies.ContainsKey(topology.MetaData["name"]))
-                {
-                    topologies[topology.MetaData["name"]] = topology;
-                }
-                else
-                {
-                    topologies.Add(topology.MetaData["name"], topology);
-                }
+				bool binary = false;
+				string name = "";
+
+				for (int i = 3; i < commands.Count; i++)
+				{
+					if (commands[i].CommandChar == 'b')
+					{
+						binary = true;
+					}
+					else if (commands[i].CommandChar == 'n')
+					{
+						name = commands[i].Value;
+					}
+				}
+
+				if(!binary)
+				{
+					binary = commands[2].Value.EndsWith("nntc", true, null);
+				}
+
+                NetworkTopology topology = Topology.Load(commands[2].Value,
+					ref objectFactory, ref settings, binary);
+
+				if (name == "")
+				{
+					if (topology.MetaData.ContainsKey("name"))
+					{
+						name = topology.MetaData["name"];
+					}
+					else
+					{
+						int i = 0;
+						bool topologyAdded = false;
+						while (!topologyAdded)
+						{
+							if (!topologies.ContainsKey("topology" + i))
+							{
+								name = "topolog" + i;
+								topologyAdded = true;
+							}
+						}
+					}
+				}
+
+
+				if (topologies.ContainsKey(name))
+				{
+					topologies[name] = topology;
+				}
+				else
+				{
+					topologies.Add(name, topology);
+				}
                 Console.WriteLine("Finished loading.");
             }
             catch (IOException ex)
@@ -115,10 +166,30 @@ namespace ENN.Runtime
 		/// command</param>
         void SettingsHandler(List<RawCommand> commands)
         {
-            Console.WriteLine("Loading settings...");
+			Console.WriteLine("Loading settings...");
+			if (commands[2].CommandChar != 'f')
+			{
+				Console.WriteLine("Settings could not be loaded");
+				Console.WriteLine("No file was specified");
+				return;
+			}
+
             try
             {
-                settings = Settings.Load(commands[2].Value);
+				bool binary = false;
+				if (commands.Count > 3)
+				{
+					if (commands[3].CommandChar == 'b')
+					{
+						binary = true;
+					}
+					else
+					{
+						binary = commands[2].Value.EndsWith("nnsc", true, null);
+					}
+				}
+
+                settings = Settings.Load(commands[2].Value, binary);
                 Console.WriteLine("Loading has finished");
             }
             catch (IOException ex)
@@ -147,23 +218,65 @@ namespace ENN.Runtime
 		/// command</param>
         void BinaryHandler(List<RawCommand> commands)
         {
-            Console.WriteLine("Loading binary...");
-            Assembly assembly = Assembly.LoadFrom(settings.UserBinaryLocation);
-            IUserObjectFactory factory =
-                (IUserObjectFactory)assembly.CreateInstance(settings.UserBinaryClassName);
-            if (objectFactory == null) Console.WriteLine("The binary was not loaded successfully");
-            else
-            {
-                if (objectFactory.ContainsKey(settings.UserBinaryName))
-                {
-                    objectFactory[settings.UserBinaryName] = factory;
-                }
-                else
-                {
-                    objectFactory.Add(settings.UserBinaryName, factory);
-                }
-            }
-            Console.WriteLine("Finished");
+			Console.WriteLine("Loading binary...");
+			if (commands[2].CommandChar != 'f')
+			{
+				Console.WriteLine("User binary could not be loaded");
+				Console.WriteLine("No file was specified");
+				return;
+			}
+
+			try
+			{
+				string name = "";
+				if (commands.Count > 3)
+				{
+					if (commands[3].CommandChar == 'n')
+					{
+						name = commands[3].Value;
+					}
+				}
+
+				Assembly assembly = Assembly.LoadFrom(commands[2].Value);
+				IUserObjectFactory factory = null;
+					//(IUserObjectFactory)assembly.CreateInstance("IUserObjectFactory");
+
+				foreach (Type type in assembly.GetTypes())
+				{
+					if (type.GetInterface("IUserObjectFactory") != null)
+					{
+						factory = (IUserObjectFactory)Activator.CreateInstance(type);
+						if (name == "")
+						{
+							name = type.Name;
+						}
+						break;
+					}
+				}
+
+				if (factory == null)
+				{
+					Console.WriteLine("The binary was not loaded successfully.");
+					return;
+				}
+				else
+				{
+					if (objectFactory.ContainsKey(name))
+					{
+						objectFactory[name] = factory;
+					}
+					else
+					{
+						objectFactory.Add(name, factory);
+					}
+				}
+				Console.WriteLine("Finished loading the binary.");
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine("The user binary file could not be loaded.");
+				Console.WriteLine("There was an error reading the file");
+			}
         }
     }
 }

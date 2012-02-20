@@ -6,26 +6,21 @@ extentions. The runtime is used through the command line and has a variety of to
 settings and topologies. It also runs networks.GUI Apps are applications that assist in the creation of
 settings files and topologies.
 
-Version: preBeta 1.0.0 2.17.2012
+To read the topology and settings file specification, go to the following address:
+https://docs.google.com/open?id=0B-lvvNhCn-WJNzU4ZDYyMWUtMDVmMS00NDJmLWE0NzItNjA0NTg0YmE1MDY4
+
+Version: preBeta 1.0.0 2.20.2012
 Newly Added:
 Framework:
--Hill Climb Algorithm was implimented for training
 
 Runtime:
--Clean up settings file specification
--Define binary settings file
--Load binary settings file
--Save binary settings file
--Clean up topology file specification
--Define binary topology file
--Load binary topology file
--Save binary topology file
+-Allow multiple topologies to be loaded
+-Allow multiple user defined binaries to be loaded
 
 GUI Apps:
--seettingsbuilder:
+-settingsbuilder:
 	-added support for newer settings file specification
 -topologybuilder:
-	-can create topology hierarchy
 
 Finished:
 Framework:
@@ -35,6 +30,7 @@ Framework:
 -Activation functions
 -Standard library factory
 -Create learning algorithm interface
+-Impliment evolution algorithm
 -Impliment hill climbing algorithm
 -Created topology helper class
 	-load/save topologies
@@ -44,9 +40,10 @@ Framework:
 Runtime:
 -load tool
 	-can load binary and text files
+	-can load multiple user binaries and topologies
 	-now uses a helper class in the runtime
 -update tool
-	-can only change settings
+	-can modify settings
 -save tool
 	-can load binary and text files
 	-now uses a helper class in the runtime
@@ -58,12 +55,7 @@ Runtime:
 	-full load
 	-full save
 	-full run
-	-partial update
-		-only settings
 -commands tool
--Clean up settings file specification
--Clean up topology file specification
-
 
 GUI Apps:
 -Settings Builder nearly finished
@@ -71,17 +63,13 @@ GUI Apps:
 
 To Do:
 Framework:
--Allow user defined combination functions
--Allow user defined activation functions
--Impliment evolution algorithm
--Allow multiple topologies to be loaded
--Allow multiple user defined binaries to be loaded
 -Add comments
 -Add more data validation tests
 
 Runtime:
--Update topology from command line
--Optimize topology loading
+-Clean up settings file specification
+-Clean up topology file specification
+-Allow for topologies to be saved after being trained
 -Add comments
 -Add more data validation tests
 -Use default time when acceptable
@@ -92,3 +80,6 @@ GUI Apps:
 	-Load and Save topology
 	-specifiy data types for each topology item
 	-finish implimenting menu items
+
+Test Suite:
+-need to fix all the tests and finish creating the tests

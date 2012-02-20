@@ -1,0 +1,89 @@
+#Created on 2/20/2012 12:47:03 AM
+
+#Topology
+topology{
+	name:main
+	algorithmFactory:standard
+	trainingAlgorithm:HillClimbAlgo
+}
+
+#Topology Layers
+layer{
+	type:input
+	dataType:BasicInputLayer
+	inputIndexes:{0,1,2,3}
+}
+
+layer{
+	type:output
+	dataType:BasicOutputLayer
+}
+
+layer{
+	type:hidden
+	dataType:BasicLayer
+	layerName:LayerOne
+	nodeCount:3
+}
+
+layer{
+	type:hidden
+	dataType:BasicLayer
+	layerName:LayerTwo
+	nodeCount:3
+}
+
+#Pre and Post processors
+preprocessor{
+	dataType:BasicPreProcessor
+	factory:TestBinary
+}
+
+postprocessor{
+	dataType:BasicPostProcessor
+	factory:TestBinary
+}
+
+#Nodes
+node{
+	dataType:BasicNode
+	layer:LayerOne
+	activationFunction:logistic
+	combinationWeights:0.4, 0.3, 0.2, 0.6
+}
+
+node{
+	dataType:BasicNode
+	layer:LayerOne
+	activationFunction:logistic
+	combinationWeights:0.4, 0.3, 0.2, 0.6
+}
+
+node{
+	dataType:BasicNode
+	layer:LayerOne
+	activationFunction:logistic
+	combinationWeights:0.4, 0.3, 0.2, 0.6
+}
+
+node{
+	dataType:BasicNode
+	layer:LayerTwo
+	activationFunction:logistic
+	combinationWeights:0.4, 0.3, 0.2
+}
+
+node{
+	dataType:BasicNode
+	layer:LayerTwo
+	activationFunction:logistic
+	combinationWeights:0.4, 0.3, 0.2
+}
+
+node{
+	dataType:BasicNode
+	layer:LayerTwo
+	activationFunction:logistic
+	combinationWeights:0.4, 0.3, 0.2
+}
+

@@ -87,18 +87,6 @@ namespace ENN.Framework.Tools
                             settings.NetworkType = NetworkType.Evolving;
                         }
                         break;
-                    case "userbinarylocation":
-                        settings.UserBinaryLocation = key.Value;
-                        break;
-                    case "userbinaryclassname":
-                        settings.UserBinaryClassName = key.Value;
-                        break;
-                    case "userbinaryname":
-                        settings.UserBinaryName = key.Value;
-                        break;
-                    case "useuserbinary":
-                        settings.UseUserBinaries = (key.Value.ToLower() == "true");
-                        break;
                     case "inputlayer":
                         settings.DefaultInputLayer = key.Value;
                         break;
@@ -187,10 +175,6 @@ namespace ENN.Framework.Tools
             writer.WriteLine("networkmode:{0}", settings.Mode);
 			writer.WriteLine("networktype:{0}", settings.NetworkType);
             writer.WriteLine("\n#User Defined Binary settings");
-			writer.WriteLine("userbinarylocation:{0}", settings.UserBinaryLocation);
-			writer.WriteLine("userbinaryclassname:{0}", settings.UserBinaryClassName);
-			writer.WriteLine("userbinaryname:{0}", settings.UserBinaryName);
-			writer.WriteLine("useuserbinary:{0}", settings.UseUserBinaries);
             writer.WriteLine("\n#Default data types");
 			writer.WriteLine("inputlayer:{0}", settings.DefaultInputLayer);
 			writer.WriteLine("node:{0}", settings.DefaultNode);

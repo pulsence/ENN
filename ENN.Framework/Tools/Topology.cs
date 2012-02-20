@@ -131,6 +131,10 @@ namespace ENN.Framework.Tools
 				else if (rawTypes[i].Type == "topology")
 				{
 					topology.MetaData = rawTypes[i].Fields;
+					if(!rawTypes[i].Fields.ContainsKey("algorithmFactory"))
+					{
+						rawTypes[i].Fields.Add("algorithmFactory", factoryName);
+					}
 					topology.TrainingAlgorithm = objectFactories[rawTypes[i].Fields["algorithmFactory"]].
 						CreateUserObject<ITrainingAlgorithm>(
 							rawTypes[i].Fields["trainingAlgorithm"],

@@ -41,12 +41,12 @@ namespace ENN.Runtime
 		/// can be executed.</param>
         public void RunCommand(List<RawCommand> commands)
         {
-            if (commands.Count < 2)
+            if (commands.Count == 1)
             {
                 Console.WriteLine("This tool allows you to update the current settings and topolgy");
                 Console.WriteLine("To learn more about how to use this tool type the command -h -u");
             }
-            else if (commands[1].CommandChar == 's')
+            else if (commands[1].CommandChar == 'k' && commands[2].CommandChar == 'v')
             {
                 SettingsHandler(commands);
             }
@@ -64,15 +64,8 @@ namespace ENN.Runtime
 		/// command</param>
         void SettingsHandler(List<RawCommand> commands)
         {
-            Dictionary<string, string> other = settings.Other;
-            string key = "";
-            string value = "";
-
-            foreach (RawCommand command in commands)
-            {
-                if (command.CommandChar == 'k') key = command.Value;
-                else if (command.CommandChar == 'v') value = command.Value;
-            }
+            string key = commands[1].Value;
+            string value = commands[2].Value;
 
             switch (key)
             {
@@ -106,18 +99,6 @@ namespace ENN.Runtime
                         settings.NetworkType = NetworkType.Evolving;
                     }
                     break;
-                case "userbinarylocation":
-                    settings.UserBinaryLocation = value;
-                    break;
-                case "userbinaryclassname":
-                    settings.UserBinaryClassName = value;
-                    break;
-                case "userbinaryname":
-                    settings.UserBinaryName = value;
-                    break;
-                case "useusesbinary":
-                    settings.UseUserBinaries = (value.ToLower() == "true");
-                    break;
                 case "inputlayer":
                     settings.DefaultInputLayer = value;
                     break;
@@ -149,13 +130,13 @@ namespace ENN.Runtime
                     settings.TraininPool = trainPool;
                     break;
                 default:
-                    if(other.ContainsKey(key))
+                    if(settings.Other.ContainsKey(key))
                     {
-                        other[key] = value;
+						settings.Other[key] = value;
                     }
                     else
                     {
-                        other.Add(key, value);
+						settings.Other.Add(key, value);
                     }
                     break;
             }

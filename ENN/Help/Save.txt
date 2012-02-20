@@ -2,9 +2,20 @@
 This tool allows you to save settings and topology to file
 The command takes another command, -s or -t to determine what is being
 saved.
+
 -s refers to settings and -t refers to topology
-For -t also add -n {name of topology} if you want to save a specific
-topology.
-The command also takes another command -f which specifies the file location
+For -t also add -n {name of topology} to save a specific topology. If this
+is not included then no topologies will be saved.
+
+The commands also takes another command -f which specifies the file
+location. They also take the -b flag which when added tells the tool to
+create a binary file. If this is not included then a binary or text file
+is created based upon the file extention.
+
 Note: if -f is not specified a stock name is used and the file is saved in
 either the Settings or Topologies folder.
+
+Examples:
+-s -s
+-s -s -f C:\\ENN\\Settings\\mySettings.nnsc -b
+-s -t -n mainTopology -f C:\\ENN\\Topologies\\mainTopology.nnt

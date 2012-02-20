@@ -1,9 +1,9 @@
 ﻿Update Tool
 This tool updates the currently loaded settings.
-It takes one commands -s for settings.
 
--s command
-The -s commnad updates settings values
+This command takes two parameters which are outlined below. The paremeters
+must be order in the following fashion, -k <value> -v <value>. If -k does
+not come immediatly before -v then the command will not be processed.
 <parameter>	Parameter Name	Description
 ---------------------------------------------------------------------------
    -k		Key		The name of the key to change
@@ -17,17 +17,13 @@ Key Name		Value Expected
 ---------------------------------------------------------------------------
 networkmode		training or computational
 networktype		traditional or evolving
-userbinarylocation	Path to the directory
-userbinaryclassname	Full name of class, namespace.class
-userbinaryname		Name of something
-useuserbinary		true or false
-inputlayer		Name of the class to use
-node			Name of the class to use
-nodelayer		Name of the class to use
-outputlayer		Name of the class to use
+inputlayer		Name of the default class to use
+node			Name of the default class to use
+nodelayer		Name of the default class to use
+outputlayer		Name of the default class to use
 enabletiming		true or false
 trainingaccuracy	Decimal value for accuracy ex: 0.9
 trainingiterations	Integer value
 trainingpool		Integer value
 
-Example: -u -s -k networkmode -v training
+Example: -u -k networkmode -v training

@@ -50,22 +50,22 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Runtime\Layers\BasicInputLayerTest.cs" />
-    <Compile Include="Runtime\Layers\BasicLayerTest.cs" />
-    <Compile Include="Runtime\Layers\BasicOutputLayerTest.cs" />
-    <Compile Include="Runtime\CombinationFunctionsTest.cs" />
-    <Compile Include="Runtime\Nodes\CustomizableNodeTest.cs" />
-    <Compile Include="Runtime\HillClimbAlgoTest.cs" />
-    <Compile Include="Runtime\NetworkSettingsTest.cs" />
-    <Compile Include="Runtime\NetworkTopologyTest.cs" />
-    <Compile Include="Runtime\NeuralNetworkTest.cs" />
-    <Compile Include="Runtime\Nodes\BasicNodeTest.cs" />
+    <Compile Include="Framework\Layers\BasicInputLayerTest.cs" />
+    <Compile Include="Framework\Layers\BasicLayerTest.cs" />
+    <Compile Include="Framework\Layers\BasicOutputLayerTest.cs" />
+    <Compile Include="Framework\CombinationFunctionsTest.cs" />
+    <Compile Include="Framework\Nodes\CustomizableNodeTest.cs" />
+    <Compile Include="Framework\HillClimbAlgoTest.cs" />
+    <Compile Include="Framework\NetworkSettingsTest.cs" />
+    <Compile Include="Framework\NetworkTopologyTest.cs" />
+    <Compile Include="Framework\NeuralNetworkTest.cs" />
+    <Compile Include="Framework\Nodes\BasicNodeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Runtime\Tools\SettingsTest.cs" />
-    <Compile Include="Runtime\Tools\TopologyTest.cs" />
-    <Compile Include="Runtime\SigmoidFunctionsTest.cs" />
-    <Compile Include="Runtime\StandLibFactoryTest.cs" />
-    <Compile Include="Runtime\Layers\ThreadedHiddenLayerTest.cs" />
+    <Compile Include="Framework\Tools\SettingsTest.cs" />
+    <Compile Include="Framework\Tools\TopologyTest.cs" />
+    <Compile Include="Framework\SigmoidFunctionsTest.cs" />
+    <Compile Include="Framework\StandLibFactoryTest.cs" />
+    <Compile Include="Framework\Layers\ThreadedHiddenLayerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENN.Framework\ENN.Framework.csproj">

@@ -38,6 +38,12 @@ namespace ENN.SettingsBuilder
             settings = new NetworkSettings();
             networkMode.SelectedIndex = 0;
             networkType.SelectedIndex = 0;
+
+			defaultInput.SelectedIndex = 0;
+			defaultHidden.SelectedIndex = 0;
+			defaultOutput.SelectedIndex = 0;
+			defaultNode.SelectedIndex = 0;
+			defaultFactory.SelectedIndex = 0;
         }
 
 		/// <summary>
@@ -47,17 +53,34 @@ namespace ENN.SettingsBuilder
         private void binaryFileButton_Click(object sender, EventArgs e)
         {
             chooseBinary.ShowDialog();
-            binaryLocation.Text = chooseBinary.FileName;
-            Assembly assembly = Assembly.LoadFrom(binaryLocation.Text);
+			string name;
+			Assembly assembly = Assembly.LoadFrom(chooseBinary.FileName);
             Type[] types = assembly.GetTypes();
             foreach (Type type in types)
             {
                 if (type.GetInterface("IUserObjectFactory") != null)
                 {
-                    className.Text = type.FullName;
-                    binaryName.Text = type.Name;
-                    useBinary.Checked = true;
-                    break;
+					name = type.Name;
+					if (type.GetInterface("IUserObjectFactory") != null)
+					{
+						defaultFactory.Items.Add(name);
+					}
+					else if (type.GetInterface("IInputLayer") != null)
+					{
+						defaultInput.Items.Add(name);
+					}
+					else if (type.GetInterface("IHiddenLayer") != null)
+					{
+						defaultHidden.Items.Add(name);
+					}
+					else if (type.GetInterface("IOutputLayer") != null)
+					{
+						defaultOutput.Items.Add(name);
+					}
+					else if (type.GetInterface("INode") != null)
+					{
+						defaultNode.Items.Add(name);
+					}
                 }
             }
         }
@@ -88,11 +111,6 @@ namespace ENN.SettingsBuilder
                 {
                     networkType.SelectedIndex = 1;
                 }
-
-                binaryLocation.Text = settings.UserBinaryLocation;
-                className.Text = settings.UserBinaryClassName;
-                binaryName.Text = settings.UserBinaryName;
-                useBinary.Checked = settings.UseUserBinaries;
 
                 defaultInput.Text = settings.DefaultInputLayer;
                 defaultNode.Text = settings.DefaultNode;
@@ -143,12 +161,7 @@ namespace ENN.SettingsBuilder
                 settings.NetworkType = NetworkType.Traditional;
             else
                 settings.NetworkType = NetworkType.Evolving;
-
-            settings.UserBinaryName = binaryName.Text;
-            settings.UserBinaryLocation = binaryLocation.Text;
-            settings.UserBinaryClassName = className.Text;
-            settings.UseUserBinaries = useBinary.Checked;
-
+			
             settings.DefaultInputLayer = defaultInput.Text;
             settings.DefaultHiddenLayer = defaultHidden.Text;
             settings.DefaultOutputLayer = defaultOutput.Text;

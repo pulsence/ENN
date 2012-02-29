@@ -25,6 +25,9 @@ using ENN.Framework;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// The pre processor layer view.
+	/// </summary>
 	public partial class PreProcessorView : LayerView
 	{
 		public PreProcessorView()

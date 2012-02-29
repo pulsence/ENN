@@ -25,6 +25,9 @@ using ENN.Framework;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// The input layer view.
+	/// </summary>
 	public partial class InputLayerView : LayerView
 	{
 		public InputLayerView()
@@ -41,9 +44,21 @@ namespace ENN.TopologyBuilder.Views
 				info.SetFactory(metaData["factory"]);
 			if (metaData.ContainsKey("dataType"))
 				info.SetDataType(metaData["dataType"]);
+			if(metaData.ContainsKey("inputCount"))
+				info.SetInputCount(metaData["inputCount"]);
 			info.SetExtraFields(metaData);
 
 			return info;
+		}
+
+		public int GetInputCount()
+		{
+			int count = 0;
+			if (metaData.ContainsKey("inputCount"))
+			{
+				int.TryParse(metaData["inputCount"], out count);
+			}
+			return count;
 		}
 	}
 }

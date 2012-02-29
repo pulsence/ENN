@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="695617a8-ec18-4b3d-9d5f-7a6920d4bf88" name="skynryd9@LIL-MONEY-PIT 2012-02-21 17:08:27" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-21 17_08_27">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution hostProcessPlatform="MSIL">
+      <Hosts skipUnhostableTests="false" />
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+      </TestTypeSpecific>
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-21T17:08:27.9768847-05:00" queuing="2012-02-21T17:08:28.0998917-05:00" start="2012-02-21T17:08:28.1118924-05:00" finish="2012-02-21T17:08:28.4509118-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="5577bcbe-3b62-1f0a-eed4-fd75c6d9137e">
+      <Execution id="67b69664-0a84-4cc8-b3d0-98446b078160" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5577bcbe-3b62-1f0a-eed4-fd75c6d9137e" executionId="67b69664-0a84-4cc8-b3d0-98446b078160" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="67b69664-0a84-4cc8-b3d0-98446b078160" testId="5577bcbe-3b62-1f0a-eed4-fd75c6d9137e" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0443658" startTime="2012-02-21T17:08:28.1168927-05:00" endTime="2012-02-21T17:08:28.4149098-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67b69664-0a84-4cc8-b3d0-98446b078160">
+    </UnitTestResult>
+  </Results>
+</TestRun>

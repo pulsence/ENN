@@ -25,7 +25,10 @@ using ENN.Framework;
 
 namespace ENN.TopologyBuilder.Views
 {
-	public partial class HiddenLayerView :LayerView
+	/// <summary>
+	/// The hidden layer view. Node layer views can be added to this layer.
+	/// </summary>
+	public partial class HiddenLayerView : LayerView, ICloneable
 	{
 		public HiddenLayerView()
 		{
@@ -50,6 +53,19 @@ namespace ENN.TopologyBuilder.Views
 			info.SetExtraFields(metaData);
 
 			return info;
+		}
+
+		/// <summary>
+		/// Gets the nodes that are currently in the layer.
+		/// </summary>
+		public LayerView[] GetNodes()
+		{
+			LayerView[] nodes = new LayerView[nodeLayout.Controls.Count];
+			for (int i = 0; i < nodes.Length; i++)
+			{
+				nodes[i] = (LayerView)nodeLayout.Controls[i];
+			}
+			return nodes;
 		}
 
 		/// <summary>
@@ -124,5 +140,19 @@ namespace ENN.TopologyBuilder.Views
 
 		}
 		#endregion
+
+		public object Clone()
+		{
+			HiddenLayerView clone = new HiddenLayerView();
+			clone.metaData = this.metaData;
+			clone.SetMetaDataModel(ref this.metaDataPool);
+
+			foreach (LayerView node in GetNodes())
+			{
+				clone.AddNode((NodeView)node);
+			}
+
+			return clone;
+		}
 	}
 }

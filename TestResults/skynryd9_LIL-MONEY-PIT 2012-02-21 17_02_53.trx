@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b15e80f6-914b-497a-97ad-e5304d20e34f" name="skynryd9@LIL-MONEY-PIT 2012-02-21 17:02:53" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-21 17_02_53">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution hostProcessPlatform="MSIL">
+      <Hosts skipUnhostableTests="false" />
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+      </TestTypeSpecific>
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-21T17:02:53.6287611-05:00" queuing="2012-02-21T17:02:53.7887702-05:00" start="2012-02-21T17:02:53.7987708-05:00" finish="2012-02-21T17:02:54.1157889-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="sumationTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="d7de268d-ad00-3d1a-9ef6-c7d7c6d2c881">
+      <Execution id="cf41bccd-f3c7-4967-b90c-a83cca997000" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.CombinationFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="sumationTest" />
+    </UnitTest>
+    <UnitTest name="productionTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="41c561ac-f514-03ed-4f2e-66225ee0a9b3">
+      <Execution id="90f238c4-305b-4fe4-a8e8-8177456241dd" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.CombinationFunctionsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="productionTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="41c561ac-f514-03ed-4f2e-66225ee0a9b3" executionId="90f238c4-305b-4fe4-a8e8-8177456241dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7de268d-ad00-3d1a-9ef6-c7d7c6d2c881" executionId="cf41bccd-f3c7-4967-b90c-a83cca997000" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="90f238c4-305b-4fe4-a8e8-8177456241dd" testId="41c561ac-f514-03ed-4f2e-66225ee0a9b3" testName="productionTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0383709" startTime="2012-02-21T17:02:53.8027710-05:00" endTime="2012-02-21T17:02:54.0827870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90f238c4-305b-4fe4-a8e8-8177456241dd">
+    </UnitTestResult>
+    <UnitTestResult executionId="cf41bccd-f3c7-4967-b90c-a83cca997000" testId="d7de268d-ad00-3d1a-9ef6-c7d7c6d2c881" testName="sumationTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0008742" startTime="2012-02-21T17:02:54.0857872-05:00" endTime="2012-02-21T17:02:54.0897874-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf41bccd-f3c7-4967-b90c-a83cca997000">
+    </UnitTestResult>
+  </Results>
+</TestRun>

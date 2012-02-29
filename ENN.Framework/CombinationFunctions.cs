@@ -26,7 +26,7 @@ namespace ENN.Framework
     /// <summary>
     /// Class containing two common combination methods that can be used.
     /// </summary>
-    public class CombinationFunctions
+    public static class CombinationFunctions
     {
         /// <summary>
         /// Standard sumation operation. Corrisponding nodeValues and constants are

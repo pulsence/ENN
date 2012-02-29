@@ -26,6 +26,12 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Delegate for the InformationChanged event. This event is called when ever
+	/// meta data is modified.
+	/// </summary>
+	/// <param name="key">The meta data key being modified.</param>
+	/// <param name="value">The value to set the key too.</param>
 	public delegate void InformationChangedHandler(string key, string value);
 
 	/// <summary>
@@ -162,7 +168,7 @@ namespace ENN.TopologyBuilder.Views
 		/// <summary>
 		/// Updates the factory meta data when ever the factory selection changes.
 		/// </summary>
-		private void factory_SelectedIndexChanged(object sender, EventArgs e)
+		protected virtual void factory_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			InvokeInformationChanged("factory", (string)factory.SelectedItem);
 		}
@@ -170,7 +176,7 @@ namespace ENN.TopologyBuilder.Views
 		/// <summary>
 		/// Updates the data type meta data when ever the dataType selection is changed.
 		/// </summary>
-		private void dataType_SelectedIndexChanged(object sender, EventArgs e)
+		protected virtual void dataType_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			InvokeInformationChanged("dataType", (string)dataType.SelectedItem);
 		}

@@ -18,3 +18,4 @@ C:\Development Projects\ENN\ENN.TopologyBuilder\obj\x86\Debug\ENN.TopologyBuilde
 C:\Development Projects\ENN\ENN.TopologyBuilder\obj\x86\Debug\ENN.TopologyBuilder.Views.LayerView.resources
 C:\Development Projects\ENN\ENN.TopologyBuilder\obj\x86\Debug\ENN.TopologyBuilder.Views.PreProcessorView.resources
 C:\Development Projects\ENN\ENN.TopologyBuilder\obj\x86\Debug\ENN.TopologyBuilder.Views.NodeMetaDataView.resources
+C:\Development Projects\ENN\ENN.TopologyBuilder\obj\x86\Debug\ENN.TopologyBuilder.Views.TopologyMetaDataView.resources

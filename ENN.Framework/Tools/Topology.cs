@@ -25,7 +25,7 @@ namespace ENN.Framework.Tools
     /// <summary>
     /// Static tool class that has functions for manipulating topologies.
     /// </summary>
-    static public class Topology
+    public static class Topology
     {
 		/// <summary>
 		/// Loads a NetwokTopology from either a text file or binary file.
@@ -40,7 +40,7 @@ namespace ENN.Framework.Tools
 		/// a text file will be loaded. By default this is false.</param>
 		/// <returns></returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static public NetworkTopology Load(
+        public static NetworkTopology Load(
             string file,
             ref Dictionary<string, IUserObjectFactory> objectFactories,
             ref NetworkSettings settings, bool binary = false)
@@ -60,7 +60,7 @@ namespace ENN.Framework.Tools
 		/// <returns>Returns the NetworkTopology located inside of the file.
 		/// If the file can not be parsed null is returned.</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private NetworkTopology LoadText(
+        private static NetworkTopology LoadText(
             string file,
             ref Dictionary<string, IUserObjectFactory> objectFactories,
             ref NetworkSettings settings)
@@ -162,7 +162,7 @@ namespace ENN.Framework.Tools
 		/// <param name="file">Location of the file to open.</param>
 		/// <returns>Returns a list of raw types found in the file.</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private List<RawType> GetRawTypes(string file)
+        private static List<RawType> GetRawTypes(string file)
         {
             StreamReader fs = File.OpenText(file);
 
@@ -226,7 +226,7 @@ namespace ENN.Framework.Tools
 		/// <param name="file">The file containing the topology.</param>
 		/// <returns>Returns the string version number. Example 1.0</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-		static private string GetVersion(string file)
+		private static string GetVersion(string file)
 		{
 			StreamReader reader = new StreamReader(file);
 			string version = reader.ReadLine();
@@ -254,7 +254,7 @@ namespace ENN.Framework.Tools
 		/// <returns>Returns the NetworkTopology found in the file. If the was some
 		/// trouble loading the file then null will be returned.</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private NetworkTopology LoadBinary(string file)
+        private static NetworkTopology LoadBinary(string file)
         {
             Stream fs = new FileStream(file, FileMode.Open, FileAccess.Read);
             BinaryFormatter binary = new BinaryFormatter();
@@ -269,7 +269,7 @@ namespace ENN.Framework.Tools
         /// <param name="file">Location to save the file.</param>
 		/// <param name="topology">The topology to save to file.</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static public void Save(string file, NetworkTopology topology, bool binary = false)
+        public static void Save(string file, NetworkTopology topology, bool binary = false)
         {
             if(binary)
                 SaveBinary(file, ref topology);
@@ -287,10 +287,11 @@ namespace ENN.Framework.Tools
 		/// <param name="file">The location of the file</param>
 		/// <param name="topology">The NetworkTopology object to persist</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private void SaveText(string file, ref NetworkTopology topology)
+        private static void SaveText(string file, ref NetworkTopology topology)
         {
             StreamWriter writer = new StreamWriter(file);
 
+			writer.WriteLine("version:1.0");
             writer.WriteLine("#Created on {0}", DateTime.Now);
             writer.WriteLine();
 
@@ -362,7 +363,7 @@ namespace ENN.Framework.Tools
 		/// to write to disk</param>
 		/// <param name="metaData">The object whoes meta data should be writen to disk</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private void WriteMeta(ref StreamWriter writer, IMetaData metaData)
+        private static void WriteMeta(ref StreamWriter writer, IMetaData metaData)
         {
             foreach (KeyValuePair<string, string> el in metaData.MetaData)
             {
@@ -376,7 +377,7 @@ namespace ENN.Framework.Tools
 		/// <param name="file">Location to save the topology.</param>
 		/// <param name="topology">The topology object to persist to disk.</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private void SaveBinary(string file, ref NetworkTopology topology)
+        private static void SaveBinary(string file, ref NetworkTopology topology)
         {
             Stream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Write);
             BinaryFormatter binary = new BinaryFormatter();

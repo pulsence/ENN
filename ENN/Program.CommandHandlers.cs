@@ -30,7 +30,7 @@ namespace ENN.Runtime
 		/// <summary>
 		/// The default respond if the base command is not recognized.
 		/// </summary>
-        static private void DefaultHandler()
+        private static void DefaultHandler()
         {
             Console.WriteLine("You have not placed a valid command. Please try again.");
             Console.WriteLine("If you are not sure what command to use, enter the help " +
@@ -41,7 +41,7 @@ namespace ENN.Runtime
 		/// Handles the running and testing of neural networks.
 		/// </summary>
 		/// <param name="commands"></param>
-		static private void RunHandler(List<RawCommand> commands)
+		private static void RunHandler(List<RawCommand> commands)
         {
             NetworkTopology topology = new NetworkTopology();
 			//gets the topology with the name specified.
@@ -122,7 +122,7 @@ namespace ENN.Runtime
 		/// </summary>
 		/// <param name="commands">Details of what type of information
 		/// should be outputed.</param>
-		static private void StatusHandler(List<RawCommand> commands)
+		private static void StatusHandler(List<RawCommand> commands)
         {
             if (commands.Count > 1)
             {
@@ -154,7 +154,7 @@ namespace ENN.Runtime
 		/// text file with command line commands on individual lines.
 		/// </summary>
 		/// <param name="commands">Information about the scripts</param>
-		static private void CommandScriptHandler(List<RawCommand> commands)
+		private static void CommandScriptHandler(List<RawCommand> commands)
         {
             if (commands[1].CommandChar == 'f')
             {
@@ -191,7 +191,7 @@ namespace ENN.Runtime
 		/// Launchs packaged gui applications from the command line.
 		/// </summary>
 		/// <param name="commands">The applications to launch.</param>
-		static private void AppLauncherHandler(List<RawCommand> commands)
+		private static void AppLauncherHandler(List<RawCommand> commands)
         {
             try
             {
@@ -216,7 +216,7 @@ namespace ENN.Runtime
 		/// the command line based up the commands passed to the function.
 		/// </summary>
 		/// <param name="commands">Determines what help information is displayed.</param>
-		static private void HelpHandler(List<RawCommand> commands)
+		private static void HelpHandler(List<RawCommand> commands)
         {
             if (commands.Count < 2)
             {
@@ -271,7 +271,7 @@ namespace ENN.Runtime
 		/// Helper function used to diplays files on screen.
 		/// </summary>
 		/// <param name="strings">Strings to display.</param>
-		static private void printToCommand(string[] strings)
+		private static void printToCommand(string[] strings)
         {
             foreach (string s in strings)
             {

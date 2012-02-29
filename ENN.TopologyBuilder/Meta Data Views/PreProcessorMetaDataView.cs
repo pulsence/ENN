@@ -26,6 +26,9 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Meta data control panel for the pre processor layer.
+	/// </summary>
 	public partial class PreProcessorMetaDataView : BaseMetaDataView
 	{
 		public PreProcessorMetaDataView(ref MetaDataPoolModel pool)

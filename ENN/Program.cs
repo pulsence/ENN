@@ -24,14 +24,14 @@ namespace ENN.Runtime
 	/// </summary>
     partial class Program
     {
-        static NetworkSettings settings;
-        static Dictionary<string, NetworkTopology> topologies;
+        private static NetworkSettings settings;
+        private static Dictionary<string, NetworkTopology> topologies;
 
-        static LoadTool loadTool;
-        static UpdateTool updateTool;
-        static SaveTool saveTool;
+        private static LoadTool loadTool;
+        private static UpdateTool updateTool;
+        private static SaveTool saveTool;
 
-        static Dictionary<string, IUserObjectFactory> objectFactory;
+        private static Dictionary<string, IUserObjectFactory> objectFactory;
 
         static void Main(string[] args)
         {
@@ -73,7 +73,7 @@ namespace ENN.Runtime
 		/// <param name="raw">The raw unprocessed string that contains the
 		/// command line commands</param>
 		/// <returns></returns>
-        static private Command RetrieveCommand(string raw)
+        private static Command RetrieveCommand(string raw)
         {
             string[] split = raw.Split(' ');
             List<RawCommand> rawCommands = new List<RawCommand>();
@@ -153,7 +153,7 @@ namespace ENN.Runtime
 		/// that are capable to responding to a particular base command.
 		/// </summary>
 		/// <param name="command">The command to process.</param>
-        static private void ProcessCommand(Command command)
+        private static void ProcessCommand(Command command)
         {
             switch (command.BaseType)
             {

@@ -65,7 +65,7 @@
 			// networkModeLabel
 			// 
 			this.networkModeLabel.AutoSize = true;
-			this.networkModeLabel.Location = new System.Drawing.Point(40, 33);
+			this.networkModeLabel.Location = new System.Drawing.Point(12, 24);
 			this.networkModeLabel.Name = "networkModeLabel";
 			this.networkModeLabel.Size = new System.Drawing.Size(77, 13);
 			this.networkModeLabel.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.fileSubMenu});
 			this.mainMenu.Location = new System.Drawing.Point(0, 0);
 			this.mainMenu.Name = "mainMenu";
-			this.mainMenu.Size = new System.Drawing.Size(625, 24);
+			this.mainMenu.Size = new System.Drawing.Size(593, 24);
 			this.mainMenu.TabIndex = 1;
 			this.mainMenu.Text = "mainMenu";
 			// 
@@ -93,21 +93,23 @@
 			// loadMenuItem
 			// 
 			this.loadMenuItem.Name = "loadMenuItem";
-			this.loadMenuItem.Size = new System.Drawing.Size(100, 22);
+			this.loadMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+			this.loadMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.loadMenuItem.Text = "Load";
 			this.loadMenuItem.Click += new System.EventHandler(this.loadMenuItem_Click);
 			// 
 			// saveMenuItem
 			// 
 			this.saveMenuItem.Name = "saveMenuItem";
-			this.saveMenuItem.Size = new System.Drawing.Size(100, 22);
+			this.saveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+			this.saveMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.saveMenuItem.Text = "Save";
 			this.saveMenuItem.Click += new System.EventHandler(this.saveMenuItem_Click);
 			// 
 			// hiddenLabel
 			// 
 			this.hiddenLabel.AutoSize = true;
-			this.hiddenLabel.Location = new System.Drawing.Point(234, 151);
+			this.hiddenLabel.Location = new System.Drawing.Point(206, 142);
 			this.hiddenLabel.Name = "hiddenLabel";
 			this.hiddenLabel.Size = new System.Drawing.Size(107, 13);
 			this.hiddenLabel.TabIndex = 3;
@@ -116,7 +118,7 @@
 			// inputLabel
 			// 
 			this.inputLabel.AutoSize = true;
-			this.inputLabel.Location = new System.Drawing.Point(244, 125);
+			this.inputLabel.Location = new System.Drawing.Point(216, 116);
 			this.inputLabel.Name = "inputLabel";
 			this.inputLabel.Size = new System.Drawing.Size(97, 13);
 			this.inputLabel.TabIndex = 4;
@@ -125,7 +127,7 @@
 			// outputLabel
 			// 
 			this.outputLabel.AutoSize = true;
-			this.outputLabel.Location = new System.Drawing.Point(236, 177);
+			this.outputLabel.Location = new System.Drawing.Point(208, 168);
 			this.outputLabel.Name = "outputLabel";
 			this.outputLabel.Size = new System.Drawing.Size(105, 13);
 			this.outputLabel.TabIndex = 5;
@@ -134,7 +136,7 @@
 			// nodeLabel
 			// 
 			this.nodeLabel.AutoSize = true;
-			this.nodeLabel.Location = new System.Drawing.Point(271, 203);
+			this.nodeLabel.Location = new System.Drawing.Point(243, 194);
 			this.nodeLabel.Name = "nodeLabel";
 			this.nodeLabel.Size = new System.Drawing.Size(70, 13);
 			this.nodeLabel.TabIndex = 7;
@@ -143,7 +145,7 @@
 			// trainIterationLabel
 			// 
 			this.trainIterationLabel.AutoSize = true;
-			this.trainIterationLabel.Location = new System.Drawing.Point(250, 30);
+			this.trainIterationLabel.Location = new System.Drawing.Point(222, 21);
 			this.trainIterationLabel.Name = "trainIterationLabel";
 			this.trainIterationLabel.Size = new System.Drawing.Size(91, 13);
 			this.trainIterationLabel.TabIndex = 8;
@@ -152,7 +154,7 @@
 			// trainPoolLabel
 			// 
 			this.trainPoolLabel.AutoSize = true;
-			this.trainPoolLabel.Location = new System.Drawing.Point(269, 87);
+			this.trainPoolLabel.Location = new System.Drawing.Point(241, 78);
 			this.trainPoolLabel.Name = "trainPoolLabel";
 			this.trainPoolLabel.Size = new System.Drawing.Size(69, 13);
 			this.trainPoolLabel.TabIndex = 9;
@@ -161,7 +163,7 @@
 			// trainAccuracyLabel
 			// 
 			this.trainAccuracyLabel.AutoSize = true;
-			this.trainAccuracyLabel.Location = new System.Drawing.Point(248, 60);
+			this.trainAccuracyLabel.Location = new System.Drawing.Point(220, 51);
 			this.trainAccuracyLabel.Name = "trainAccuracyLabel";
 			this.trainAccuracyLabel.Size = new System.Drawing.Size(93, 13);
 			this.trainAccuracyLabel.TabIndex = 10;
@@ -174,7 +176,7 @@
 			this.networkMode.Items.AddRange(new object[] {
             "computational",
             "training"});
-			this.networkMode.Location = new System.Drawing.Point(123, 30);
+			this.networkMode.Location = new System.Drawing.Point(95, 21);
 			this.networkMode.Name = "networkMode";
 			this.networkMode.Size = new System.Drawing.Size(100, 21);
 			this.networkMode.TabIndex = 15;
@@ -187,7 +189,7 @@
 			// 
 			// binaryFileButton
 			// 
-			this.binaryFileButton.Location = new System.Drawing.Point(42, 87);
+			this.binaryFileButton.Location = new System.Drawing.Point(14, 78);
 			this.binaryFileButton.Name = "binaryFileButton";
 			this.binaryFileButton.Size = new System.Drawing.Size(94, 23);
 			this.binaryFileButton.TabIndex = 17;
@@ -197,7 +199,7 @@
 			// 
 			// trainingPool
 			// 
-			this.trainingPool.Location = new System.Drawing.Point(347, 84);
+			this.trainingPool.Location = new System.Drawing.Point(319, 75);
 			this.trainingPool.Name = "trainingPool";
 			this.trainingPool.Size = new System.Drawing.Size(100, 20);
 			this.trainingPool.TabIndex = 22;
@@ -205,13 +207,12 @@
 			// 
 			// openSettings
 			// 
-			this.openSettings.DefaultExt = "nns";
 			this.openSettings.InitialDirectory = "Settings/";
 			this.openSettings.Title = "Open Settings";
 			// 
 			// saveSettings
 			// 
-			this.saveSettings.DefaultExt = "nns";
+			this.saveSettings.CreatePrompt = true;
 			this.saveSettings.InitialDirectory = "Settings/";
 			this.saveSettings.Title = "Save Settings";
 			// 
@@ -219,7 +220,7 @@
 			// 
 			this.enableTiming.AutoSize = true;
 			this.enableTiming.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.enableTiming.Location = new System.Drawing.Point(43, 116);
+			this.enableTiming.Location = new System.Drawing.Point(15, 107);
 			this.enableTiming.Name = "enableTiming";
 			this.enableTiming.Size = new System.Drawing.Size(93, 17);
 			this.enableTiming.TabIndex = 27;
@@ -228,7 +229,7 @@
 			// 
 			// trainingIterations
 			// 
-			this.trainingIterations.Location = new System.Drawing.Point(347, 32);
+			this.trainingIterations.Location = new System.Drawing.Point(319, 23);
 			this.trainingIterations.Name = "trainingIterations";
 			this.trainingIterations.Size = new System.Drawing.Size(100, 20);
 			this.trainingIterations.TabIndex = 28;
@@ -236,7 +237,7 @@
 			// 
 			// trainingAccuracy
 			// 
-			this.trainingAccuracy.Location = new System.Drawing.Point(347, 58);
+			this.trainingAccuracy.Location = new System.Drawing.Point(319, 49);
 			this.trainingAccuracy.Name = "trainingAccuracy";
 			this.trainingAccuracy.Size = new System.Drawing.Size(100, 20);
 			this.trainingAccuracy.TabIndex = 29;
@@ -245,7 +246,7 @@
 			// networkTypeLabel
 			// 
 			this.networkTypeLabel.AutoSize = true;
-			this.networkTypeLabel.Location = new System.Drawing.Point(43, 58);
+			this.networkTypeLabel.Location = new System.Drawing.Point(15, 49);
 			this.networkTypeLabel.Name = "networkTypeLabel";
 			this.networkTypeLabel.Size = new System.Drawing.Size(74, 13);
 			this.networkTypeLabel.TabIndex = 30;
@@ -258,7 +259,7 @@
 			this.networkType.Items.AddRange(new object[] {
             "traditional",
             "evolutionary"});
-			this.networkType.Location = new System.Drawing.Point(123, 57);
+			this.networkType.Location = new System.Drawing.Point(95, 48);
 			this.networkType.Name = "networkType";
 			this.networkType.Size = new System.Drawing.Size(100, 21);
 			this.networkType.TabIndex = 31;
@@ -266,7 +267,7 @@
 			// factoryLabel
 			// 
 			this.factoryLabel.AutoSize = true;
-			this.factoryLabel.Location = new System.Drawing.Point(262, 230);
+			this.factoryLabel.Location = new System.Drawing.Point(234, 221);
 			this.factoryLabel.Name = "factoryLabel";
 			this.factoryLabel.Size = new System.Drawing.Size(79, 13);
 			this.factoryLabel.TabIndex = 32;
@@ -274,7 +275,7 @@
 			// 
 			// customParameters
 			// 
-			this.customParameters.Location = new System.Drawing.Point(456, 46);
+			this.customParameters.Location = new System.Drawing.Point(428, 37);
 			this.customParameters.Multiline = true;
 			this.customParameters.Name = "customParameters";
 			this.customParameters.Size = new System.Drawing.Size(157, 201);
@@ -283,7 +284,7 @@
 			// customLabel
 			// 
 			this.customLabel.AutoSize = true;
-			this.customLabel.Location = new System.Drawing.Point(453, 30);
+			this.customLabel.Location = new System.Drawing.Point(425, 21);
 			this.customLabel.Name = "customLabel";
 			this.customLabel.Size = new System.Drawing.Size(98, 13);
 			this.customLabel.TabIndex = 35;
@@ -294,7 +295,7 @@
 			this.defaultInput.FormattingEnabled = true;
 			this.defaultInput.Items.AddRange(new object[] {
             "BasicInputLayer"});
-			this.defaultInput.Location = new System.Drawing.Point(347, 121);
+			this.defaultInput.Location = new System.Drawing.Point(319, 112);
 			this.defaultInput.Name = "defaultInput";
 			this.defaultInput.Size = new System.Drawing.Size(100, 21);
 			this.defaultInput.TabIndex = 36;
@@ -305,7 +306,7 @@
 			this.defaultHidden.Items.AddRange(new object[] {
             "BasicLayer",
             "ThreadedHiddenLayer"});
-			this.defaultHidden.Location = new System.Drawing.Point(347, 147);
+			this.defaultHidden.Location = new System.Drawing.Point(319, 138);
 			this.defaultHidden.Name = "defaultHidden";
 			this.defaultHidden.Size = new System.Drawing.Size(100, 21);
 			this.defaultHidden.TabIndex = 37;
@@ -315,7 +316,7 @@
 			this.defaultOutput.FormattingEnabled = true;
 			this.defaultOutput.Items.AddRange(new object[] {
             "BasicOutputLayer"});
-			this.defaultOutput.Location = new System.Drawing.Point(347, 174);
+			this.defaultOutput.Location = new System.Drawing.Point(319, 165);
 			this.defaultOutput.Name = "defaultOutput";
 			this.defaultOutput.Size = new System.Drawing.Size(100, 21);
 			this.defaultOutput.TabIndex = 38;
@@ -326,7 +327,7 @@
 			this.defaultNode.Items.AddRange(new object[] {
             "BasicNode",
             "CustomizableNode"});
-			this.defaultNode.Location = new System.Drawing.Point(347, 200);
+			this.defaultNode.Location = new System.Drawing.Point(319, 191);
 			this.defaultNode.Name = "defaultNode";
 			this.defaultNode.Size = new System.Drawing.Size(100, 21);
 			this.defaultNode.TabIndex = 39;
@@ -336,7 +337,7 @@
 			this.defaultFactory.FormattingEnabled = true;
 			this.defaultFactory.Items.AddRange(new object[] {
             "standard"});
-			this.defaultFactory.Location = new System.Drawing.Point(347, 227);
+			this.defaultFactory.Location = new System.Drawing.Point(319, 218);
 			this.defaultFactory.Name = "defaultFactory";
 			this.defaultFactory.Size = new System.Drawing.Size(100, 21);
 			this.defaultFactory.TabIndex = 40;
@@ -345,7 +346,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(625, 255);
+			this.ClientSize = new System.Drawing.Size(593, 255);
 			this.Controls.Add(this.defaultFactory);
 			this.Controls.Add(this.defaultNode);
 			this.Controls.Add(this.defaultOutput);

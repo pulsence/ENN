@@ -26,6 +26,9 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Meta data control panel for the post processor layer.
+	/// </summary>
 	public partial class PostProcessorMetaDataView : BaseMetaDataView
 	{
 		public PostProcessorMetaDataView(ref MetaDataPoolModel pool)

@@ -100,6 +100,11 @@ namespace ENN.TopologyBuilder
 						postProcessor.Items.Add(name);
 						postProcessor.Text = name;
 					}
+					else if (type.GetInterface("ITrainingAlgorithm") != null)
+					{
+						trainingAlgorithm.Items.Add(name);
+						trainingAlgorithm.Text = name;
+					}
 				}
 			}
 			catch (IOException ex)
@@ -132,6 +137,9 @@ namespace ENN.TopologyBuilder
 
 			postProcessor.Text = "";
 			postProcessor.Items.Clear();
+
+			trainingAlgorithm.Text = "";
+			trainingAlgorithm.Items.Clear();
 		}
 
 		/// <summary>
@@ -158,6 +166,9 @@ namespace ENN.TopologyBuilder
 
 			foreach(string processor in postProcessor.Items.Cast<string>())
 				metaDataPool.SetPostProcessor(processor);
+
+			foreach (string trainingAlgo in trainingAlgorithm.Items.Cast<string>())
+				metaDataPool.SetTrainingAlgorithm(trainingAlgo);
 
 			MessageBox.Show("Information Added");
 			clear_Click(null, null);

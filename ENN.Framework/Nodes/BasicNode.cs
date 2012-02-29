@@ -78,6 +78,8 @@ namespace ENN.Framework
 					return 1;
 			    };
 		    }
+
+			meta = new Dictionary<string, string>();
 	    }
 
 	    /// <summary>

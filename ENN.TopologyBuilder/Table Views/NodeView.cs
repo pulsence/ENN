@@ -25,6 +25,9 @@ using ENN.Framework;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// The node layer view. This layer is added to hidden layer views.
+	/// </summary>
 	public partial class NodeView : LayerView
 	{
 		protected string layerName;

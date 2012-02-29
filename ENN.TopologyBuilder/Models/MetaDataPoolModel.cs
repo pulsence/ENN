@@ -42,6 +42,7 @@ namespace ENN.TopologyBuilder.Models
 		List<string> preProcessors;
 		List<string> postProcessors;
 		List<string> nodes;
+		List<string> trainingAlgorithms;
 
 		//Events
 		
@@ -80,6 +81,11 @@ namespace ENN.TopologyBuilder.Models
 		/// </summary>
 		public event MetaDataPoolChangedEventHandler PostProcessorListChanged;
 
+		/// <summary>
+		/// Raised when ever the list of training algorithms is changed.
+		/// </summary>
+		public event MetaDataPoolChangedEventHandler TrainingAlgorithmsListChanged;
+
 		public MetaDataPoolModel()
 		{
 			objectFactory = new Dictionary<string, IUserObjectFactory>();
@@ -89,7 +95,7 @@ namespace ENN.TopologyBuilder.Models
 			preProcessors = new List<string>();
 			postProcessors = new List<string>();
 			nodes = new List<string>();
-			
+			trainingAlgorithms = new List<string>();
 		}
 
 		/// <summary>
@@ -259,6 +265,28 @@ namespace ENN.TopologyBuilder.Models
 		public List<string> GetPostProcessors()
 		{
 			return postProcessors;
+		}
+		
+		/// <summary>
+		/// Adds a training algorithm.
+		/// </summary>
+		/// <param name="name">The training algorithm to add.</param>
+		public void SetTrainingAlgorithm(string name)
+		{
+			if (trainingAlgorithms.Contains(name)) return;
+
+			trainingAlgorithms.Add(name);
+			if (TrainingAlgorithmsListChanged != null)
+				TrainingAlgorithmsListChanged();
+		}
+
+		/// <summary>
+		/// Retrieves the current list of training algorithms.
+		/// </summary>
+		/// <returns>Returns the list of training algorithms.</returns>
+		public List<string> GetTrainingAlgorithms()
+		{
+			return trainingAlgorithms;
 		}
 	}
 }

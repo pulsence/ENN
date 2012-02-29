@@ -37,6 +37,7 @@ namespace TestSuite.Framework.Tools
 			basePath = "C:\\Development Projects\\ENN\\TestSuite\\TestFiles\\";
 			testSetting = new NetworkSettings();
 			baseSetting = new NetworkSettings();
+			SetBaseSetting();
 		}
 
 		[TestMethod]

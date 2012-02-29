@@ -24,7 +24,7 @@ namespace ENN.Framework.Tools
     /// <summary>
     /// Static class that contains method that are helpful in manipulating NetworkSettings.
     /// </summary>
-    static public class Settings
+    public static class Settings
     {
         /// <summary>
         /// Loads NetworkSettings from a file. Can load either text or binary representations.
@@ -37,7 +37,7 @@ namespace ENN.Framework.Tools
         /// <returns>Returns the NetworkSettings found in the file specified. If the object
 		/// could not be successfully loaded a null value is returned.</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static public NetworkSettings Load(string filePath, bool binary = false)
+        public static NetworkSettings Load(string filePath, bool binary = false)
         {
             if (binary)
                 return LoadBinary(filePath);
@@ -51,7 +51,7 @@ namespace ENN.Framework.Tools
 		/// <returns>Returns the NetworkSettings that were loaded from the file. Returns null
 		/// if the file could no be parsed.</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private NetworkSettings LoadText(string filePath)
+        private static NetworkSettings LoadText(string filePath)
         {
             NetworkSettings settings = new NetworkSettings();
 
@@ -62,6 +62,7 @@ namespace ENN.Framework.Tools
 			//if know version was specified then the latest file version is specified
             if (!raw.ContainsKey("version")) raw.Add("version", "1.0");
             if (raw["version"] != "1.0") return null;
+			raw.Remove("version");
 			//parses the key-value pairs by maping the key to the proper settings field
             foreach (KeyValuePair<string, string> key in raw)
             {
@@ -137,7 +138,7 @@ namespace ENN.Framework.Tools
 		/// <returns>Returns the NetworkSettings found in the file. If there was an something
 		/// wrong with reading the file null will be returned.</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private NetworkSettings LoadBinary(string filePath)
+        private static NetworkSettings LoadBinary(string filePath)
         {
             Stream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             BinaryFormatter binary = new BinaryFormatter();
@@ -155,7 +156,7 @@ namespace ENN.Framework.Tools
 		/// <param name="binary">If true a binary file will be created. Else a text file will
 		/// be generated. By default this parameter is false.</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static public void Save(NetworkSettings settings, string filePath, bool binary = false)
+        public static void Save(NetworkSettings settings, string filePath, bool binary = false)
         {
             if (binary)
                 SaveBinary(ref settings, filePath);
@@ -169,9 +170,10 @@ namespace ENN.Framework.Tools
 		/// <param name="settings">The NetworkSettings object to save to disk.</param>
 		/// <param name="filePath">The location to save the file to.</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private void SaveText(ref NetworkSettings settings, string filePath)
+        private static void SaveText(ref NetworkSettings settings, string filePath)
         {
             StreamWriter writer = new StreamWriter(filePath);
+			writer.WriteLine("version:1.0\n");
             writer.WriteLine("networkmode:{0}", settings.Mode);
 			writer.WriteLine("networktype:{0}", settings.NetworkType);
             writer.WriteLine("\n#User Defined Binary settings");
@@ -204,7 +206,7 @@ namespace ENN.Framework.Tools
 		/// disk in a binary file.</param>
 		/// <param name="filePath">The location to save the file.</param>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private void SaveBinary(ref NetworkSettings settings, string filePath)
+        private static void SaveBinary(ref NetworkSettings settings, string filePath)
         {
             Stream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
             BinaryFormatter binary = new BinaryFormatter();
@@ -219,7 +221,7 @@ namespace ENN.Framework.Tools
 		/// <returns>Returns a dictionary of key-value pairs found inside of
 		/// the file</returns>
 		/// <exception cref="IOException">System.IO.IOException</exception>
-        static private Dictionary<string, string> rawText(string filePath)
+        private static Dictionary<string, string> rawText(string filePath)
         {
             Dictionary<string, string> raw = new Dictionary<string, string>();
             StreamReader reader = new StreamReader(filePath);

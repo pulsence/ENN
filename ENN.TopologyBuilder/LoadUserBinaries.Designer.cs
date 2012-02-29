@@ -49,6 +49,8 @@
 			this.node = new System.Windows.Forms.ComboBox();
 			this.output = new System.Windows.Forms.ComboBox();
 			this.clear = new System.Windows.Forms.Button();
+			this.trainingAlgorithmLabel = new System.Windows.Forms.Label();
+			this.trainingAlgorithm = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// fileLabel
@@ -93,7 +95,7 @@
 			// 
 			// addButton
 			// 
-			this.addButton.Location = new System.Drawing.Point(387, 12);
+			this.addButton.Location = new System.Drawing.Point(413, 12);
 			this.addButton.Name = "addButton";
 			this.addButton.Size = new System.Drawing.Size(75, 23);
 			this.addButton.TabIndex = 4;
@@ -104,7 +106,7 @@
 			// factoryNameLabel
 			// 
 			this.factoryNameLabel.AutoSize = true;
-			this.factoryNameLabel.Location = new System.Drawing.Point(12, 78);
+			this.factoryNameLabel.Location = new System.Drawing.Point(9, 78);
 			this.factoryNameLabel.Name = "factoryNameLabel";
 			this.factoryNameLabel.Size = new System.Drawing.Size(107, 13);
 			this.factoryNameLabel.TabIndex = 5;
@@ -112,7 +114,7 @@
 			// 
 			// factoryName
 			// 
-			this.factoryName.Location = new System.Drawing.Point(125, 75);
+			this.factoryName.Location = new System.Drawing.Point(122, 75);
 			this.factoryName.Name = "factoryName";
 			this.factoryName.Size = new System.Drawing.Size(121, 20);
 			this.factoryName.TabIndex = 6;
@@ -120,7 +122,7 @@
 			// inputLabel
 			// 
 			this.inputLabel.AutoSize = true;
-			this.inputLabel.Location = new System.Drawing.Point(54, 104);
+			this.inputLabel.Location = new System.Drawing.Point(51, 104);
 			this.inputLabel.Name = "inputLabel";
 			this.inputLabel.Size = new System.Drawing.Size(65, 13);
 			this.inputLabel.TabIndex = 7;
@@ -129,7 +131,7 @@
 			// hiddenLayersLabel
 			// 
 			this.hiddenLayersLabel.AutoSize = true;
-			this.hiddenLayersLabel.Location = new System.Drawing.Point(44, 132);
+			this.hiddenLayersLabel.Location = new System.Drawing.Point(41, 132);
 			this.hiddenLayersLabel.Name = "hiddenLayersLabel";
 			this.hiddenLayersLabel.Size = new System.Drawing.Size(75, 13);
 			this.hiddenLayersLabel.TabIndex = 8;
@@ -138,7 +140,7 @@
 			// outputLayerLabel
 			// 
 			this.outputLayerLabel.AutoSize = true;
-			this.outputLayerLabel.Location = new System.Drawing.Point(46, 158);
+			this.outputLayerLabel.Location = new System.Drawing.Point(43, 158);
 			this.outputLayerLabel.Name = "outputLayerLabel";
 			this.outputLayerLabel.Size = new System.Drawing.Size(73, 13);
 			this.outputLayerLabel.TabIndex = 9;
@@ -147,7 +149,7 @@
 			// postProcessorLabel
 			// 
 			this.postProcessorLabel.AutoSize = true;
-			this.postProcessorLabel.Location = new System.Drawing.Point(252, 132);
+			this.postProcessorLabel.Location = new System.Drawing.Point(278, 131);
 			this.postProcessorLabel.Name = "postProcessorLabel";
 			this.postProcessorLabel.Size = new System.Drawing.Size(83, 13);
 			this.postProcessorLabel.TabIndex = 11;
@@ -156,7 +158,7 @@
 			// preProcessorLabel
 			// 
 			this.preProcessorLabel.AutoSize = true;
-			this.preProcessorLabel.Location = new System.Drawing.Point(257, 105);
+			this.preProcessorLabel.Location = new System.Drawing.Point(283, 104);
 			this.preProcessorLabel.Name = "preProcessorLabel";
 			this.preProcessorLabel.Size = new System.Drawing.Size(78, 13);
 			this.preProcessorLabel.TabIndex = 12;
@@ -165,7 +167,7 @@
 			// nodeLabel
 			// 
 			this.nodeLabel.AutoSize = true;
-			this.nodeLabel.Location = new System.Drawing.Point(297, 78);
+			this.nodeLabel.Location = new System.Drawing.Point(323, 77);
 			this.nodeLabel.Name = "nodeLabel";
 			this.nodeLabel.Size = new System.Drawing.Size(38, 13);
 			this.nodeLabel.TabIndex = 13;
@@ -173,49 +175,49 @@
 			// 
 			// input
 			// 
-			this.input.Location = new System.Drawing.Point(125, 101);
+			this.input.Location = new System.Drawing.Point(122, 101);
 			this.input.Name = "input";
 			this.input.Size = new System.Drawing.Size(121, 21);
 			this.input.TabIndex = 14;
 			// 
 			// hidden
 			// 
-			this.hidden.Location = new System.Drawing.Point(125, 128);
+			this.hidden.Location = new System.Drawing.Point(122, 128);
 			this.hidden.Name = "hidden";
 			this.hidden.Size = new System.Drawing.Size(121, 21);
 			this.hidden.TabIndex = 15;
 			// 
 			// preProcessor
 			// 
-			this.preProcessor.Location = new System.Drawing.Point(341, 102);
+			this.preProcessor.Location = new System.Drawing.Point(367, 102);
 			this.preProcessor.Name = "preProcessor";
 			this.preProcessor.Size = new System.Drawing.Size(121, 21);
 			this.preProcessor.TabIndex = 16;
 			// 
 			// postProcessor
 			// 
-			this.postProcessor.Location = new System.Drawing.Point(341, 129);
+			this.postProcessor.Location = new System.Drawing.Point(367, 129);
 			this.postProcessor.Name = "postProcessor";
 			this.postProcessor.Size = new System.Drawing.Size(121, 21);
 			this.postProcessor.TabIndex = 17;
 			// 
 			// node
 			// 
-			this.node.Location = new System.Drawing.Point(341, 75);
+			this.node.Location = new System.Drawing.Point(367, 75);
 			this.node.Name = "node";
 			this.node.Size = new System.Drawing.Size(121, 21);
 			this.node.TabIndex = 18;
 			// 
 			// output
 			// 
-			this.output.Location = new System.Drawing.Point(125, 155);
+			this.output.Location = new System.Drawing.Point(122, 155);
 			this.output.Name = "output";
 			this.output.Size = new System.Drawing.Size(121, 21);
 			this.output.TabIndex = 19;
 			// 
 			// clear
 			// 
-			this.clear.Location = new System.Drawing.Point(306, 12);
+			this.clear.Location = new System.Drawing.Point(332, 12);
 			this.clear.Name = "clear";
 			this.clear.Size = new System.Drawing.Size(75, 23);
 			this.clear.TabIndex = 20;
@@ -223,11 +225,30 @@
 			this.clear.UseVisualStyleBackColor = true;
 			this.clear.Click += new System.EventHandler(this.clear_Click);
 			// 
+			// trainingAlgorithmLabel
+			// 
+			this.trainingAlgorithmLabel.AutoSize = true;
+			this.trainingAlgorithmLabel.Location = new System.Drawing.Point(265, 158);
+			this.trainingAlgorithmLabel.Name = "trainingAlgorithmLabel";
+			this.trainingAlgorithmLabel.Size = new System.Drawing.Size(96, 13);
+			this.trainingAlgorithmLabel.TabIndex = 21;
+			this.trainingAlgorithmLabel.Text = "Training Algorithms";
+			// 
+			// trainingAlgorithm
+			// 
+			this.trainingAlgorithm.FormattingEnabled = true;
+			this.trainingAlgorithm.Location = new System.Drawing.Point(367, 156);
+			this.trainingAlgorithm.Name = "trainingAlgorithm";
+			this.trainingAlgorithm.Size = new System.Drawing.Size(121, 21);
+			this.trainingAlgorithm.TabIndex = 22;
+			// 
 			// LoadUserBinaries
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(476, 185);
+			this.ClientSize = new System.Drawing.Size(500, 185);
+			this.Controls.Add(this.trainingAlgorithm);
+			this.Controls.Add(this.trainingAlgorithmLabel);
 			this.Controls.Add(this.clear);
 			this.Controls.Add(this.output);
 			this.Controls.Add(this.node);
@@ -278,5 +299,7 @@
 		private System.Windows.Forms.ComboBox node;
 		private System.Windows.Forms.ComboBox output;
 		private System.Windows.Forms.Button clear;
+		private System.Windows.Forms.Label trainingAlgorithmLabel;
+		private System.Windows.Forms.ComboBox trainingAlgorithm;
 	}
 }

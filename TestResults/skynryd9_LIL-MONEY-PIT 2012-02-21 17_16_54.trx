@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="be77fc61-2be9-4827-882e-6224d88a4e12" name="skynryd9@LIL-MONEY-PIT 2012-02-21 17:16:54" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-21 17_16_54">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution hostProcessPlatform="MSIL">
+      <Hosts skipUnhostableTests="false" />
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+      </TestTypeSpecific>
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-21T17:16:54.5878612-05:00" queuing="2012-02-21T17:16:54.6488647-05:00" start="2012-02-21T17:16:54.6678658-05:00" finish="2012-02-21T17:16:55.0368869-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="8de660a6-a5b4-4a08-e168-84d6a8847c2d">
+      <Execution id="4853542d-eb3c-44b4-820b-21adb65343e6" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="8de660a6-a5b4-4a08-e168-84d6a8847c2d" executionId="4853542d-eb3c-44b4-820b-21adb65343e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4853542d-eb3c-44b4-820b-21adb65343e6" testId="8de660a6-a5b4-4a08-e168-84d6a8847c2d" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0995713" startTime="2012-02-21T17:16:54.6708659-05:00" endTime="2012-02-21T17:16:55.0108854-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4853542d-eb3c-44b4-820b-21adb65343e6">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.NetworkTopologyTest.EqualsTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.NetworkTopology.Equals(Object obj) in C:\Development Projects\ENN\ENN.Framework\NetworkTopology.cs:line 136
+   at TestSuite.Framework.NetworkTopologyTest.EqualsTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 49
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

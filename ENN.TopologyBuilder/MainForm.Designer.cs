@@ -28,9 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.mainMenu = new System.Windows.Forms.MenuStrip();
 			this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.loadFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.topologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.userBinariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.actionMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,14 +52,20 @@
 			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topologyContainer = new System.Windows.Forms.SplitContainer();
 			this.topologyDisplay = new System.Windows.Forms.FlowLayoutPanel();
-			this.topologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.userBinariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.binaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveTopology = new System.Windows.Forms.SaveFileDialog();
+			this.openTopology = new System.Windows.Forms.OpenFileDialog();
+			this.topologyStatus = new System.Windows.Forms.StatusStrip();
+			this.canSaveStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.inputLayerStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.outputLayerStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.preProcessorStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.postProcessorStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.saveStatusTimer = new System.Windows.Forms.Timer(this.components);
 			this.mainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.topologyContainer)).BeginInit();
 			this.topologyContainer.Panel1.SuspendLayout();
 			this.topologyContainer.SuspendLayout();
+			this.topologyStatus.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenu
@@ -85,14 +94,29 @@
             this.topologyToolStripMenuItem,
             this.userBinariesToolStripMenuItem});
 			this.loadFileMenuItem.Name = "loadFileMenuItem";
-			this.loadFileMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.loadFileMenuItem.Size = new System.Drawing.Size(100, 22);
 			this.loadFileMenuItem.Text = "Load";
+			// 
+			// topologyToolStripMenuItem
+			// 
+			this.topologyToolStripMenuItem.Name = "topologyToolStripMenuItem";
+			this.topologyToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.topologyToolStripMenuItem.Text = "Topology";
+			this.topologyToolStripMenuItem.Click += new System.EventHandler(this.topologyToolStripMenuItem_Click);
+			// 
+			// userBinariesToolStripMenuItem
+			// 
+			this.userBinariesToolStripMenuItem.Name = "userBinariesToolStripMenuItem";
+			this.userBinariesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.userBinariesToolStripMenuItem.Text = "User Binaries";
+			this.userBinariesToolStripMenuItem.Click += new System.EventHandler(this.userBinariesToolStripMenuItem_Click);
 			// 
 			// saveFileMenuItem
 			// 
 			this.saveFileMenuItem.Name = "saveFileMenuItem";
-			this.saveFileMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.saveFileMenuItem.Size = new System.Drawing.Size(100, 22);
 			this.saveFileMenuItem.Text = "Save";
+			this.saveFileMenuItem.Click += new System.EventHandler(this.saveFileMenuItem_Click);
 			// 
 			// actionMenu
 			// 
@@ -247,52 +271,82 @@
 			this.topologyDisplay.Name = "topologyDisplay";
 			this.topologyDisplay.Size = new System.Drawing.Size(693, 406);
 			this.topologyDisplay.TabIndex = 0;
+			this.topologyDisplay.Click += new System.EventHandler(this.topologyDisplay_Click);
 			this.topologyDisplay.Resize += new System.EventHandler(this.topologyDisplay_Resize);
 			// 
-			// topologyToolStripMenuItem
+			// topologyStatus
 			// 
-			this.topologyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.textToolStripMenuItem,
-            this.binaryToolStripMenuItem});
-			this.topologyToolStripMenuItem.Name = "topologyToolStripMenuItem";
-			this.topologyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.topologyToolStripMenuItem.Text = "Topology";
+			this.topologyStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.canSaveStatus,
+            this.inputLayerStatus,
+            this.outputLayerStatus,
+            this.preProcessorStatus,
+            this.postProcessorStatus});
+			this.topologyStatus.Location = new System.Drawing.Point(0, 408);
+			this.topologyStatus.Name = "topologyStatus";
+			this.topologyStatus.Size = new System.Drawing.Size(886, 22);
+			this.topologyStatus.TabIndex = 3;
 			// 
-			// userBinariesToolStripMenuItem
+			// canSaveStatus
 			// 
-			this.userBinariesToolStripMenuItem.Name = "userBinariesToolStripMenuItem";
-			this.userBinariesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.userBinariesToolStripMenuItem.Text = "User Binaries";
-			this.userBinariesToolStripMenuItem.Click += new System.EventHandler(this.userBinariesToolStripMenuItem_Click);
+			this.canSaveStatus.Name = "canSaveStatus";
+			this.canSaveStatus.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+			this.canSaveStatus.Size = new System.Drawing.Size(92, 17);
+			this.canSaveStatus.Text = "Can Save: False";
 			// 
-			// textToolStripMenuItem
+			// inputLayerStatus
 			// 
-			this.textToolStripMenuItem.Name = "textToolStripMenuItem";
-			this.textToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.textToolStripMenuItem.Text = "Text";
+			this.inputLayerStatus.Name = "inputLayerStatus";
+			this.inputLayerStatus.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+			this.inputLayerStatus.Size = new System.Drawing.Size(126, 17);
+			this.inputLayerStatus.Text = "Has Input Layer: False";
 			// 
-			// binaryToolStripMenuItem
+			// outputLayerStatus
 			// 
-			this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
-			this.binaryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.binaryToolStripMenuItem.Text = "Binary";
+			this.outputLayerStatus.Name = "outputLayerStatus";
+			this.outputLayerStatus.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+			this.outputLayerStatus.Size = new System.Drawing.Size(136, 17);
+			this.outputLayerStatus.Text = "Has Output Layer: False";
+			// 
+			// preProcessorStatus
+			// 
+			this.preProcessorStatus.Name = "preProcessorStatus";
+			this.preProcessorStatus.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+			this.preProcessorStatus.Size = new System.Drawing.Size(138, 17);
+			this.preProcessorStatus.Text = "Has Pre Processor: False";
+			// 
+			// postProcessorStatus
+			// 
+			this.postProcessorStatus.Name = "postProcessorStatus";
+			this.postProcessorStatus.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+			this.postProcessorStatus.Size = new System.Drawing.Size(144, 17);
+			this.postProcessorStatus.Text = "Has Post Processor: False";
+			// 
+			// saveStatusTimer
+			// 
+			this.saveStatusTimer.Interval = 10000;
+			this.saveStatusTimer.Tick += new System.EventHandler(this.saveStatusTimer_Tick);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(886, 430);
+			this.Controls.Add(this.topologyStatus);
 			this.Controls.Add(this.topologyContainer);
 			this.Controls.Add(this.mainMenu);
 			this.MainMenuStrip = this.mainMenu;
 			this.Name = "MainForm";
 			this.Text = "Topology Builder";
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.mainMenu.ResumeLayout(false);
 			this.mainMenu.PerformLayout();
 			this.topologyContainer.Panel1.ResumeLayout(false);
 			this.topologyContainer.Panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.topologyContainer)).EndInit();
 			this.topologyContainer.ResumeLayout(false);
+			this.topologyStatus.ResumeLayout(false);
+			this.topologyStatus.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -322,9 +376,16 @@
 		private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
 		private System.Windows.Forms.FlowLayoutPanel topologyDisplay;
 		private System.Windows.Forms.ToolStripMenuItem topologyToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem binaryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem userBinariesToolStripMenuItem;
+		private System.Windows.Forms.SaveFileDialog saveTopology;
+		private System.Windows.Forms.OpenFileDialog openTopology;
+		private System.Windows.Forms.StatusStrip topologyStatus;
+		private System.Windows.Forms.ToolStripStatusLabel canSaveStatus;
+		private System.Windows.Forms.ToolStripStatusLabel inputLayerStatus;
+		private System.Windows.Forms.ToolStripStatusLabel outputLayerStatus;
+		private System.Windows.Forms.ToolStripStatusLabel preProcessorStatus;
+		private System.Windows.Forms.ToolStripStatusLabel postProcessorStatus;
+		private System.Windows.Forms.Timer saveStatusTimer;
 	}
 }
 

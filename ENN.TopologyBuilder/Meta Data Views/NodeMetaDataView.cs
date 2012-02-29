@@ -26,6 +26,9 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Meta data control panel for a node.
+	/// </summary>
 	public partial class NodeMetaDataView : BaseMetaDataView
 	{
 		public NodeMetaDataView(ref MetaDataPoolModel pool)

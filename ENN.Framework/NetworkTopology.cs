@@ -130,17 +130,71 @@ namespace ENN.Framework
 
 			if (other == null) return false;
 
-			if (!preProcessor.Equals( other.PreProcessor)) return false;
-			if (!postProcessor .Equals(other.postProcessor)) return false;
-			if (!TrainingAlgorithm.Equals(other.TrainingAlgorithm)) return false;
-			if (!TrainingPreProcessor.Equals(other.TrainingPreProcessor)) return false;
-			if (!inputLayer.Equals(other.InputLayer)) return false;
-			if (!outputLayer.Equals(other.OutputLayer)) return false;
-
-			if (!hiddenLayers.Length.Equals(other.HiddenLayers.Length)) return false;
-			for (int i = 0; i < hiddenLayers.Length; i++)
+			if (preProcessor == null)
 			{
-				if (!hiddenLayers[i].Equals(other.HiddenLayers[i])) return false;
+				if (other.PreProcessor != null) return false;
+			}
+			else
+			{
+				if (!preProcessor.Equals(other.PreProcessor)) return false;
+			}
+
+			if (postProcessor == null)
+			{
+				if (other.PostProcessor != null) return false;
+			}
+			else
+			{
+				if (!postProcessor.Equals(other.postProcessor)) return false;
+			}
+
+			if (TrainingAlgorithm == null)
+			{
+				if (other.TrainingAlgorithm != null) return false;
+			}
+			else
+			{
+				if (!TrainingAlgorithm.Equals(other.TrainingAlgorithm)) return false;
+			}
+
+			if (TrainingPreProcessor == null)
+			{
+				if (other.TrainingPreProcessor != null) return false;
+			}
+			else
+			{
+				if (!TrainingPreProcessor.Equals(other.TrainingPreProcessor)) return false;
+			}
+
+			if (inputLayer == null)
+			{
+				if (other.InputLayer != null) return false;
+			}
+			else
+			{
+				if (!inputLayer.Equals(other.InputLayer)) return false;
+			}
+
+			if (outputLayer == null)
+			{
+				if (other.OutputLayer != null) return false;
+			}
+			else
+			{
+				if (!outputLayer.Equals(other.OutputLayer)) return false;
+			}
+
+			if (hiddenLayers == null)
+			{
+				if (other.HiddenLayers != null) return false;
+			}
+			else
+			{
+				if (!hiddenLayers.Length.Equals(other.HiddenLayers.Length)) return false;
+				for (int i = 0; i < hiddenLayers.Length; i++)
+				{
+					if (!hiddenLayers[i].Equals(other.HiddenLayers[i])) return false;
+				}
 			}
 
 			return true;

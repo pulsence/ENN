@@ -26,6 +26,9 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Meta data control panel for the input layer.
+	/// </summary>
 	public partial class InputLayerMetaDataView : BaseMetaDataView
 	{
 		public InputLayerMetaDataView(ref MetaDataPoolModel pool)
@@ -35,6 +38,7 @@ namespace ENN.TopologyBuilder.Views
 			base.headerLabel.Text = "Input Layer information";
 			metaDataPool.InputListChanged += DataTypesChanged;
 
+			excludedKeys.Add("inputCount");
 			DataTypesChanged();
 		}
 
@@ -45,6 +49,20 @@ namespace ENN.TopologyBuilder.Views
 				if (!dataType.Items.Contains(type))
 					dataType.Items.Add(type);
 			}
+		}
+
+		/// <summary>
+		/// Sets the input count to some value.
+		/// </summary>
+		/// <param name="count">The value to set the input count too.</param>
+		public void SetInputCount(string count)
+		{
+			inputCount.Text = count;
+		}
+
+		private void inputCount_TextChanged(object sender, EventArgs e)
+		{
+			InvokeInformationChanged("inputCount", inputCount.Text);
 		}
 	}
 }

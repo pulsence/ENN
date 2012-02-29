@@ -61,6 +61,15 @@ namespace ENN.TopologyBuilder.Views
 		}
 
 		/// <summary>
+		/// Gets the meta data that was set for this layer.
+		/// </summary>
+		/// <returns>The current meta data.</returns>
+		public Dictionary<string, string> GetMetaData()
+		{
+			return metaData;
+		}
+
+		/// <summary>
 		/// Used to handle information changed events.
 		/// </summary>
 		/// <param name="key">Meta dat key to modify.</param>

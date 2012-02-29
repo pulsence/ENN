@@ -26,6 +26,9 @@ using ENN.TopologyBuilder.Models;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// Meta data control panel for the output layer.
+	/// </summary>
 	public partial class OutputLayerMetaDataView : BaseMetaDataView
 	{
 		public OutputLayerMetaDataView(ref MetaDataPoolModel pool)

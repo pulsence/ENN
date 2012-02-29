@@ -25,6 +25,9 @@ using ENN.Framework;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// The output layer view.
+	/// </summary>
 	public partial class OutputLayerView : LayerView
 	{
 		public OutputLayerView()

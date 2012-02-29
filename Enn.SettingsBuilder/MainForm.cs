@@ -93,7 +93,8 @@ namespace ENN.SettingsBuilder
             openSettings.ShowDialog();
             try
             {
-                settings = Settings.Load(openSettings.FileName);
+                settings = Settings.Load(openSettings.FileName,
+										 openSettings.FileName.EndsWith(".nnsc", true, null));
                 if (settings.Mode == NetworkMode.Computational)
                 {
                     networkMode.SelectedIndex = 1;
@@ -199,7 +200,9 @@ namespace ENN.SettingsBuilder
             saveSettings.ShowDialog();
             try
             {
-                Settings.Save(settings, saveSettings.FileName);
+                Settings.Save(settings,
+							  saveSettings.FileName,
+							  saveSettings.FileName.EndsWith(".nnsc", true, null));
             }
             catch (IOException ex)
             {

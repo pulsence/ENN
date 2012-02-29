@@ -1,12 +1,6 @@
 ﻿#network execution mode
 networkmode:computational
 
-#user defined file information
-userbinarylocation:UserBin\TestUserBinary.dll
-userbinaryclassname:TestUserBinary.TestBinary
-userbinaryname:TestBinary
-useuserbinary:true
-
 #default topology types
 inputlayer:BasicInputLayer
 node:BasicNode

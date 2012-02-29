@@ -27,11 +27,6 @@ namespace ENN.Framework
     [Serializable()]
     public class ThreadedHiddenLayer : BasicLayer
     {
-        /// <summary>
-        /// Property for this object's meta data
-        /// </summary>
-        public Dictionary<string, string> MetaData { get; set; }
-
         public ThreadedHiddenLayer(INode[] nodes)
             : base(nodes) { }
 

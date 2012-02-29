@@ -25,6 +25,9 @@ using ENN.Framework;
 
 namespace ENN.TopologyBuilder.Views
 {
+	/// <summary>
+	/// The post processor layer view.
+	/// </summary>
 	public partial class PostProcessorView : LayerView
 	{
 		public PostProcessorView()

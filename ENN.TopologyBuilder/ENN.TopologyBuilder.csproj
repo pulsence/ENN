@@ -94,8 +94,19 @@
     <Compile Include="Meta Data Views\NodeMetaDataView.Designer.cs">
       <DependentUpon>NodeMetaDataView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meta Data Views\TopologyMetaDataView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Meta Data Views\TopologyMetaDataView.Designer.cs">
+      <DependentUpon>TopologyMetaDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HiddenLayerShell.cs" />
+    <Compile Include="Models\InputLayerShell.cs" />
     <Compile Include="Models\MetaDataPoolModel.cs" />
-    <Compile Include="Models\TopologyModel.cs" />
+    <Compile Include="Models\NodeShell.cs" />
+    <Compile Include="Models\OutputLayerShell.cs" />
+    <Compile Include="Models\PostProcessorShell.cs" />
+    <Compile Include="Models\PreProcessorShell.cs" />
     <Compile Include="Table Views\PostProcessorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Meta Data Views\NodeMetaDataView.resx">
       <DependentUpon>NodeMetaDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meta Data Views\TopologyMetaDataView.resx">
+      <DependentUpon>TopologyMetaDataView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Table Views\PostProcessorView.resx">
       <DependentUpon>PostProcessorView.cs</DependentUpon>

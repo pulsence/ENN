@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9c245fdb-a2dc-497e-bfa5-d091290a86ed" name="skynryd9@LIL-MONEY-PIT 2012-02-21 17:02:44" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Development Projects\ENN\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-02-21 17_02_44">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution hostProcessPlatform="MSIL">
+      <Hosts skipUnhostableTests="false" />
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+      </TestTypeSpecific>
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-21T17:02:44.2012219-05:00" queuing="2012-02-21T17:02:44.3452301-05:00" start="2012-02-21T17:02:44.3672314-05:00" finish="2012-02-21T17:02:45.1462759-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="50" executed="50" error="0" failed="14" timeout="0" aborted="0" inconclusive="36" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="EnableTimingTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="2b901e5f-9814-1f85-ba74-9596bce4ae77">
+      <Execution id="ba354a8e-ab5c-4a8f-827a-1fd7f0a8a535" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EnableTimingTest" />
+    </UnitTest>
+    <UnitTest name="DefaultOutputLayerTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="a8823d1a-dea7-22d8-3b80-cec046111d72">
+      <Execution id="94644163-ce28-474b-ab2f-70cc490d9b3a" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DefaultOutputLayerTest" />
+    </UnitTest>
+    <UnitTest name="TrainNetworkTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="d60f0c70-680a-f2a7-be96-723443b7d4dc">
+      <Execution id="2bf449a1-e5cb-4b1f-a093-fca00e1e73da" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.HillClimbAlgoTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TrainNetworkTest" />
+    </UnitTest>
+    <UnitTest name="DefaultNodeTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="3c3ed5b7-5e6a-8138-0b65-4fd13679f387">
+      <Execution id="984063c5-d89f-4e11-94de-f77f9494ae1b" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DefaultNodeTest" />
+    </UnitTest>
+    <UnitTest name="OtherTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="b5e3a755-a2ab-152d-aa80-c4911fd65e0b">
+      <Execution id="46995eaa-8b2d-4c3f-a28e-c4081d077ff5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OtherTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="604a034f-362e-5faa-f734-caee2f5177cf">
+      <Execution id="159d35d1-7f2f-419f-9dda-261f783d0a35" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.BasicLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="BasicLayerConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="07b21b41-3269-6cca-bc3e-6dc3a61f0299">
+      <Execution id="1024013c-0d98-4e70-a262-33776bc43ad3" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.BasicLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="BasicLayerConstructorTest" />
+    </UnitTest>
+    <UnitTest name="TraininPoolTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="27e69bba-5d02-273a-8090-be69ec325e3e">
+      <Execution id="6dd05130-8cd7-43cf-a5e3-0375a1ba4bdb" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TraininPoolTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="ea95e44c-ad70-2fd7-0521-02dea5e03db6">
+      <Execution id="999bfe41-2335-4b35-9889-aa27d52cc18f" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest" />
+    </UnitTest>
+    <UnitTest name="LoadText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="895e1ad2-9637-1929-bdca-2e13d6ecdf33">
+      <Execution id="aecfc8fe-81a3-418d-9105-f7a9076682a3" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadText" />
+    </UnitTest>
+    <UnitTest name="CreateUserObjectTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="86183e70-5869-ac26-e602-fe6fdc8564f6">
+      <DeploymentItems>
+        <DeploymentItem filename="ENN.Framework.dll" />
+      </DeploymentItems>
+      <Execution id="88cc1e54-3ee8-4409-8726-624bb0693616" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.StandLibFactoryTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateUserObjectTest" />
+    </UnitTest>
+    <UnitTest name="GetValuesTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="430f1830-9fb9-6f5a-5bbd-8746f440b9db">
+      <Execution id="bea700e1-c726-413d-9eb7-ea095cf1381d" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.ThreadedHiddenLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetValuesTest" />
+    </UnitTest>
+    <UnitTest name="TrainingAccuracyTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="8c397046-78ee-c33d-3e4c-44a5719d553d">
+      <Execution id="e5669010-7122-4c51-b4ec-20030fce95a6" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TrainingAccuracyTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="020f297e-a2c1-3a64-4acc-60c7b6d21770">
+      <Execution id="0c301a26-f4a5-4b07-b49d-b3a53fad6844" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.CustomizableNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="HiddenLayersTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="ba1cb5ab-f487-d922-92d1-b5c0b8d6512f">
+      <Execution id="ab792f79-ad87-4ab6-a96d-d28cd1aeda5f" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="HiddenLayersTest" />
+    </UnitTest>
+    <UnitTest name="NetworkTypeTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="a1ceb0d7-e762-54e4-c7d1-02628c8188ab">
+      <Execution id="e0a18243-1ac2-4896-bb63-317f36cdc7e6" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NetworkTypeTest" />
+    </UnitTest>
+    <UnitTest name="GetValueTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="855130ce-84bf-1161-1eee-aae8000252b2">
+      <Execution id="2baad471-b318-431d-8c8b-a146c3aabdec" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.CustomizableNodeTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetValueTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="8de660a6-a5b4-4a08-e168-84d6a8847c2d">
+      <Execution id="a3f4fdcf-bc8d-43f1-a618-b48cefd9db82" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="NetworkSettingsConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="573b324d-2394-0284-242e-658089f98732">
+      <Execution id="206556a3-52fb-411f-9534-33365a07379b" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NetworkSettingsConstructorTest" />
+    </UnitTest>
+    <UnitTest name="StandLibFactoryConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="3c9d6005-6c63-77c2-b4e0-1c2eb9238c86">
+      <Execution id="4610f957-88cb-4974-817a-ffc0860790d1" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.StandLibFactoryTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="StandLibFactoryConstructorTest" />
+    </UnitTest>
+    <UnitTest name="GetValuesTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="f053d416-9380-8069-ef40-6a7789ba8040">
+      <Execution id="f4d27d60-4db8-445c-9474-481b44ce9a09" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.BasicLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetValuesTest" />
+    </UnitTest>
+    <UnitTest name="TrainingIterationsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="c598b3e8-9ef4-dda5-2cbb-7eb6dc003da3">
+      <Execution id="e90400bc-689c-48a0-824b-dc491f25d4e5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TrainingIterationsTest" />
+    </UnitTest>
+    <UnitTest name="SetSettingsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="680a45b5-4f49-a5c2-34cb-d26f2ad2185b">
+      <Execution id="056fa9e4-0e54-4b84-a832-646398465663" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.HillClimbAlgoTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetSettingsTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="5577bcbe-3b62-1f0a-eed4-fd75c6d9137e">
+      <Execution id="3f4851ba-d5cb-43f7-a626-59f4866eed61" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+    <UnitTest name="PreProcessorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="1b724367-d2c1-3107-fa6a-cfdd80613097">
+      <Execution id="5a0980f0-0dc1-4336-a2fa-b86db72686a4" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PreProcessorTest" />
+    </UnitTest>
+    <UnitTest name="SaveText" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="dc7516d4-ea11-52ea-592a-675e802b27f3">
+      <Execution id="a80a17d5-b055-45e3-8276-1659ab4f7a84" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveText" />
+    </UnitTest>
+    <UnitTest name="TrainNetworkTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="583e1b08-512f-1567-2515-8af7db8880c1">
+      <Execution id="16c17d7f-8d63-4001-bbca-df8c84162f57" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NeuralNetworkTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TrainNetworkTest" />
+    </UnitTest>
+    <UnitTest name="ModeTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="8fa4a54a-bae6-94d8-d573-1647c12d4824">
+      <Execution id="5ed902b0-8eed-43dd-820d-4516404952eb" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ModeTest" />
+    </UnitTest>
+    <UnitTest name="TrainingPreProcessorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="f1ce82b4-23b4-e9e2-a855-4dfbf8340573">
+      <Execution id="f049cd4c-d240-4baa-b63d-96a187354079" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TrainingPreProcessorTest" />
+    </UnitTest>
+    <UnitTest name="OutputLayerTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="99f0b5b4-0a2a-3205-9152-e1a3e644b886">
+      <Execution id="b114aea8-b288-4a6f-80c9-a14528e27f09" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OutputLayerTest" />
+    </UnitTest>
+    <UnitTest name="DefaultHiddenLayerTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="37a9f4d0-d84b-2633-12b6-49d19baece9d">
+      <Execution id="f96fde5b-80f1-4ddc-9ea7-7c6cb7478281" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DefaultHiddenLayerTest" />
+    </UnitTest>
+    <UnitTest name="InputLayerTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="aff7f15c-9745-8d57-d62e-e6de87a6f68c">
+      <Execution id="cd15307c-c0bd-4eb3-80d8-714cfea816c9" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InputLayerTest" />
+    </UnitTest>
+    <UnitTest name="MetaDataTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="47b48568-fe23-aa9f-4797-84c392c55991">
+      <Execution id="bd73f662-c4cf-452d-a7be-fc7007ab8b91" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.BasicLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MetaDataTest" />
+    </UnitTest>
+    <UnitTest name="SaveLoadBinary" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="b956f179-a280-645c-1bae-ce922e14d496">
+      <Execution id="fa0d569a-c339-448c-888c-faa1802cbfea" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.Tools.SettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveLoadBinary" />
+    </UnitTest>
+    <UnitTest name="TrainingAlgorithmTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="1f504a14-9109-8935-fb3d-3e0cc9acaced">
+      <Execution id="6c5a7118-bdd7-4ad0-9e63-ad6288f1d3b0" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TrainingAlgorithmTest" />
+    </UnitTest>
+    <UnitTest name="ThreadedHiddenLayerConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="b5ae595f-7dca-73d7-1bda-f09e7ea52bd4">
+      <Execution id="c88fe9ce-12d1-4091-be79-9bf60c51f01f" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.ThreadedHiddenLayerTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ThreadedHiddenLayerConstructorTest" />
+    </UnitTest>
+    <UnitTest name="StartNetworkTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="4d46c574-4e3e-c892-575b-4964cedc723f">
+      <Execution id="d2b82ba3-6bbf-4868-9894-349d45193576" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NeuralNetworkTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="StartNetworkTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="e000e601-a400-b77b-7cbe-e16a1fb8bf43">
+      <Execution id="7336b390-7f97-4490-a30b-11413f12d763" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToStringTest" />
+    </UnitTest>
+    <UnitTest name="HillClimbAlgoConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="bd6134f3-8c29-55c3-d0c7-c2fb216d01d4">
+      <Execution id="1e2ef245-518c-4f68-965e-a996bab9c45f" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.HillClimbAlgoTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="HillClimbAlgoConstructorTest" />
+    </UnitTest>
+    <UnitTest name="getActivationFunctionTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="357b4346-32ed-acf9-652d-d83b6fab665a">
+      <Execution id="a7990da2-f2e6-4121-a4d6-0dba5352b2a5" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.StandLibFactoryTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="getActivationFunctionTest" />
+    </UnitTest>
+    <UnitTest name="DefaultInputLayerTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="18bf7b2a-4736-099f-9f87-d6165f9a1d8f">
+      <Execution id="d612d0fe-5ffd-4885-8ffa-e1565b6a68e7" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DefaultInputLayerTest" />
+    </UnitTest>
+    <UnitTest name="NeuralNetworkConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="cf73ff44-a6c5-1e64-628c-f9b7f15247dd">
+      <Execution id="72bc576d-4a26-4755-9332-24de7e2c824a" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NeuralNetworkTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NeuralNetworkConstructorTest" />
+    </UnitTest>
+    <UnitTest name="MetaDataTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="54ea49d7-872c-276b-d1ac-f03e032aae87">
+      <Execution id="f1d1f666-ec5a-4a42-90f7-6e8ac6848d4e" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MetaDataTest" />
+    </UnitTest>
+    <UnitTest name="getCombinationFunctionTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="349f5a51-cd4a-74bd-4680-47d19c2c213f">
+      <Execution id="83b04f8e-2d6c-4098-942b-2e14ed6fb6e2" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.StandLibFactoryTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="getCombinationFunctionTest" />
+    </UnitTest>
+    <UnitTest name="DefaultFactoryTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="b4ff2759-93e7-a8a5-d6b3-d10da4893f5a">
+      <Execution id="5143d1a0-0ea0-4006-8d2a-75be42ea2a3f" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkSettingsTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DefaultFactoryTest" />
+    </UnitTest>
+    <UnitTest name="ComputeDecisionTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="b6e27dc1-3f73-d482-30bb-5034e06d0f49">
+      <Execution id="5c6f4660-9346-448d-99c0-2d5af760c3e7" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NeuralNetworkTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ComputeDecisionTest" />
+    </UnitTest>
+    <UnitTest name="NetworkTopologyConstructorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="90d4d793-c175-7e4f-a953-2c15482e9127">
+      <Execution id="d11ee9da-6500-4fad-b5fd-abde8507d217" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NetworkTopologyConstructorTest" />
+    </UnitTest>
+    <UnitTest name="PostProcessorTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="6c48ec72-9487-035f-80b3-d8b19112a2d9">
+      <Execution id="55fa524a-a986-45a7-8d27-76c552a76d4e" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.NetworkTopologyTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PostProcessorTest" />
+    </UnitTest>
+    <UnitTest name="ParseListTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="e28af217-9e05-374a-b589-3e0e31013f06">
+      <Execution id="da5ac1d3-b24b-4608-9db7-6b1c67c3c483" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.StandLibFactoryTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ParseListTest" />
+    </UnitTest>
+    <UnitTest name="EqualsTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="b5af2dd1-ef3f-eec7-b120-54c52453cde4">
+      <Execution id="9bafa331-68ac-4b0e-80e5-a2bf81bc71fc" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.HillClimbAlgoTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EqualsTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b5e3a755-a2ab-152d-aa80-c4911fd65e0b" executionId="46995eaa-8b2d-4c3f-a28e-c4081d077ff5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b724367-d2c1-3107-fa6a-cfdd80613097" executionId="5a0980f0-0dc1-4336-a2fa-b86db72686a4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18bf7b2a-4736-099f-9f87-d6165f9a1d8f" executionId="d612d0fe-5ffd-4885-8ffa-e1565b6a68e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="583e1b08-512f-1567-2515-8af7db8880c1" executionId="16c17d7f-8d63-4001-bbca-df8c84162f57" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="895e1ad2-9637-1929-bdca-2e13d6ecdf33" executionId="aecfc8fe-81a3-418d-9105-f7a9076682a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="99f0b5b4-0a2a-3205-9152-e1a3e644b886" executionId="b114aea8-b288-4a6f-80c9-a14528e27f09" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf73ff44-a6c5-1e64-628c-f9b7f15247dd" executionId="72bc576d-4a26-4755-9332-24de7e2c824a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="855130ce-84bf-1161-1eee-aae8000252b2" executionId="2baad471-b318-431d-8c8b-a146c3aabdec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="430f1830-9fb9-6f5a-5bbd-8746f440b9db" executionId="bea700e1-c726-413d-9eb7-ea095cf1381d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="604a034f-362e-5faa-f734-caee2f5177cf" executionId="159d35d1-7f2f-419f-9dda-261f783d0a35" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc7516d4-ea11-52ea-592a-675e802b27f3" executionId="a80a17d5-b055-45e3-8276-1659ab4f7a84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f1ce82b4-23b4-e9e2-a855-4dfbf8340573" executionId="f049cd4c-d240-4baa-b63d-96a187354079" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aff7f15c-9745-8d57-d62e-e6de87a6f68c" executionId="cd15307c-c0bd-4eb3-80d8-714cfea816c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba1cb5ab-f487-d922-92d1-b5c0b8d6512f" executionId="ab792f79-ad87-4ab6-a96d-d28cd1aeda5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5ae595f-7dca-73d7-1bda-f09e7ea52bd4" executionId="c88fe9ce-12d1-4091-be79-9bf60c51f01f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f504a14-9109-8935-fb3d-3e0cc9acaced" executionId="6c5a7118-bdd7-4ad0-9e63-ad6288f1d3b0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="86183e70-5869-ac26-e602-fe6fdc8564f6" executionId="88cc1e54-3ee8-4409-8726-624bb0693616" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e000e601-a400-b77b-7cbe-e16a1fb8bf43" executionId="7336b390-7f97-4490-a30b-11413f12d763" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="349f5a51-cd4a-74bd-4680-47d19c2c213f" executionId="83b04f8e-2d6c-4098-942b-2e14ed6fb6e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c48ec72-9487-035f-80b3-d8b19112a2d9" executionId="55fa524a-a986-45a7-8d27-76c552a76d4e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37a9f4d0-d84b-2633-12b6-49d19baece9d" executionId="f96fde5b-80f1-4ddc-9ea7-7c6cb7478281" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c3ed5b7-5e6a-8138-0b65-4fd13679f387" executionId="984063c5-d89f-4e11-94de-f77f9494ae1b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c598b3e8-9ef4-dda5-2cbb-7eb6dc003da3" executionId="e90400bc-689c-48a0-824b-dc491f25d4e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f053d416-9380-8069-ef40-6a7789ba8040" executionId="f4d27d60-4db8-445c-9474-481b44ce9a09" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e28af217-9e05-374a-b589-3e0e31013f06" executionId="da5ac1d3-b24b-4608-9db7-6b1c67c3c483" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a1ceb0d7-e762-54e4-c7d1-02628c8188ab" executionId="e0a18243-1ac2-4896-bb63-317f36cdc7e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d60f0c70-680a-f2a7-be96-723443b7d4dc" executionId="2bf449a1-e5cb-4b1f-a093-fca00e1e73da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c9d6005-6c63-77c2-b4e0-1c2eb9238c86" executionId="4610f957-88cb-4974-817a-ffc0860790d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8823d1a-dea7-22d8-3b80-cec046111d72" executionId="94644163-ce28-474b-ab2f-70cc490d9b3a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="020f297e-a2c1-3a64-4acc-60c7b6d21770" executionId="0c301a26-f4a5-4b07-b49d-b3a53fad6844" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b956f179-a280-645c-1bae-ce922e14d496" executionId="fa0d569a-c339-448c-888c-faa1802cbfea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8fa4a54a-bae6-94d8-d573-1647c12d4824" executionId="5ed902b0-8eed-43dd-820d-4516404952eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4ff2759-93e7-a8a5-d6b3-d10da4893f5a" executionId="5143d1a0-0ea0-4006-8d2a-75be42ea2a3f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b901e5f-9814-1f85-ba74-9596bce4ae77" executionId="ba354a8e-ab5c-4a8f-827a-1fd7f0a8a535" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5af2dd1-ef3f-eec7-b120-54c52453cde4" executionId="9bafa331-68ac-4b0e-80e5-a2bf81bc71fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54ea49d7-872c-276b-d1ac-f03e032aae87" executionId="f1d1f666-ec5a-4a42-90f7-6e8ac6848d4e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="357b4346-32ed-acf9-652d-d83b6fab665a" executionId="a7990da2-f2e6-4121-a4d6-0dba5352b2a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d46c574-4e3e-c892-575b-4964cedc723f" executionId="d2b82ba3-6bbf-4868-9894-349d45193576" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90d4d793-c175-7e4f-a953-2c15482e9127" executionId="d11ee9da-6500-4fad-b5fd-abde8507d217" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47b48568-fe23-aa9f-4797-84c392c55991" executionId="bd73f662-c4cf-452d-a7be-fc7007ab8b91" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="680a45b5-4f49-a5c2-34cb-d26f2ad2185b" executionId="056fa9e4-0e54-4b84-a832-646398465663" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8de660a6-a5b4-4a08-e168-84d6a8847c2d" executionId="a3f4fdcf-bc8d-43f1-a618-b48cefd9db82" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07b21b41-3269-6cca-bc3e-6dc3a61f0299" executionId="1024013c-0d98-4e70-a262-33776bc43ad3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27e69bba-5d02-273a-8090-be69ec325e3e" executionId="6dd05130-8cd7-43cf-a5e3-0375a1ba4bdb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b6e27dc1-3f73-d482-30bb-5034e06d0f49" executionId="5c6f4660-9346-448d-99c0-2d5af760c3e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ea95e44c-ad70-2fd7-0521-02dea5e03db6" executionId="999bfe41-2335-4b35-9889-aa27d52cc18f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5577bcbe-3b62-1f0a-eed4-fd75c6d9137e" executionId="3f4851ba-d5cb-43f7-a626-59f4866eed61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c397046-78ee-c33d-3e4c-44a5719d553d" executionId="e5669010-7122-4c51-b4ec-20030fce95a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="573b324d-2394-0284-242e-658089f98732" executionId="206556a3-52fb-411f-9534-33365a07379b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd6134f3-8c29-55c3-d0c7-c2fb216d01d4" executionId="1e2ef245-518c-4f68-965e-a996bab9c45f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="46995eaa-8b2d-4c3f-a28e-c4081d077ff5" testId="b5e3a755-a2ab-152d-aa80-c4911fd65e0b" testName="OtherTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0495027" startTime="2012-02-21T17:02:44.3712316-05:00" endTime="2012-02-21T17:02:44.7092509-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46995eaa-8b2d-4c3f-a28e-c4081d077ff5">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.OtherTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 254
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5a0980f0-0dc1-4336-a2fa-b86db72686a4" testId="1b724367-d2c1-3107-fa6a-cfdd80613097" testName="PreProcessorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0029965" startTime="2012-02-21T17:02:44.7122511-05:00" endTime="2012-02-21T17:02:44.7192515-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a0980f0-0dc1-4336-a2fa-b86db72686a4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.PreProcessorTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 209
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d612d0fe-5ffd-4885-8ffa-e1565b6a68e7" testId="18bf7b2a-4736-099f-9f87-d6165f9a1d8f" testName="DefaultInputLayerTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0011679" startTime="2012-02-21T17:02:44.7212516-05:00" endTime="2012-02-21T17:02:44.7262519-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d612d0fe-5ffd-4885-8ffa-e1565b6a68e7">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.DefaultInputLayerTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 164
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="16c17d7f-8d63-4001-bbca-df8c84162f57" testId="583e1b08-512f-1567-2515-8af7db8880c1" testName="TrainNetworkTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0013300" startTime="2012-02-21T17:02:44.7302521-05:00" endTime="2012-02-21T17:02:44.7352524-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16c17d7f-8d63-4001-bbca-df8c84162f57">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. A method that does not return a value cannot be verified.</Message>
+          <StackTrace>   at TestSuite.Framework.NeuralNetworkTest.TrainNetworkTest() in C:\Development Projects\ENN\TestSuite\Framework\NeuralNetworkTest.cs:line 75
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="aecfc8fe-81a3-418d-9105-f7a9076682a3" testId="895e1ad2-9637-1929-bdca-2e13d6ecdf33" testName="LoadText" computerName="LIL-MONEY-PIT" duration="00:00:00.0196728" startTime="2012-02-21T17:02:44.7372525-05:00" endTime="2012-02-21T17:02:44.7602538-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aecfc8fe-81a3-418d-9105-f7a9076682a3">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.Tools.SettingsTest.LoadText threw exception: 
+System.ArgumentException: An item with the same key has already been added.</Message>
+          <StackTrace>    at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at TestSuite.Framework.Tools.SettingsTest.SetBaseSetting() in C:\Development Projects\ENN\TestSuite\Framework\Tools\SettingsTest.cs:line 89
+   at TestSuite.Framework.Tools.SettingsTest.LoadText() in C:\Development Projects\ENN\TestSuite\Framework\Tools\SettingsTest.cs:line 46
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b114aea8-b288-4a6f-80c9-a14528e27f09" testId="99f0b5b4-0a2a-3205-9152-e1a3e644b886" testName="OutputLayerTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0019082" startTime="2012-02-21T17:02:44.7632540-05:00" endTime="2012-02-21T17:02:44.7682543-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b114aea8-b288-4a6f-80c9-a14528e27f09">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.OutputLayerTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 179
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="72bc576d-4a26-4755-9332-24de7e2c824a" testId="cf73ff44-a6c5-1e64-628c-f9b7f15247dd" testName="NeuralNetworkConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0014605" startTime="2012-02-21T17:02:44.7702544-05:00" endTime="2012-02-21T17:02:44.7752547-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="72bc576d-4a26-4755-9332-24de7e2c824a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.NeuralNetworkTest.NeuralNetworkConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\NeuralNetworkTest.cs:line 40
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2baad471-b318-431d-8c8b-a146c3aabdec" testId="855130ce-84bf-1161-1eee-aae8000252b2" testName="GetValueTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0048342" startTime="2012-02-21T17:02:44.7782549-05:00" endTime="2012-02-21T17:02:44.7862553-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2baad471-b318-431d-8c8b-a146c3aabdec">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.CustomizableNodeTest.GetValueTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.CombinationFunctions.sumation(Single[] nodeValues, Single[] constants) in C:\Development Projects\ENN\ENN.Framework\CombinationFunctions.cs:line 43
+   at ENN.Framework.CustomizableNode.GetValue(Single[] nodeValues) in C:\Development Projects\ENN\ENN.Framework\Nodes\CustomizableNode.cs:line 52
+   at TestSuite.Framework.CustomizableNodeTest.GetValueTest() in C:\Development Projects\ENN\TestSuite\Framework\Nodes\CustomizableNodeTest.cs:line 56
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bea700e1-c726-413d-9eb7-ea095cf1381d" testId="430f1830-9fb9-6f5a-5bbd-8746f440b9db" testName="GetValuesTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0041513" startTime="2012-02-21T17:02:44.7902555-05:00" endTime="2012-02-21T17:02:44.7972559-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bea700e1-c726-413d-9eb7-ea095cf1381d">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.ThreadedHiddenLayerTest.GetValuesTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.ThreadedHiddenLayer.GetValues(Single[] values) in C:\Development Projects\ENN\ENN.Framework\Layers\TreadedHiddenLayer.cs:line 40
+   at TestSuite.Framework.ThreadedHiddenLayerTest.GetValuesTest() in C:\Development Projects\ENN\TestSuite\Framework\Layers\ThreadedHiddenLayerTest.cs:line 52
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="159d35d1-7f2f-419f-9dda-261f783d0a35" testId="604a034f-362e-5faa-f734-caee2f5177cf" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0019578" startTime="2012-02-21T17:02:44.7992561-05:00" endTime="2012-02-21T17:02:44.8062565-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="159d35d1-7f2f-419f-9dda-261f783d0a35">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.BasicLayerTest.EqualsTest() in C:\Development Projects\ENN\TestSuite\Framework\Layers\BasicLayerTest.cs:line 54
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a80a17d5-b055-45e3-8276-1659ab4f7a84" testId="dc7516d4-ea11-52ea-592a-675e802b27f3" testName="SaveText" computerName="LIL-MONEY-PIT" duration="00:00:00.0022185" startTime="2012-02-21T17:02:44.8082566-05:00" endTime="2012-02-21T17:02:44.8142569-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a80a17d5-b055-45e3-8276-1659ab4f7a84">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.Tools.SettingsTest.SaveText threw exception: 
+System.ArgumentException: An item with the same key has already been added.</Message>
+          <StackTrace>    at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at TestSuite.Framework.Tools.SettingsTest.SetBaseSetting() in C:\Development Projects\ENN\TestSuite\Framework\Tools\SettingsTest.cs:line 89
+   at TestSuite.Framework.Tools.SettingsTest.SaveText() in C:\Development Projects\ENN\TestSuite\Framework\Tools\SettingsTest.cs:line 54
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f049cd4c-d240-4baa-b63d-96a187354079" testId="f1ce82b4-23b4-e9e2-a855-4dfbf8340573" testName="TrainingPreProcessorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0015552" startTime="2012-02-21T17:02:44.8172571-05:00" endTime="2012-02-21T17:02:44.8222574-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f049cd4c-d240-4baa-b63d-96a187354079">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.TrainingPreProcessorTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 239
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cd15307c-c0bd-4eb3-80d8-714cfea816c9" testId="aff7f15c-9745-8d57-d62e-e6de87a6f68c" testName="InputLayerTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0016930" startTime="2012-02-21T17:02:44.8252575-05:00" endTime="2012-02-21T17:02:44.8312579-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd15307c-c0bd-4eb3-80d8-714cfea816c9">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.InputLayerTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 149
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ab792f79-ad87-4ab6-a96d-d28cd1aeda5f" testId="ba1cb5ab-f487-d922-92d1-b5c0b8d6512f" testName="HiddenLayersTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0017677" startTime="2012-02-21T17:02:44.8332580-05:00" endTime="2012-02-21T17:02:44.8392583-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab792f79-ad87-4ab6-a96d-d28cd1aeda5f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.HiddenLayersTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 134
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c88fe9ce-12d1-4091-be79-9bf60c51f01f" testId="b5ae595f-7dca-73d7-1bda-f09e7ea52bd4" testName="ThreadedHiddenLayerConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0011533" startTime="2012-02-21T17:02:44.8422585-05:00" endTime="2012-02-21T17:02:44.8472588-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c88fe9ce-12d1-4091-be79-9bf60c51f01f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.ThreadedHiddenLayerTest.ThreadedHiddenLayerConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\Layers\ThreadedHiddenLayerTest.cs:line 38
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6c5a7118-bdd7-4ad0-9e63-ad6288f1d3b0" testId="1f504a14-9109-8935-fb3d-3e0cc9acaced" testName="TrainingAlgorithmTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0011729" startTime="2012-02-21T17:02:44.8492589-05:00" endTime="2012-02-21T17:02:44.8542592-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c5a7118-bdd7-4ad0-9e63-ad6288f1d3b0">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.TrainingAlgorithmTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 224
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="88cc1e54-3ee8-4409-8726-624bb0693616" testId="86183e70-5869-ac26-e602-fe6fdc8564f6" testName="CreateUserObjectTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0049844" startTime="2012-02-21T17:02:44.8562593-05:00" endTime="2012-02-21T17:02:44.8652598-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88cc1e54-3ee8-4409-8726-624bb0693616">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.StandLibFactoryTest.CreateUserObjectTestHelper[TObject]() in C:\Development Projects\ENN\TestSuite\Framework\StandLibFactoryTest.cs:line 104
+   at TestSuite.Framework.StandLibFactoryTest.CreateUserObjectTest() in C:\Development Projects\ENN\TestSuite\Framework\StandLibFactoryTest.cs:line 111
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7336b390-7f97-4490-a30b-11413f12d763" testId="e000e601-a400-b77b-7cbe-e16a1fb8bf43" testName="ToStringTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0044647" startTime="2012-02-21T17:02:44.8672600-05:00" endTime="2012-02-21T17:02:44.8742604-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7336b390-7f97-4490-a30b-11413f12d763">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;&gt;. Actual:&lt;Mode: Computational
+Network Type: Evolving
+Default Input Layer: BasicInputLayer
+Default Node: BasicNode
+Default Node Layer: BasicNodeLayer
+Default OutputLayer: BasicOutputLayer
+Timing Enabled: False
+Training Iterations: 10000
+Training Accuracy: 0.9
+Training Point: 0
+&gt;. </Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.ToStringTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 118
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="83b04f8e-2d6c-4098-942b-2e14ed6fb6e2" testId="349f5a51-cd4a-74bd-4680-47d19c2c213f" testName="getCombinationFunctionTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0020756" startTime="2012-02-21T17:02:44.8772605-05:00" endTime="2012-02-21T17:02:44.8812608-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="83b04f8e-2d6c-4098-942b-2e14ed6fb6e2">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;(null)&gt;. Actual:&lt;ENN.Framework.CombinationFunction&gt;. </Message>
+          <StackTrace>   at TestSuite.Framework.StandLibFactoryTest.getCombinationFunctionTest() in C:\Development Projects\ENN\TestSuite\Framework\StandLibFactoryTest.cs:line 152
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="55fa524a-a986-45a7-8d27-76c552a76d4e" testId="6c48ec72-9487-035f-80b3-d8b19112a2d9" testName="PostProcessorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0013265" startTime="2012-02-21T17:02:44.8842609-05:00" endTime="2012-02-21T17:02:44.8882612-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55fa524a-a986-45a7-8d27-76c552a76d4e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.PostProcessorTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 194
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f96fde5b-80f1-4ddc-9ea7-7c6cb7478281" testId="37a9f4d0-d84b-2633-12b6-49d19baece9d" testName="DefaultHiddenLayerTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0010085" startTime="2012-02-21T17:02:44.8902613-05:00" endTime="2012-02-21T17:02:44.8942615-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f96fde5b-80f1-4ddc-9ea7-7c6cb7478281">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.DefaultHiddenLayerTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 149
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="984063c5-d89f-4e11-94de-f77f9494ae1b" testId="3c3ed5b7-5e6a-8138-0b65-4fd13679f387" testName="DefaultNodeTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0013127" startTime="2012-02-21T17:02:44.8962616-05:00" endTime="2012-02-21T17:02:44.9012619-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="984063c5-d89f-4e11-94de-f77f9494ae1b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.DefaultNodeTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 179
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e90400bc-689c-48a0-824b-dc491f25d4e5" testId="c598b3e8-9ef4-dda5-2cbb-7eb6dc003da3" testName="TrainingIterationsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0009747" startTime="2012-02-21T17:02:44.9042621-05:00" endTime="2012-02-21T17:02:44.9072622-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e90400bc-689c-48a0-824b-dc491f25d4e5">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.TrainingIterationsTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 299
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f4d27d60-4db8-445c-9474-481b44ce9a09" testId="f053d416-9380-8069-ef40-6a7789ba8040" testName="GetValuesTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0024529" startTime="2012-02-21T17:02:44.9102624-05:00" endTime="2012-02-21T17:02:44.9152627-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f4d27d60-4db8-445c-9474-481b44ce9a09">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.BasicLayerTest.GetValuesTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.BasicLayer.GetValues(Single[] values) in C:\Development Projects\ENN\ENN.Framework\Layers\BasicLayer.cs:line 46
+   at TestSuite.Framework.BasicLayerTest.GetValuesTest() in C:\Development Projects\ENN\TestSuite\Framework\Layers\BasicLayerTest.cs:line 68
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="da5ac1d3-b24b-4608-9db7-6b1c67c3c483" testId="e28af217-9e05-374a-b589-3e0e31013f06" testName="ParseListTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0022439" startTime="2012-02-21T17:02:44.9182629-05:00" endTime="2012-02-21T17:02:44.9232632-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da5ac1d3-b24b-4608-9db7-6b1c67c3c483">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;(null)&gt;. Actual:&lt;System.String[]&gt;. </Message>
+          <StackTrace>   at TestSuite.Framework.StandLibFactoryTest.ParseListTest() in C:\Development Projects\ENN\TestSuite\Framework\StandLibFactoryTest.cs:line 124
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e0a18243-1ac2-4896-bb63-317f36cdc7e6" testId="a1ceb0d7-e762-54e4-c7d1-02628c8188ab" testName="NetworkTypeTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0029541" startTime="2012-02-21T17:02:44.9252633-05:00" endTime="2012-02-21T17:02:44.9312636-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0a18243-1ac2-4896-bb63-317f36cdc7e6">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.NetworkTypeTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 239
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2bf449a1-e5cb-4b1f-a093-fca00e1e73da" testId="d60f0c70-680a-f2a7-be96-723443b7d4dc" testName="TrainNetworkTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0040304" startTime="2012-02-21T17:02:44.9342638-05:00" endTime="2012-02-21T17:02:44.9412642-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2bf449a1-e5cb-4b1f-a093-fca00e1e73da">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.HillClimbAlgoTest.TrainNetworkTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.HillClimbAlgo.TrainNetwork(NetworkTopology&amp; topology, Single error) in C:\Development Projects\ENN\ENN.Framework\HillClimbAlgo.cs:line 95
+   at TestSuite.Framework.HillClimbAlgoTest.TrainNetworkTest() in C:\Development Projects\ENN\TestSuite\Framework\HillClimbAlgoTest.cs:line 129
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4610f957-88cb-4974-817a-ffc0860790d1" testId="3c9d6005-6c63-77c2-b4e0-1c2eb9238c86" testName="StandLibFactoryConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0009023" startTime="2012-02-21T17:02:44.9432643-05:00" endTime="2012-02-21T17:02:44.9472645-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4610f957-88cb-4974-817a-ffc0860790d1">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.StandLibFactoryTest.StandLibFactoryConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\StandLibFactoryTest.cs:line 89
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="94644163-ce28-474b-ab2f-70cc490d9b3a" testId="a8823d1a-dea7-22d8-3b80-cec046111d72" testName="DefaultOutputLayerTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0010670" startTime="2012-02-21T17:02:44.9492646-05:00" endTime="2012-02-21T17:02:44.9542649-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="94644163-ce28-474b-ab2f-70cc490d9b3a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.DefaultOutputLayerTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 194
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0c301a26-f4a5-4b07-b49d-b3a53fad6844" testId="020f297e-a2c1-3a64-4acc-60c7b6d21770" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0016853" startTime="2012-02-21T17:02:44.9562650-05:00" endTime="2012-02-21T17:02:44.9612653-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c301a26-f4a5-4b07-b49d-b3a53fad6844">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.CustomizableNodeTest.EqualsTest() in C:\Development Projects\ENN\TestSuite\Framework\Nodes\CustomizableNodeTest.cs:line 43
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="fa0d569a-c339-448c-888c-faa1802cbfea" testId="b956f179-a280-645c-1bae-ce922e14d496" testName="SaveLoadBinary" computerName="LIL-MONEY-PIT" duration="00:00:00.0030650" startTime="2012-02-21T17:02:44.9632654-05:00" endTime="2012-02-21T17:02:44.9692658-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa0d569a-c339-448c-888c-faa1802cbfea">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.Tools.SettingsTest.SaveLoadBinary threw exception: 
+System.ArgumentException: An item with the same key has already been added.</Message>
+          <StackTrace>    at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at TestSuite.Framework.Tools.SettingsTest.SetBaseSetting() in C:\Development Projects\ENN\TestSuite\Framework\Tools\SettingsTest.cs:line 89
+   at TestSuite.Framework.Tools.SettingsTest.SaveLoadBinary() in C:\Development Projects\ENN\TestSuite\Framework\Tools\SettingsTest.cs:line 65
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5ed902b0-8eed-43dd-820d-4516404952eb" testId="8fa4a54a-bae6-94d8-d573-1647c12d4824" testName="ModeTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0029225" startTime="2012-02-21T17:02:44.9722660-05:00" endTime="2012-02-21T17:02:44.9772662-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ed902b0-8eed-43dd-820d-4516404952eb">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.ModeTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 224
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5143d1a0-0ea0-4006-8d2a-75be42ea2a3f" testId="b4ff2759-93e7-a8a5-d6b3-d10da4893f5a" testName="DefaultFactoryTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0013019" startTime="2012-02-21T17:02:44.9802664-05:00" endTime="2012-02-21T17:02:44.9842666-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5143d1a0-0ea0-4006-8d2a-75be42ea2a3f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.DefaultFactoryTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 134
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ba354a8e-ab5c-4a8f-827a-1fd7f0a8a535" testId="2b901e5f-9814-1f85-ba74-9596bce4ae77" testName="EnableTimingTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0011444" startTime="2012-02-21T17:02:44.9872668-05:00" endTime="2012-02-21T17:02:44.9912670-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba354a8e-ab5c-4a8f-827a-1fd7f0a8a535">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.EnableTimingTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 209
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9bafa331-68ac-4b0e-80e5-a2bf81bc71fc" testId="b5af2dd1-ef3f-eec7-b120-54c52453cde4" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0012076" startTime="2012-02-21T17:02:44.9942672-05:00" endTime="2012-02-21T17:02:44.9982674-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bafa331-68ac-4b0e-80e5-a2bf81bc71fc">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.HillClimbAlgoTest.EqualsTest() in C:\Development Projects\ENN\TestSuite\Framework\HillClimbAlgoTest.cs:line 104
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f1d1f666-ec5a-4a42-90f7-6e8ac6848d4e" testId="54ea49d7-872c-276b-d1ac-f03e032aae87" testName="MetaDataTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0012522" startTime="2012-02-21T17:02:45.0002676-05:00" endTime="2012-02-21T17:02:45.0042678-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f1d1f666-ec5a-4a42-90f7-6e8ac6848d4e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.MetaDataTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 164
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a7990da2-f2e6-4121-a4d6-0dba5352b2a5" testId="357b4346-32ed-acf9-652d-d83b6fab665a" testName="getActivationFunctionTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0033144" startTime="2012-02-21T17:02:45.0072680-05:00" endTime="2012-02-21T17:02:45.0132683-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7990da2-f2e6-4121-a4d6-0dba5352b2a5">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;(null)&gt;. Actual:&lt;ENN.Framework.ActivationFunction&gt;. </Message>
+          <StackTrace>   at TestSuite.Framework.StandLibFactoryTest.getActivationFunctionTest() in C:\Development Projects\ENN\TestSuite\Framework\StandLibFactoryTest.cs:line 138
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d2b82ba3-6bbf-4868-9894-349d45193576" testId="4d46c574-4e3e-c892-575b-4964cedc723f" testName="StartNetworkTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0033729" startTime="2012-02-21T17:02:45.0152684-05:00" endTime="2012-02-21T17:02:45.0222688-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2b82ba3-6bbf-4868-9894-349d45193576">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.NeuralNetworkTest.StartNetworkTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.NeuralNetwork.StartNetwork(Object state) in C:\Development Projects\ENN\ENN.Framework\NeuralNetwork.cs:line 45
+   at TestSuite.Framework.NeuralNetworkTest.StartNetworkTest() in C:\Development Projects\ENN\TestSuite\Framework\NeuralNetworkTest.cs:line 65
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d11ee9da-6500-4fad-b5fd-abde8507d217" testId="90d4d793-c175-7e4f-a953-2c15482e9127" testName="NetworkTopologyConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0008930" startTime="2012-02-21T17:02:45.0252690-05:00" endTime="2012-02-21T17:02:45.0282692-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d11ee9da-6500-4fad-b5fd-abde8507d217">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.NetworkTopologyConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 90
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bd73f662-c4cf-452d-a7be-fc7007ab8b91" testId="47b48568-fe23-aa9f-4797-84c392c55991" testName="MetaDataTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0013246" startTime="2012-02-21T17:02:45.0312693-05:00" endTime="2012-02-21T17:02:45.0352696-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd73f662-c4cf-452d-a7be-fc7007ab8b91">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.BasicLayerTest.MetaDataTest() in C:\Development Projects\ENN\TestSuite\Framework\Layers\BasicLayerTest.cs:line 86
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="056fa9e4-0e54-4b84-a832-646398465663" testId="680a45b5-4f49-a5c2-34cb-d26f2ad2185b" testName="SetSettingsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0026488" startTime="2012-02-21T17:02:45.0372697-05:00" endTime="2012-02-21T17:02:45.0432700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="056fa9e4-0e54-4b84-a832-646398465663">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestSuite.Framework.HillClimbAlgoTest.SetSettingsTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at ENN.Framework.HillClimbAlgo.SetSettings(NetworkSettings settings) in C:\Development Projects\ENN\ENN.Framework\HillClimbAlgo.cs:line 64
+   at TestSuite.Framework.HillClimbAlgoTest.SetSettingsTest() in C:\Development Projects\ENN\TestSuite\Framework\HillClimbAlgoTest.cs:line 115
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a3f4fdcf-bc8d-43f1-a618-b48cefd9db82" testId="8de660a6-a5b4-4a08-e168-84d6a8847c2d" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0020248" startTime="2012-02-21T17:02:45.0452701-05:00" endTime="2012-02-21T17:02:45.0492704-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a3f4fdcf-bc8d-43f1-a618-b48cefd9db82">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.EqualsTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 105
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1024013c-0d98-4e70-a262-33776bc43ad3" testId="07b21b41-3269-6cca-bc3e-6dc3a61f0299" testName="BasicLayerConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0009169" startTime="2012-02-21T17:02:45.0522705-05:00" endTime="2012-02-21T17:02:45.0552707-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1024013c-0d98-4e70-a262-33776bc43ad3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.BasicLayerTest.BasicLayerConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\Layers\BasicLayerTest.cs:line 38
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6dd05130-8cd7-43cf-a5e3-0375a1ba4bdb" testId="27e69bba-5d02-273a-8090-be69ec325e3e" testName="TraininPoolTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0009754" startTime="2012-02-21T17:02:45.0582709-05:00" endTime="2012-02-21T17:02:45.0622711-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6dd05130-8cd7-43cf-a5e3-0375a1ba4bdb">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.TraininPoolTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 269
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5c6f4660-9346-448d-99c0-2d5af760c3e7" testId="b6e27dc1-3f73-d482-30bb-5034e06d0f49" testName="ComputeDecisionTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0008857" startTime="2012-02-21T17:02:45.0642712-05:00" endTime="2012-02-21T17:02:45.0682714-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c6f4660-9346-448d-99c0-2d5af760c3e7">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NeuralNetworkTest.ComputeDecisionTest() in C:\Development Projects\ENN\TestSuite\Framework\NeuralNetworkTest.cs:line 52
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="999bfe41-2335-4b35-9889-aa27d52cc18f" testId="ea95e44c-ad70-2fd7-0521-02dea5e03db6" testName="ToStringTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0015833" startTime="2012-02-21T17:02:45.0702716-05:00" endTime="2012-02-21T17:02:45.0732717-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="999bfe41-2335-4b35-9889-aa27d52cc18f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkTopologyTest.ToStringTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkTopologyTest.cs:line 119
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3f4851ba-d5cb-43f7-a626-59f4866eed61" testId="5577bcbe-3b62-1f0a-eed4-fd75c6d9137e" testName="EqualsTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0033960" startTime="2012-02-21T17:02:45.0752718-05:00" endTime="2012-02-21T17:02:45.0812722-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f4851ba-d5cb-43f7-a626-59f4866eed61">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;False&gt;. Actual:&lt;True&gt;. </Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.EqualsTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 104
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e5669010-7122-4c51-b4ec-20030fce95a6" testId="8c397046-78ee-c33d-3e4c-44a5719d553d" testName="TrainingAccuracyTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0012387" startTime="2012-02-21T17:02:45.0832723-05:00" endTime="2012-02-21T17:02:45.0882726-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5669010-7122-4c51-b4ec-20030fce95a6">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.TrainingAccuracyTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 284
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="206556a3-52fb-411f-9534-33365a07379b" testId="573b324d-2394-0284-242e-658089f98732" testName="NetworkSettingsConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0010528" startTime="2012-02-21T17:02:45.0912728-05:00" endTime="2012-02-21T17:02:45.0952730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="206556a3-52fb-411f-9534-33365a07379b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.NetworkSettingsTest.NetworkSettingsConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\NetworkSettingsTest.cs:line 90
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1e2ef245-518c-4f68-965e-a996bab9c45f" testId="bd6134f3-8c29-55c3-d0c7-c2fb216d01d4" testName="HillClimbAlgoConstructorTest" computerName="LIL-MONEY-PIT" duration="00:00:00.0008981" startTime="2012-02-21T17:02:45.0972731-05:00" endTime="2012-02-21T17:02:45.1192744-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e2ef245-518c-4f68-965e-a996bab9c45f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at TestSuite.Framework.HillClimbAlgoTest.HillClimbAlgoConstructorTest() in C:\Development Projects\ENN\TestSuite\Framework\HillClimbAlgoTest.cs:line 89
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

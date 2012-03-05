@@ -61,6 +61,15 @@ namespace ENN.TopologyBuilder.Views
 		}
 
 		/// <summary>
+		/// Sets this layers meta data.
+		/// </summary>
+		/// <param name="data">The data to set the meta dat too.</param>
+		public void SetMetaData(Dictionary<string, string> data)
+		{
+			metaData = data;
+		}
+
+		/// <summary>
 		/// Gets the meta data that was set for this layer.
 		/// </summary>
 		/// <returns>The current meta data.</returns>

@@ -102,21 +102,21 @@
 			this.topologyToolStripMenuItem.Name = "topologyToolStripMenuItem";
 			this.topologyToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.topologyToolStripMenuItem.Text = "Topology";
-			this.topologyToolStripMenuItem.Click += new System.EventHandler(this.topologyToolStripMenuItem_Click);
+			this.topologyToolStripMenuItem.Click += new System.EventHandler(this.LoadTopology);
 			// 
 			// userBinariesToolStripMenuItem
 			// 
 			this.userBinariesToolStripMenuItem.Name = "userBinariesToolStripMenuItem";
 			this.userBinariesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.userBinariesToolStripMenuItem.Text = "User Binaries";
-			this.userBinariesToolStripMenuItem.Click += new System.EventHandler(this.userBinariesToolStripMenuItem_Click);
+			this.userBinariesToolStripMenuItem.Click += new System.EventHandler(this.LoadUserBinaries);
 			// 
 			// saveFileMenuItem
 			// 
 			this.saveFileMenuItem.Name = "saveFileMenuItem";
 			this.saveFileMenuItem.Size = new System.Drawing.Size(100, 22);
 			this.saveFileMenuItem.Text = "Save";
-			this.saveFileMenuItem.Click += new System.EventHandler(this.saveFileMenuItem_Click);
+			this.saveFileMenuItem.Click += new System.EventHandler(this.SaveTopology);
 			// 
 			// actionMenu
 			// 
@@ -156,7 +156,7 @@
             | System.Windows.Forms.Keys.I)));
 			this.inputToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
 			this.inputToolStripMenuItem.Text = "Input";
-			this.inputToolStripMenuItem.Click += new System.EventHandler(this.inputToolStripMenuItem_Click);
+			this.inputToolStripMenuItem.Click += new System.EventHandler(this.AddInputLayer);
 			// 
 			// hiddenToolStripMenuItem
 			// 
@@ -165,7 +165,7 @@
             | System.Windows.Forms.Keys.H)));
 			this.hiddenToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
 			this.hiddenToolStripMenuItem.Text = "Hidden";
-			this.hiddenToolStripMenuItem.Click += new System.EventHandler(this.hiddenToolStripMenuItem_Click);
+			this.hiddenToolStripMenuItem.Click += new System.EventHandler(this.AddHiddenLayer);
 			// 
 			// outputToolStripMenuItem
 			// 
@@ -174,7 +174,7 @@
             | System.Windows.Forms.Keys.O)));
 			this.outputToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
 			this.outputToolStripMenuItem.Text = "Output";
-			this.outputToolStripMenuItem.Click += new System.EventHandler(this.outputToolStripMenuItem_Click);
+			this.outputToolStripMenuItem.Click += new System.EventHandler(this.AddOutputLayer);
 			// 
 			// nodeToolStripMenuItem
 			// 
@@ -183,7 +183,7 @@
             | System.Windows.Forms.Keys.N)));
 			this.nodeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
 			this.nodeToolStripMenuItem.Text = "Node";
-			this.nodeToolStripMenuItem.Click += new System.EventHandler(this.nodeToolStripMenuItem_Click);
+			this.nodeToolStripMenuItem.Click += new System.EventHandler(this.AddNode);
 			// 
 			// processorToolStripMenuItem
 			// 
@@ -199,21 +199,21 @@
 			this.preProcessorToolStripMenuItem.Name = "preProcessorToolStripMenuItem";
 			this.preProcessorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
 			this.preProcessorToolStripMenuItem.Text = "PreProcessor";
-			this.preProcessorToolStripMenuItem.Click += new System.EventHandler(this.preProcessorToolStripMenuItem_Click);
+			this.preProcessorToolStripMenuItem.Click += new System.EventHandler(this.AddPreProcessor);
 			// 
 			// postProcessorToolStripMenuItem
 			// 
 			this.postProcessorToolStripMenuItem.Name = "postProcessorToolStripMenuItem";
 			this.postProcessorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
 			this.postProcessorToolStripMenuItem.Text = "PostProcessor";
-			this.postProcessorToolStripMenuItem.Click += new System.EventHandler(this.postProcessorToolStripMenuItem_Click);
+			this.postProcessorToolStripMenuItem.Click += new System.EventHandler(this.AddPostProcessor);
 			// 
 			// copyToolStripMenuItem
 			// 
 			this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
 			this.copyToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
 			this.copyToolStripMenuItem.Text = "Copy";
-			this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+			this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopySelectedLayer);
 			// 
 			// pasteToolStripMenuItem
 			// 
@@ -229,21 +229,21 @@
 			this.selectedToolStripMenuItem.Name = "selectedToolStripMenuItem";
 			this.selectedToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
 			this.selectedToolStripMenuItem.Text = "Selected";
-			this.selectedToolStripMenuItem.Click += new System.EventHandler(this.selectedToolStripMenuItem_Click);
+			this.selectedToolStripMenuItem.Click += new System.EventHandler(this.PasteLayer);
 			// 
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
 			this.newToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
 			this.newToolStripMenuItem.Text = "New";
-			this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+			this.newToolStripMenuItem.Click += new System.EventHandler(this.PasteNewLayer);
 			// 
 			// deleteToolStripMenuItem
 			// 
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
 			this.deleteToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
 			this.deleteToolStripMenuItem.Text = "Delete";
-			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteLayer);
 			// 
 			// topologyContainer
 			// 
@@ -271,8 +271,8 @@
 			this.topologyDisplay.Name = "topologyDisplay";
 			this.topologyDisplay.Size = new System.Drawing.Size(693, 406);
 			this.topologyDisplay.TabIndex = 0;
-			this.topologyDisplay.Click += new System.EventHandler(this.topologyDisplay_Click);
-			this.topologyDisplay.Resize += new System.EventHandler(this.topologyDisplay_Resize);
+			this.topologyDisplay.Click += new System.EventHandler(this.TopologyDisplayClick);
+			this.topologyDisplay.Resize += new System.EventHandler(this.ResizeTopologyDisplay);
 			// 
 			// topologyStatus
 			// 
@@ -325,7 +325,7 @@
 			// saveStatusTimer
 			// 
 			this.saveStatusTimer.Interval = 10000;
-			this.saveStatusTimer.Tick += new System.EventHandler(this.saveStatusTimer_Tick);
+			this.saveStatusTimer.Tick += new System.EventHandler(this.SaveTimerTick);
 			// 
 			// MainForm
 			// 
@@ -338,7 +338,7 @@
 			this.MainMenuStrip = this.mainMenu;
 			this.Name = "MainForm";
 			this.Text = "Topology Builder";
-			this.Load += new System.EventHandler(this.MainForm_Load);
+			this.Load += new System.EventHandler(this.LoadMainForm);
 			this.mainMenu.ResumeLayout(false);
 			this.mainMenu.PerformLayout();
 			this.topologyContainer.Panel1.ResumeLayout(false);

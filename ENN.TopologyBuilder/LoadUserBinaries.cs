@@ -46,7 +46,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Locates a file the contains user created library.
 		/// </summary>
-		private void findFile_Click(object sender, EventArgs e)
+		private void ChooseFile(object sender, EventArgs e)
 		{
 			openBinary.ShowDialog();
 			fileLocation.Text = openBinary.FileName;
@@ -55,7 +55,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Loads the selected file
 		/// </summary>
-		private void loadFile_Click(object sender, EventArgs e)
+		private void LoadFile(object sender, EventArgs e)
 		{
 			try
 			{
@@ -116,7 +116,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Clears the form of the loaded values
 		/// </summary>
-		private void clear_Click(object sender, EventArgs e)
+		private void ClearForm(object sender, EventArgs e)
 		{
 			factoryName.Text = "";
 
@@ -145,7 +145,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds the loaded information into its correct lists
 		/// </summary>
-		private void addButton_Click(object sender, EventArgs e)
+		private void AddDataTypes(object sender, EventArgs e)
 		{
 			metaDataPool.SetFactory(factoryName.Text, loadedFactory);
 
@@ -171,7 +171,7 @@ namespace ENN.TopologyBuilder
 				metaDataPool.SetTrainingAlgorithm(trainingAlgo);
 
 			MessageBox.Show("Information Added");
-			clear_Click(null, null);
+			ClearForm(null, null);
 		}
 	}
 }

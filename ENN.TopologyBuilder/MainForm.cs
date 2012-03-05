@@ -82,7 +82,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Creates a copy of the currently selected layer.
 		/// </summary>
-		private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+		private void CopySelectedLayer(object sender, EventArgs e)
 		{
 			if(currentSelectedLayer.GetType() != typeof(HiddenLayerView))
 			{
@@ -96,16 +96,16 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Copies the copied layer to the current layer
 		/// </summary>
-		private void selectedToolStripMenuItem_Click(object sender, EventArgs e)
+		private void PasteLayer(object sender, EventArgs e)
 		{
 			AddTableItem(copyLayer, GetLayerRow(currentSelectedLayer));
-			deleteToolStripMenuItem_Click(null, null);
+			DeleteLayer(null, null);
 		}
 
 		/// <summary>
 		/// Copies the copied layer as a new layer
 		/// </summary>
-		private void newToolStripMenuItem_Click(object sender, EventArgs e)
+		private void PasteNewLayer(object sender, EventArgs e)
 		{
 			int row = -1;
 
@@ -122,7 +122,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Deletes the currently selected layer,
 		/// </summary>
-		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+		private void DeleteLayer(object sender, EventArgs e)
 		{
 			Type currentType = currentSelectedLayer.GetType();
 			if (currentType == typeof(OutputLayerView))
@@ -157,7 +157,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a Hidden Layer
 		/// </summary>
-		private void hiddenToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AddHiddenLayer(object sender, EventArgs e)
 		{
 			HiddenLayerView layer = new HiddenLayerView();
 			layer.SetMetaDataModel(ref metaData);
@@ -175,7 +175,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds an Output Layer
 		/// </summary>
-		private void outputToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AddOutputLayer(object sender, EventArgs e)
 		{
 			if (!hasOutput)
 			{
@@ -197,7 +197,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds Input Layer
 		/// </summary>
-		private void inputToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AddInputLayer(object sender, EventArgs e)
 		{
 			if (!hasInput)
 			{
@@ -215,7 +215,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a pre processor
 		/// </summary>
-		private void preProcessorToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AddPreProcessor(object sender, EventArgs e)
 		{
 			if (!hasPreProcessor)
 			{
@@ -230,7 +230,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a post processor
 		/// </summary>
-		private void postProcessorToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AddPostProcessor(object sender, EventArgs e)
 		{
 			if (!hasPostProcessor)
 			{
@@ -245,7 +245,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Adds a node to the current layer
 		/// </summary>
-		private void nodeToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AddNode(object sender, EventArgs e)
 		{
 			if (currentSelectedLayer.GetType() == typeof(HiddenLayerView))
 			{
@@ -318,6 +318,21 @@ namespace ENN.TopologyBuilder
 			}
 
 			return row;
+		}
+
+		/// <summary>
+		/// Retrieves the layer at the specific row. If the row is not a valid
+		/// value then null is returned.
+		/// </summary>
+		/// <param name="row">The row of the layer to return.</param>
+		/// <returns>The layer at that row passed.</returns>
+		private LayerView GetLayer(int row)
+		{
+			if (row < 0 || row >= topologyDisplay.Controls.Count)
+			{
+				return null;
+			}
+			return (LayerView)topologyDisplay.Controls[row];
 		}
 
 		/// <summary>
@@ -416,7 +431,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Resizes the elements in the display
 		/// </summary>
-		private void topologyDisplay_Resize(object sender, EventArgs e)
+		private void ResizeTopologyDisplay(object sender, EventArgs e)
 		{
 			int width = topologyDisplay.Width - 25;
 			foreach (Control control in topologyDisplay.Controls)
@@ -428,7 +443,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Opens a form to load user defined binaries
 		/// </summary>
-		private void userBinariesToolStripMenuItem_Click(object sender, EventArgs e)
+		private void LoadUserBinaries(object sender, EventArgs e)
 		{
 			LoadUserBinaries form = new LoadUserBinaries();
 			form.SetMetaDataPool(ref metaData);
@@ -438,10 +453,11 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Saves the current topology in the GUI.
 		/// </summary>
-		private void saveFileMenuItem_Click(object sender, EventArgs e)
+		private void SaveTopology(object sender, EventArgs e)
 		{
 			NetworkTopology topology = new NetworkTopology();
 			topology.MetaData = topologyMetaData;
+
 			List<IHiddenLayer> hiddenLayers = new List<IHiddenLayer>();
 			foreach (UserControl layer in topologyDisplay.Controls)
 			{
@@ -502,7 +518,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Loads a topology from a file into the gui.
 		/// </summary>
-		private void topologyToolStripMenuItem_Click(object sender, EventArgs e)
+		private void LoadTopology(object sender, EventArgs e)
 		{
 			openTopology.ShowDialog();
 			Dictionary<string, IUserObjectFactory> factories = metaData.GetFactories();
@@ -511,12 +527,35 @@ namespace ENN.TopologyBuilder
 				Topology.Load(openTopology.FileName, ref factories, ref settings,
 							openTopology.FileName.EndsWith(".nntc", true, null));
 
+			topologyMetaData = topology.MetaData;
+
+			AddPreProcessor(null, null);
+			GetLayer(0).SetMetaData(topology.PreProcessor.MetaData);
+
+			AddInputLayer(null, null);
+			GetLayer(1).SetMetaData(topology.InputLayer.MetaData);
+
+			int row = 2;
+			for(int i = 0; i < topology.HiddenLayers.Length; i++)
+			{
+				AddHiddenLayer(null, null);
+				HiddenLayerView layer = (HiddenLayerView)GetLayer(row);
+				layer.SetMetaData(topology.HiddenLayers[i].MetaData);
+				currentSelectedLayer = layer;
+
+
+				row++;
+			}
+
+			AddOutputLayer(null, null);
+
+			AddPostProcessor(null, null);
 		}
 		
 		/// <summary>
 		/// Starts the timer.
 		/// </summary>
-		private void MainForm_Load(object sender, EventArgs e)
+		private void LoadMainForm(object sender, EventArgs e)
 		{
 			saveStatusTimer.Start();
 		}
@@ -524,7 +563,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Every time 1000ms the topology is checked to see if it is ready to save.
 		/// </summary>
-		private void saveStatusTimer_Tick(object sender, EventArgs e)
+		private void SaveTimerTick(object sender, EventArgs e)
 		{
 			UpdateSaveStatus();
 		}
@@ -532,7 +571,7 @@ namespace ENN.TopologyBuilder
 		/// <summary>
 		/// Displays the topology meta data view when clicked.
 		/// </summary>
-		private void topologyDisplay_Click(object sender, EventArgs e)
+		private void TopologyDisplayClick(object sender, EventArgs e)
 		{
 			topologyMetaDataView.Size = topologyContainer.Panel2.Size;
 			if (topologyContainer.Panel2.Controls.Count > 0)

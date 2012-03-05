@@ -81,7 +81,7 @@
 			this.findFile.TabIndex = 2;
 			this.findFile.Text = "Choose File";
 			this.findFile.UseVisualStyleBackColor = true;
-			this.findFile.Click += new System.EventHandler(this.findFile_Click);
+			this.findFile.Click += new System.EventHandler(this.ChooseFile);
 			// 
 			// loadFile
 			// 
@@ -91,7 +91,7 @@
 			this.loadFile.TabIndex = 3;
 			this.loadFile.Text = "Load File";
 			this.loadFile.UseVisualStyleBackColor = true;
-			this.loadFile.Click += new System.EventHandler(this.loadFile_Click);
+			this.loadFile.Click += new System.EventHandler(this.LoadFile);
 			// 
 			// addButton
 			// 
@@ -101,7 +101,7 @@
 			this.addButton.TabIndex = 4;
 			this.addButton.Text = "Add";
 			this.addButton.UseVisualStyleBackColor = true;
-			this.addButton.Click += new System.EventHandler(this.addButton_Click);
+			this.addButton.Click += new System.EventHandler(this.AddDataTypes);
 			// 
 			// factoryNameLabel
 			// 
@@ -223,7 +223,7 @@
 			this.clear.TabIndex = 20;
 			this.clear.Text = "Clear";
 			this.clear.UseVisualStyleBackColor = true;
-			this.clear.Click += new System.EventHandler(this.clear_Click);
+			this.clear.Click += new System.EventHandler(this.ClearForm);
 			// 
 			// trainingAlgorithmLabel
 			// 

@@ -9,18 +9,7 @@ settings files and topologies.
 To read the topology and settings file specification, go to the following address:
 https://docs.google.com/open?id=0B-lvvNhCn-WJNzU4ZDYyMWUtMDVmMS00NDJmLWE0NzItNjA0NTg0YmE1MDY4
 
-Version: Beta 1.x.0 3.18.2012
-Newly Added:
-Framework:
-
-Runtime:
-
-GUI Apps:
--settingsbuilder:
-
--topologybuilder:
-	-can nearly save topologies
-	-various improvements
+Version: 1.0.0 3.18.2012
 
 Finished:
 Framework:
@@ -60,23 +49,3 @@ Runtime:
 GUI Apps:
 -Settings Builder finished
 -Topology Builder started
-
-To Do:
-Framework:
--Add comments
--Add more data validation tests
-
-Runtime:
--Allow for topologies to be saved after being trained
--Add comments
--Add more data validation tests
--Use default time when acceptable
-
-GUI Apps:
--Topology Builder
-	-Load and Save topology
-	-specifiy data types for each topology item
-	-finish implimenting menu items
-
-Test Suite:
--need to fix all the tests and finish creating the tests

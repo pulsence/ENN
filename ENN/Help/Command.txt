@@ -1,7 +1,0 @@
-﻿The -c command allows you to load a command script file into the runtime.
-These file are a series of commands in a file. Each command goes onto a
-single line and are the same and if you were to enter them into the command
-line. The -c command expects a -f parameter which specifies the file to
-read from.
-
-Example: -c -f Scripts/myScript.script

@@ -229,7 +229,7 @@ namespace ENN.Runtime
         {
             if (commands.Count < 2)
             {
-                printToCommand(File.ReadAllLines("Help\\Intro.txt"));
+                Console.WriteLine(Help.intro);
             }
             else if (commands[1].CommandChar == 'r')
             {
@@ -240,15 +240,15 @@ namespace ENN.Runtime
             }
             else if (commands[1].CommandChar == 'l')
             {
-                printToCommand(File.ReadAllLines("Help\\Load.txt"));
+                Console.WriteLine(Help.load);
             }
             else if (commands[1].CommandChar == 'u')
             {
-                printToCommand(File.ReadAllLines("Help\\Update.txt"));
+				Console.WriteLine(Help.update);
             }
             else if (commands[1].CommandChar == 's')
             {
-                printToCommand(File.ReadAllLines("Help\\Save.txt."));
+				Console.WriteLine(Help.save);
             }
             else if (commands[1].CommandChar == 'i')
             {
@@ -262,29 +262,17 @@ namespace ENN.Runtime
             }
             else if (commands[1].CommandChar == 'c')
             {
-                printToCommand(File.ReadAllLines("Help\\Command.txt"));
+				Console.WriteLine(Help.command);
             }
             else if (commands[1].CommandChar == 'a')
             {
-                printToCommand(File.ReadAllLines("Help\\Application.txt"));
+				Console.WriteLine(Help.application);
             }
             else
             {
                 Console.WriteLine("The " + commands[1].CommandChar +
                     " is not one of the accepted commands");
-                printToCommand(File.ReadAllLines("Help\\Intro.txt"));
-            }
-        }
-
-		/// <summary>
-		/// Helper function used to diplays files on screen.
-		/// </summary>
-		/// <param name="strings">Strings to display.</param>
-		private static void printToCommand(string[] strings)
-        {
-            foreach (string s in strings)
-            {
-                Console.WriteLine(s);
+				Console.WriteLine(Help.intro);
             }
         }
     }

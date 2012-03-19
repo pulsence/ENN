@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="90b13bc0-f8ce-44f7-bf0b-e8bb1e467470" name="skynryd9@LIL-MONEY-PIT 2012-03-18 20:05:30" runUser="Lil-Money-Pit\skynryd9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="edb481bb-0340-4d08-a79e-041a6ff1b069">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="skynryd9_LIL-MONEY-PIT 2012-03-18 20_05_30">
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN\bin\Debug\UserBin\TestUserBinary.dll" />
+      <DeploymentItem filename="C:\Development Projects\ENN\ENN.Framework\bin\Debug\ENN.Framework.dll" />
+    </Deployment>
+    <Execution hostProcessPlatform="MSIL">
+      <Hosts skipUnhostableTests="false" />
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+      </TestTypeSpecific>
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-03-18T20:05:30.1581159-04:00" queuing="2012-03-18T20:05:31.0389550-04:00" start="2012-03-18T20:05:31.1699625-04:00" finish="2012-03-18T20:05:57.1994031-04:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="LIL-MONEY-PIT" outcome="Error" timestamp="2012-03-18T20:05:57.1984031-04:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ParseListTest" storage="c:\development projects\enn\testsuite\bin\debug\testsuite.dll" id="e28af217-9e05-374a-b589-3e0e31013f06">
+      <Execution id="5c107cee-1906-4380-8d46-41adef6bfb75" />
+      <TestMethod codeBase="C:/Development Projects/ENN/TestSuite/bin/Debug/TestSuite.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestSuite.Framework.StandLibFactoryTest, TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ParseListTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="e28af217-9e05-374a-b589-3e0e31013f06" executionId="5c107cee-1906-4380-8d46-41adef6bfb75" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5c107cee-1906-4380-8d46-41adef6bfb75" testId="e28af217-9e05-374a-b589-3e0e31013f06" testName="ParseListTest" computerName="LIL-MONEY-PIT" duration="00:00:25.8804320" startTime="2012-03-18T20:05:31.3189711-04:00" endTime="2012-03-18T20:05:57.1994031-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c107cee-1906-4380-8d46-41adef6bfb75">
+    </UnitTestResult>
+  </Results>
+</TestRun>

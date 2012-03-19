@@ -85,8 +85,6 @@ namespace TestSuite.Framework.Tools
 			baseSetting.TrainingAccuracy = 0.9f;
 			baseSetting.TrainingIterations = 10000;
 			baseSetting.TraininPool = 25;
-
-			baseSetting.Other.Add("version", "1.0");
 		}
 	}
 }

@@ -44,30 +44,39 @@ namespace ENN.Runtime
 		private static void RunHandler(List<RawCommand> commands)
         {
             NetworkTopology topology = new NetworkTopology();
-			//gets the topology with the name specified.
-            if (commands[1].CommandChar == 'n')
-            {
-				if (topologies.ContainsKey(commands[1].Value))
+
+			string name = "";
+			bool test = false;
+
+			foreach(RawCommand command in commands)
+			{
+				if(command.CommandChar == 't')
 				{
-					topology = topologies[commands[1].Value];
+					test = true;
 				}
-				else
+				else if(command.CommandChar == 'n')
 				{
-					Console.WriteLine("{0} is not a valid topology name/n",
-									  commands[1].Value);
-					return;
+					name = command.Value;
 				}
-            }
-            else//gets the first topology is no name is specified
+			}
+
+			if (name == "")
             {
-                foreach (KeyValuePair<string, NetworkTopology> key in topologies)
-                {
-                    topology = key.Value;
-                    break;
-                }
+				Console.WriteLine("Could not process request becuase no name was set");
+				return;
             }
 
-            if (commands.Count > 2 && commands[2].CommandChar == 't')
+			if (topologies.ContainsKey(name))
+			{
+				topology = topologies[name];
+			}
+			else
+			{
+				Console.WriteLine("No topology by the name {0} is loaded", name);
+				return;
+			}
+
+            if (test)
             {
 				//tests to see is the specified topology is ready to be used.
 

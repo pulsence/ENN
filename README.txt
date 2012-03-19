@@ -9,7 +9,7 @@ settings files and topologies.
 To read the topology and settings file specification, go to the following address:
 https://docs.google.com/open?id=0B-lvvNhCn-WJNzU4ZDYyMWUtMDVmMS00NDJmLWE0NzItNjA0NTg0YmE1MDY4
 
-Version: Beta 1.0.0 3.4.2012
+Version: Beta 1.x.0 3.18.2012
 Newly Added:
 Framework:
 
